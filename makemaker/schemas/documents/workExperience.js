@@ -1,9 +1,12 @@
+import { MdGroupWork } from "react-icons/md";
 
 
 
 export default {
+
     name: "workExperience",
     title: "Work Experience",
+    icon: MdGroupWork,
     description: "The work experience of the web.",
     type: "document",
     fields: [
