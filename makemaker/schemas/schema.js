@@ -6,6 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // import schemas 
 import social from "./documents/social";
 import testimonials from './documents/testimonials';
+import brand from './documents/brand';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -15,6 +16,7 @@ export default createSchema({
   types: schemaTypes.concat([
     /* Your types here! */
     social,
-    testimonials
+    testimonials,
+    brand,
   ]),
 })
