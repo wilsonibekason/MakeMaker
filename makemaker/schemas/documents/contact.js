@@ -21,16 +21,6 @@ export default{
                         ]
                         }
                         },
-                        {
-                            validator: function (value) {
-                                return value.length > 0;
-                                }
-                            },
-                            {
-                                validator: function (value) {   
-                                    return value.length < 5;
-                                    }
-                                    },
                                     {
                                         name: "email",
                                         title: "Email",
@@ -45,7 +35,7 @@ export default{
                                                     }
                                                     ]
                                                     }
-                                    } ,
+                                    },
                                     {
                                         name: "message",
                                         title: 'Message',
