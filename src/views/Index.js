@@ -1,6 +1,12 @@
 /*eslint-disable*/
 import React from "react";
 import { Link } from "react-router-dom";
+/** 
+ * 
+ *    CREATE IMPORTS FOR SANITY INTEGRATION
+ * 
+ */
+import { client, urlFor } from "../client";
 
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footers/Footer.js";
@@ -24,7 +30,7 @@ export default function Index() {
                   className="text-blueGray-600"
                   target="_blank"
                 >
-                  Tailwind CSS 
+                  Tailwind CSS
                 </a>
                 . It features multiple HTML elements and it comes with dynamic
                 components for ReactJS, Vue and Angular.
