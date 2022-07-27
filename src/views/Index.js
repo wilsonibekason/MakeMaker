@@ -1,17 +1,43 @@
 /*eslint-disable*/
-import React from "react";
+// create imports for internal dependencies
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+
+// create import for external dependencies
+
 /** 
  * 
  *    CREATE IMPORTS FOR SANITY INTEGRATION
  * 
  */
 import { client, urlFor } from "../client";
-
+// import home context 
+//import {homeContext } from '../../onContext/onHomeContext';
+ 
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footers/Footer.js";
+import { HomeContext } from "oncontext/OnHomeContext";
 
 export default function Index() {
+const {header, setHeader} = HomeContext();
+  useEffect(() => {
+    if (urlFor(window.location.href) === "http://localhost:3000") {
+      window.scrollTo(0, 0);
+      }
+  },  []);
+
+  useEffect(() => {
+      const headerQuery = '*[__type === "header]';
+      // fetching headers from sanity stidio
+      try {
+        client?.fetch(headerQuery)?.then((headerData) => {
+          setHeader(headerData);
+          console.log(headerData);
+        });
+      } catch (error) {
+        console.log(`The Error Message ${err?.message}`);
+      }
+  }, [])
   return (
     <>
       <IndexNavbar fixed />
