@@ -24,7 +24,7 @@ export default function Index() {
                   className="text-blueGray-600"
                   target="_blank"
                 >
-                  Tailwind CSS
+                  Tailwind CSS 
                 </a>
                 . It features multiple HTML elements and it comes with dynamic
                 components for ReactJS, Vue and Angular.
