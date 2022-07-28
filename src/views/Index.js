@@ -1,6 +1,6 @@
 /*eslint-disable*/
 // create imports for internal dependencies
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // create import for external dependencies
@@ -10,21 +10,26 @@ import { Link } from "react-router-dom";
  *    CREATE IMPORTS FOR SANITY INTEGRATION
  * 
  */
+
+
 import { client, urlFor } from "../client";
 // import home context 
 //import {homeContext } from '../../onContext/onHomeContext';
  
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footers/Footer.js";
-import { HomeContext } from "oncontext/OnHomeContext";
-
+//import { HomeContext } from "oncontext/OnHomeContext";
+import { useStateContext } from "oncontext/OnHomeContext";
+// CSS COMPONENTS  DEFINITIONS
+const cssComponent = ["Buttons", "Index", "Labels", "Menus", "Navbars", "Pagination", "ProgressBar", "Typography"];
 export default function Index() {
-const {header, setHeader} = HomeContext();
-  useEffect(() => {
-    if (urlFor(window.location.href) === "http://localhost:3000") {
-      window.scrollTo(0, 0);
-      }
-  },  []);
+//const {header, setHeader} = useStateContext();
+const {header} = useContext(Context)
+  // useEffect(() => {
+  //   if (urlFor(window.location.href) === "http://localhost:3000") {
+  //     window.scrollTo(0, 0);
+  //     }
+  // },  []);
 
   useEffect(() => {
       const headerQuery = '*[__type === "header]';
@@ -222,30 +227,11 @@ const {header, setHeader} = HomeContext();
                 have different colours.
               </p>
               <div className="block pb-6">
-                <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Buttons
-                </span>
-                <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Inputs
-                </span>
-                <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Labels
-                </span>
-                <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Menus
-                </span>
-                <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Navbars
-                </span>
-                <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Pagination
-                </span>
-                <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Progressbars
-                </span>
-                <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Typography
-                </span>
+                {cssComponent?.map((cssItem, index) => (
+                    <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2" key={index+cssItem}>
+                    {cssItem}
+                  </span>
+                ))}
               </div>
               <a
                 href="https://www.creative-tim.com/learning-lab/tailwind/react/alerts/notus?ref=nr-index"
