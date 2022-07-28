@@ -10,6 +10,12 @@ export const HomeContext = ({children}) => {
        const [currentIndex, setCurrentIndex] = useState([]);
        const [sections, setSections] = useState([]);
        const navComponents = ['Home', 'About Us', "Products", "Services", "Contact Us"];
+       const sectionsItems = [
+        {
+            title: 'Home',
+            icons: "fas fa-"
+        }
+       ]
     return(
         <Context.Provider value={{header, setHeader, currentIndex, setCurrentIndex, navComponents, sections, setSections}}>
             {children}
