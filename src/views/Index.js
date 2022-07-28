@@ -95,12 +95,21 @@ export default function Index() {
     }
   }, []);
   console.log(aboutContents);
-  console.log(aboutContents[0]?.categoriesItem?.map((item, index) => item));
+  console.log(
+    aboutContents?.map((item, index) => (
+      <img alt=".." src={urlFor(item?.sectionImage)} />
+    ))
+  );
+  console.log(aboutContents?.map((item, index) => urlFor(item?.sectionIcons)));
   console.log(aboutContents.map((item, index) => item?.description));
   console.log(urlFor(aboutImageUrl?.sectionIcons));
   console.log(aboutImageUrl?.sectionIcons?.asset?._ref);
   const sectionImg = aboutImageUrl?.sectionIcons?.asset?._ref;
   const sectionImage = urlFor(aboutImageUrl?.sectionIcons);
+  const sectionImageURL = aboutContents?.map((item, index) =>
+    urlFor(item?.sectionIcons)
+  );
+
   const headers = header[currentIndex];
   const aboutSectionItems = aboutContents[0]?.categoriesItem;
   const sectionItem1 = sectionContents[0];
@@ -311,9 +320,9 @@ export default function Index() {
                 <div className="relative flex flex-col min-w-0 w-full mb-6 mt-48 md:mt-0">
                   <img
                     className=" w-full align-middle rounded-lg absolute shadow-2xl max-w-800-px -left-0-px -top-225-px "
-                    src={sectionImage}
+                    //src={sectionImage}
                     //src={require("assets/img/pattern_react.png").default}
-                    //src={urlFor(item?.sectionImage)}
+                    src={sectionImageURL}
                     // src={urlFor(aboutImageUrl?.sectionIcons)}
                     //src={sectionImg}
                     alt="..."
@@ -432,46 +441,15 @@ export default function Index() {
                 <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
                   In order to create a great User Experience some components
                   require JavaScript. In this way you can manipulate the
+                  elements on the page and give more options to your users. In
+                  order to create a great User Experience some components
+                  require JavaScript. In this way you can manipulate the
                   elements on the page and give more options to your users.
                 </p>
                 <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
                   We created a set of Components that are dynamic and come to
                   help you.
                 </p>
-                <div className="block pb-6">
-                  <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                    Alerts
-                  </span>
-                  <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                    Dropdowns
-                  </span>
-                  <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                    Menus
-                  </span>
-                  <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                    Modals
-                  </span>
-                  <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                    Navbars
-                  </span>
-                  <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                    Popovers
-                  </span>
-                  <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                    Tabs
-                  </span>
-                  <span className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2">
-                    Tooltips
-                  </span>
-                </div>
-                <a
-                  href="https://www.creative-tim.com/learning-lab/tailwind/react/alerts/notus?ref=nr-index"
-                  target="_blank"
-                  className="font-bold text-blueGray-700 hover:text-blueGray-500 ease-linear transition-all duration-150"
-                >
-                  View all{" "}
-                  <i className="fa fa-angle-double-right ml-1 leading-relaxed"></i>
-                </a>
               </div>
             </div>
           </div>
