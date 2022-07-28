@@ -21,9 +21,10 @@ import React, { useState, useContext, createContext } from "react";
 const Context = createContext({});
 
 export const HomeContext = ({children}) => {
-       const [header, setHeader] = useState('');
+       const [header, setHeader] = useState([]);
+       const [currentIndex, setCurrentIndex] = useState([]);
     return(
-        <Context.Provider value={{header, setHeader}}>
+        <Context.Provider value={{header, setHeader, currentIndex, setCurrentIndex}}>
             {children}
         </Context.Provider>
     )

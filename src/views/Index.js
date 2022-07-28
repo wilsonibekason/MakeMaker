@@ -24,49 +24,52 @@ import Context from "../oncontext/OnLandingContext";
 // CSS COMPONENTS  DEFINITIONS
 const cssComponent = ["Buttons", "Index", "Labels", "Menus", "Navbars", "Pagination", "ProgressBar", "Typography"];
 export default function Index() {
-const {header, setHeader} = useStateContext();
+const {header, setHeader, currentIndex} = useStateContext();
 //const {header, setHeader} = useContext(Context);
   // useEffect(() => {
   //   if (urlFor(window.location.href) === "http://localhost:3000") {
   //     window.scrollTo(0, 0);
   //     }
   // },  []);
-
+console.log(header);
   useEffect(() => {
-      const headerQuery = '*[__type === "header]';
-      // fetching headers from sanity stidio
+      const headerQuery = '*[_type == "header"]';
+      // fetching headers from sanity stidio headerImage?.asset?._ref
       try {
         client?.fetch(headerQuery)?.then((headerData) => {
           setHeader(headerData);
           console.log(headerData);
         });
       } catch (error) {
-        console.log(`The Error Message ${error?.message}`);
+        console.log(`The Error Message ${error?.response?.body?.error?.description}`);
         throw new error;
       }
-  }, [])
+  }, []);
+  const headers = header[currentIndex];
   return (
     <>
       <IndexNavbar fixed />
+       {header.map((item, index) => (
+      // {header?.length && (
+        <> 
       <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
         <div className="container mx-auto items-center flex flex-wrap">
           <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
             <div className="pt-32 sm:pt-0">
               <h2 className="font-semibold text-4xl text-blueGray-600">
-                Notus React - A beautiful extension for Tailwind CSS.
+               {item?.title}.
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
-                Notus React is Free and Open Source. It does not change any of
-                the CSS from{" "}
+              {item?.description}{" "}
                 <a
                   href="https://tailwindcss.com/?ref=creativetim"
                   className="text-blueGray-600"
                   target="_blank"
                 >
-                  Tailwind CSS
+                 Makemaker
                 </a>
-                . It features multiple HTML elements and it comes with dynamic
-                components for ReactJS, Vue and Angular.
+                {/* . It features multiple HTML elements and it comes with dynamic
+                components for ReactJS, Vue and Angular. */}
               </p>
               <div className="mt-12">
                 <a
@@ -81,7 +84,7 @@ const {header, setHeader} = useStateContext();
                   className="github-star ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
                   target="_blank"
                 >
-                  Github Star
+                  Join Us
                 </a>
               </div>
             </div>
@@ -90,7 +93,9 @@ const {header, setHeader} = useStateContext();
 
         <img
           className="absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 max-h-860px"
-          src={require("assets/img/pattern_react.png").default}
+           src={urlFor(item?.headerImage)}
+          //src={require("assets/img/pattern_react.png").default}urlFor(item?.headerImage?.asset?._ref
+         // src={urlFor(item?.headerImage?.asset?._ref).url}
           alt="..."
         />
       </section>
@@ -681,6 +686,9 @@ const {header, setHeader} = useStateContext();
           </div>
         </div>
       </section>
+      </>
+         ))}
+   
       <Footer />
     </>
   );
