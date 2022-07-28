@@ -24,7 +24,7 @@ import Context from "../oncontext/OnLandingContext";
 // CSS COMPONENTS  DEFINITIONS
 const cssComponent = ["Buttons", "Index", "Labels", "Menus", "Navbars", "Pagination", "ProgressBar", "Typography"];
 export default function Index() {
-const {header, setHeader, currentIndex} = useStateContext();
+const {header, setHeader, currentIndex, navComponents} = useStateContext();
 //const {header, setHeader} = useContext(Context);
   // useEffect(() => {
   //   if (urlFor(window.location.href) === "http://localhost:3000") {
