@@ -32,8 +32,8 @@ export default {
       description: "Note: Only one item is needed",
     },
     {
-      name: "categoriesItem",
-      title: "CategoriesItem",
+      name: "linkUrl",
+      title: "LinkUrl",
       type: "array",
       of: [
         // The "of"-property must be set, and it must be an array
