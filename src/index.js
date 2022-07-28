@@ -15,9 +15,11 @@ import Auth from "layouts/Auth.js";
 import Landing from "views/Landing.js";
 import Profile from "views/Profile.js";
 import Index from "views/Index.js";
+import { HomeContext } from "oncontext/OnLandingContext";
 
 ReactDOM.render(
   <BrowserRouter>
+  <HomeContext>
     <Switch>
       {/* add routes with layouts */}
       <Route path="/admin" component={Admin} />
@@ -29,6 +31,7 @@ ReactDOM.render(
       {/* add redirect for first page */}
       <Redirect from="*" to="/" />
     </Switch>
+    </HomeContext>
   </BrowserRouter>,
   document.getElementById("root")
 );
