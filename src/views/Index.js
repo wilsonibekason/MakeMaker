@@ -91,7 +91,10 @@ export default function Index() {
     }
   }, []);
   console.log(aboutContents);
+  console.log(aboutContents[0]?.categoriesItem?.map((item, index) => item));
+  console.log(aboutContents.map((item, index) => item?.description));
   const headers = header[currentIndex];
+  const aboutSectionItems = aboutContents[0]?.categoriesItem;
   const sectionItem1 = sectionContents[0];
   const sectionItem2 = sectionContents[1];
   const sectionItem3 = sectionContents[2];
@@ -279,7 +282,7 @@ export default function Index() {
                   can have different colours.
                 </p>
                 <div className="block pb-6">
-                  {cssComponent?.map((cssItem, index) => (
+                  {aboutSectionItems?.map((cssItem, index) => (
                     <span
                       className="text-xs font-semibold inline-block py-1 px-2  rounded-full text-blueGray-500 bg-white uppercase last:mr-0 mr-2 mt-2"
                       key={index + cssItem}

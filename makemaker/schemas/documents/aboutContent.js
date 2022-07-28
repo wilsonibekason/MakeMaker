@@ -21,23 +21,15 @@ export default {
     {
       name: "sectionIcons",
       title: "SectionIcons",
-      type: "array",
+      type: "image",
       options: { hotspot: true },
-      of: [
-        // The "of"-property must be set, and it must be an array
-        {
-          type: "logo", // type is required
-          title: "Author",
-        },
-      ],
-      items: [
-        {
-          name: "icon",
-          title: "Icon",
-          type: "image",
-          required: true,
-        },
-      ],
+    },
+    {
+      name: "icons",
+      type: "string",
+      required: true,
+      title: "Description for FontAwesome Icons",
+      description: "Note: Only one item is needed",
     },
     {
       name: "categoriesItem",
