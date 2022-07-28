@@ -10,6 +10,7 @@ export const HomeContext = ({children}) => {
        const [currentIndex, setCurrentIndex] = useState([]);
        const [sections, setSections] = useState([]);
        const [sectionContents, setSectionContents] = useState([]);
+       const [aboutContents, setAboutCA]
        const navComponents = ['Home', 'About Us', "Products", "Services", "Contact Us"];
        const sectionsItems = [
         {
