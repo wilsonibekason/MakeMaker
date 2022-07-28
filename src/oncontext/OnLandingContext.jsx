@@ -1,30 +1,77 @@
-
-
 // export const useStateContext = () => useContext(Context);
-import React, { useState, useContext, createContext } from "react";
+import { client, urlFor } from "../client";
+import React, { useState, useContext, useEffect, createContext } from "react";
 
 const Context = createContext({});
 
-export const HomeContext = ({children}) => {
-       const [header, setHeader] = useState([]);
-       const [currentIndex, setCurrentIndex] = useState([]);
-       const [sections, setSections] = useState([]);
-       const [sectionContents, setSectionContents] = useState([]);
-       const [aboutContents, setAboutCA]
-       const navComponents = ['Home', 'About Us', "Products", "Services", "Contact Us"];
-       const sectionsItems = [
-        {
-            title: 'Home',
-            icons: "fas fa-"
-        }
-       ]
-    return(
-        <Context.Provider value={{header, setHeader, currentIndex, setCurrentIndex, navComponents, sections, setSections, sectionContents, setSectionContents}}>
-            {children}
-        </Context.Provider>
-    )
-}
- 
+export const HomeContext = ({ children }) => {
+  const [header, setHeader] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState([]);
+  const [sections, setSections] = useState([]);
+  const [sectionContents, setSectionContents] = useState([]);
+  const [aboutContents, setAboutContents] = useState([]);
+  const navComponents = [
+    "Home",
+    "About Us",
+    "Products",
+    "Services",
+    "Contact Us",
+  ];
+
+  useEffect(() => {
+    if (currentIndex.length > 0) {
+      setCurrentIndex(currentIndex);
+    } else {
+      setCurrentIndex(0);
+    }
+    return () => {
+      if (currentIndex.length > 0) {
+        setCurrentIndex(currentIndex - 1);
+      } else {
+        setCurrentIndex(0);
+      }
+    };
+
+    return () => {
+      if (currentIndex.length > 0) {
+        setCurrentIndex(currentIndex + 1);
+      } else {
+        setCurrentIndex(0);
+      }
+    };
+  }, []);
+  useEffect(() => {
+    const aboutQuery = '*[_type == "aboutContent"]';
+    try {
+      client.fetch(aboutQuery).then((data) => setAboutContents(data));
+    } catch (error) {
+      console.log(
+        `The Error Message ${error?.response?.body?.error?.description}`
+      );
+      throw new error();
+    }
+  }, []);
+  return (
+    <Context.Provider
+      value={{
+        header,
+        setHeader,
+        currentIndex,
+        setCurrentIndex,
+        navComponents,
+        sections,
+        setSections,
+        sectionContents,
+        setSectionContents,
+        aboutContents,
+        setAboutContents,
+      }}
+    >
+      {children}
+    </Context.Provider>
+  );
+};
+
 export const useStateContext = () => useContext(Context);
 
 //export default Context();

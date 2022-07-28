@@ -41,6 +41,8 @@ export default function Index() {
     setSections,
     sectionContents,
     setSectionContents,
+    aboutContents,
+    setAboutContents,
   } = useStateContext();
 
   console.log(header);
@@ -88,6 +90,7 @@ export default function Index() {
       throw new error();
     }
   }, []);
+  console.log(aboutContents);
   const headers = header[currentIndex];
   const sectionItem1 = sectionContents[0];
   const sectionItem2 = sectionContents[1];
