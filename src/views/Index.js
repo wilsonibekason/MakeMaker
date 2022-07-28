@@ -19,12 +19,13 @@ import { client, urlFor } from "../client";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footers/Footer.js";
 //import { HomeContext } from "oncontext/OnHomeContext";
-import { useStateContext } from "oncontext/OnHomeContext";
+import { useStateContext } from "../oncontext/OnLandingContext";
+import Context from "../oncontext/OnLandingContext";
 // CSS COMPONENTS  DEFINITIONS
 const cssComponent = ["Buttons", "Index", "Labels", "Menus", "Navbars", "Pagination", "ProgressBar", "Typography"];
 export default function Index() {
-//const {header, setHeader} = useStateContext();
-const {header} = useContext(Context)
+const {header, setHeader} = useStateContext();
+//const {header, setHeader} = useContext(Context);
   // useEffect(() => {
   //   if (urlFor(window.location.href) === "http://localhost:3000") {
   //     window.scrollTo(0, 0);
@@ -40,7 +41,8 @@ const {header} = useContext(Context)
           console.log(headerData);
         });
       } catch (error) {
-        console.log(`The Error Message ${err?.message}`);
+        console.log(`The Error Message ${error?.message}`);
+        throw new error;
       }
   }, [])
   return (

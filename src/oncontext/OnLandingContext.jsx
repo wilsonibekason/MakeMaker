@@ -16,9 +16,9 @@
 // //export default LandingContext;
 
 // export const useStateContext = () => useContext(Context);
-import { useState, useContext, createContext } from "react";
+import React, { useState, useContext, createContext } from "react";
 
-const Context = createContext();
+const Context = createContext({});
 
 export const HomeContext = ({children}) => {
        const [header, setHeader] = useState('');
@@ -29,7 +29,6 @@ export const HomeContext = ({children}) => {
     )
 }
 
-//export const useStateContext = () => useContext(Context);
+export const useStateContext = () => useContext(Context);
 
-export default Context();
-
+//export default Context();
