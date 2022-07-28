@@ -43,6 +43,10 @@ export default function Index() {
     setSectionContents,
     aboutContents,
     setAboutContents,
+    aboutTitle,
+    aboutDesc,
+    aboutImageUrl,
+    aboutTitleIcon,
   } = useStateContext();
 
   console.log(header);
@@ -93,6 +97,10 @@ export default function Index() {
   console.log(aboutContents);
   console.log(aboutContents[0]?.categoriesItem?.map((item, index) => item));
   console.log(aboutContents.map((item, index) => item?.description));
+  console.log(urlFor(aboutImageUrl?.sectionIcons));
+  console.log(aboutImageUrl?.sectionIcons?.asset?._ref);
+  const sectionImg = aboutImageUrl?.sectionIcons?.asset?._ref;
+  const sectionImage = urlFor(aboutImageUrl?.sectionIcons);
   const headers = header[currentIndex];
   const aboutSectionItems = aboutContents[0]?.categoriesItem;
   const sectionItem1 = sectionContents[0];
@@ -271,15 +279,13 @@ export default function Index() {
             <div className="flex flex-wrap items-center">
               <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
                 <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
-                  <i className="fas fa-sitemap text-xl"></i>
+                  <i className={`fas ${aboutTitleIcon} text-xl`}></i>
                 </div>
                 <h3 className="text-3xl mb-2 font-semibold leading-normal">
-                  CSS Components
+                  {aboutTitle}
                 </h3>
                 <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
-                  Every element that you need in a product comes built in as a
-                  component. All components fit perfectly with each other and
-                  can have different colours.
+                  {aboutDesc}
                 </p>
                 <div className="block pb-6">
                   {aboutSectionItems?.map((cssItem, index) => (
@@ -305,7 +311,11 @@ export default function Index() {
                 <div className="relative flex flex-col min-w-0 w-full mb-6 mt-48 md:mt-0">
                   <img
                     className=" w-full align-middle rounded-lg absolute shadow-2xl max-w-800-px -left-0-px -top-225-px "
-                    src={require("assets/img/pattern_react.png").default}
+                    src={sectionImage}
+                    //src={require("assets/img/pattern_react.png").default}
+                    //src={urlFor(item?.sectionImage)}
+                    // src={urlFor(aboutImageUrl?.sectionIcons)}
+                    //src={sectionImg}
                     alt="..."
                   />
                 </div>

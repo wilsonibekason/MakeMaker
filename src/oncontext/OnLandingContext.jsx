@@ -51,6 +51,10 @@ export const HomeContext = ({ children }) => {
       throw new error();
     }
   }, []);
+  const aboutTitle = aboutContents.map((item, index) => item?.title);
+  const aboutDesc = aboutContents.map((item, index) => item?.description);
+  const aboutImageUrl = aboutContents[0];
+  const aboutTitleIcon = aboutContents.map((item, index) => item?.icons);
   return (
     <Context.Provider
       value={{
@@ -65,6 +69,10 @@ export const HomeContext = ({ children }) => {
         setSectionContents,
         aboutContents,
         setAboutContents,
+        aboutDesc,
+        aboutTitle,
+        aboutImageUrl,
+        aboutTitleIcon,
       }}
     >
       {children}
