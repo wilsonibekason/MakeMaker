@@ -15,7 +15,7 @@ import header from "./documents/header";
 import sections from "./documents/sections";
 import sectionItem from "./documents/sectionItem";
 import sectionContent from "./documents/sectionContent";
-import sectionAbout from "./documents/sectionAbout";
+import aboutContent from "./documents/aboutContent";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -34,6 +34,6 @@ export default createSchema({
     sections,
     sectionItem,
     sectionContent,
-    sectionAbout,
+    aboutContent,
   ]),
 });
