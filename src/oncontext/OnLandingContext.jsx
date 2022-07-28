@@ -8,9 +8,10 @@ const Context = createContext({});
 export const HomeContext = ({children}) => {
        const [header, setHeader] = useState([]);
        const [currentIndex, setCurrentIndex] = useState([]);
+       const [sections, setSections] = useState([]);
        const navComponents = ['Home', 'About Us', "Products", "Services", "Contact Us"];
     return(
-        <Context.Provider value={{header, setHeader, currentIndex, setCurrentIndex, navComponents}}>
+        <Context.Provider value={{header, setHeader, currentIndex, setCurrentIndex, navComponents, sections, setSections}}>
             {children}
         </Context.Provider>
     )
