@@ -1,27 +1,26 @@
 **MakeMaker**
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-  
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
 
 export default {
-    name: "contact",
-    title: "Contact",
-    type: "document",
-    url: "/contact",
-    description: "Contact information",
-    preview: true,
-    fields: [
-        {
-            name: "name",
-            title: "Name",
-            type: "text",
-            required: true,
-            display: {
-                placeholder: "Name",
-                validators: {
-                    required: {
-                        message: "Name is required",
-                        
+name: "contact",
+title: "Contact",
+type: "document",
+url: "/contact",
+description: "Contact information",
+preview: true,
+fields: [
+{
+name: "name",
+title: "Name",
+type: "text",
+required: true,
+display: {
+placeholder: "Name",
+validators: {
+required: {
+message: "Name is required",
+
                     },
                     email: {
                         message: "Email is required",
@@ -70,4 +69,21 @@ export default {
                             }
         }
     ]
+
 }
+
+{sectionContents.map((item, index) => (
+<div className="relative flex flex-col mt-4">
+<div className="px-4 py-5 flex-auto">
+<div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
+<i className={`fas ${item?.icons}`}></i>
+</div>
+<h6 className="text-xl mb-1 font-semibold">
+{item?.title}
+</h6>
+<p className="mb-4 text-blueGray-500">
+{item?.description}
+</p>
+</div>
+</div>
+))}

@@ -39,6 +39,8 @@ export default function Index() {
     navComponents,
     sections,
     setSections,
+    sectionContents,
+    setSectionContents,
   } = useStateContext();
 
   console.log(header);
@@ -47,6 +49,8 @@ export default function Index() {
     const headerQuery = '*[_type == "header"]';
     // sanity fetch sections
     const sectionsQuery = '*[_type == "section"]';
+    // sanity fetch sectionscontent
+    const sectionContentQuery = '*[_type == "sectionContent"]';
     // fetching headers from sanity stidio headerImage?.asset?._ref
     try {
       client?.fetch(headerQuery)?.then((headerData) => {
@@ -70,8 +74,25 @@ export default function Index() {
       );
       throw new error();
     }
+    try {
+      client?.fetch(sectionContentQuery)?.then((itemData) => {
+        setSectionContents(itemData);
+        console.log(itemData);
+        console.log(itemData[0]);
+        console.log(sectionContents[3]?.description);
+      });
+    } catch (error) {
+      console.log(
+        `The Error Message ${error?.response?.body?.error?.description}`
+      );
+      throw new error();
+    }
   }, []);
   const headers = header[currentIndex];
+  const sectionItem1 = sectionContents[0];
+  const sectionItem2 = sectionContents[1];
+  const sectionItem3 = sectionContents[2];
+  const sectionItem4 = sectionContents[3];
   return (
     <>
       <IndexNavbar fixed />
@@ -144,9 +165,10 @@ export default function Index() {
             </svg>
           </div>
           {/** sections componnets  */}
-          {sections?.map((item, index) => (
-            <div className="container mx-auto">
-              <div className="flex flex-wrap items-center">
+
+          <div className="container mx-auto">
+            <div className="flex flex-wrap items-center">
+              {sections?.map((item, index) => (
                 <div className="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-32">
                   <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500">
                     <img
@@ -175,72 +197,70 @@ export default function Index() {
                     </blockquote>
                   </div>
                 </div>
-
-                <div className="w-full md:w-6/12 px-4">
-                  <div className="flex flex-wrap">
-                    <div className="w-full md:w-6/12 px-4">
-                      <div className="relative flex flex-col mt-4">
-                        <div className="px-4 py-5 flex-auto">
-                          <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
-                            <i className="fas fa-sitemap"></i>
-                          </div>
-                          <h6 className="text-xl mb-1 font-semibold">
-                            CSS Components
-                          </h6>
-                          <p className="mb-4 text-blueGray-500">
-                            Notus React comes with a huge number of Fully Coded
-                            CSS components.
-                          </p>
+              ))}
+              <div className="w-full md:w-6/12 px-4">
+                <div className="flex flex-wrap">
+                  <div className="w-full md:w-6/12 px-4">
+                    <div className="relative flex flex-col mt-4">
+                      <div className="px-4 py-5 flex-auto">
+                        <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
+                          <i className={`fas ${sectionItem1?.icons} `}></i>
                         </div>
-                      </div>
-                      <div className="relative flex flex-col min-w-0">
-                        <div className="px-4 py-5 flex-auto">
-                          <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
-                            <i className="fas fa-drafting-compass"></i>
-                          </div>
-                          <h6 className="text-xl mb-1 font-semibold">
-                            JavaScript Components
-                          </h6>
-                          <p className="mb-4 text-blueGray-500">
-                            We also feature many dynamic components for React,
-                            NextJS, Vue and Angular.
-                          </p>
-                        </div>
+                        <h6 className="text-xl mb-1 font-semibold">
+                          {sectionItem1?.title}
+                        </h6>
+                        <p className="mb-4 text-blueGray-500">
+                          {sectionItem1?.description}
+                        </p>
                       </div>
                     </div>
-                    <div className="w-full md:w-6/12 px-4">
-                      <div className="relative flex flex-col min-w-0 mt-4">
-                        <div className="px-4 py-5 flex-auto">
-                          <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
-                            <i className="fas fa-newspaper"></i>
-                          </div>
-                          <h6 className="text-xl mb-1 font-semibold">Pages</h6>
-                          <p className="mb-4 text-blueGray-500">
-                            This extension also comes with 3 sample pages. They
-                            are fully coded so you can start working instantly.
-                          </p>
+                    <div className="relative flex flex-col min-w-0">
+                      <div className="px-4 py-5 flex-auto">
+                        <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
+                          <i className={`fas ${sectionItem2?.icons}`}></i>
                         </div>
+                        <h6 className="text-xl mb-1 font-semibold">
+                          {sectionItem2?.title}
+                        </h6>
+                        <p className="mb-4 text-blueGray-500">
+                          {sectionItem2?.description}
+                        </p>
                       </div>
-                      <div className="relative flex flex-col min-w-0">
-                        <div className="px-4 py-5 flex-auto">
-                          <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
-                            <i className="fas fa-file-alt"></i>
-                          </div>
-                          <h6 className="text-xl mb-1 font-semibold">
-                            Documentation
-                          </h6>
-                          <p className="mb-4 text-blueGray-500">
-                            Built by developers for developers. You will love
-                            how easy is to to work with Notus React.
-                          </p>
+                    </div>
+                  </div>
+                  <div className="w-full md:w-6/12 px-4">
+                    <div className="relative flex flex-col min-w-0 mt-4">
+                      <div className="px-4 py-5 flex-auto">
+                        <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
+                          <i className={`fas ${sectionItem3?.icons}`}></i>
                         </div>
+                        <h6 className="text-xl mb-1 font-semibold">
+                          {" "}
+                          {sectionItem3?.title}
+                        </h6>
+                        <p className="mb-4 text-blueGray-500">
+                          {sectionItem3?.description}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="relative flex flex-col min-w-0">
+                      <div className="px-4 py-5 flex-auto">
+                        <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
+                          <i className={`fas ${sectionItem4?.icons}`}></i>
+                        </div>
+                        <h6 className="text-xl mb-1 font-semibold">
+                          {sectionItem4?.title}
+                        </h6>
+                        <p className="mb-4 text-blueGray-500">
+                          {sectionItem4?.description}
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
 
           {/** end of sections components  */}
           <div className="container mx-auto overflow-hidden pb-20">

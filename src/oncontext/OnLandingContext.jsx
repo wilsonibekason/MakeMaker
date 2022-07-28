@@ -9,6 +9,7 @@ export const HomeContext = ({children}) => {
        const [header, setHeader] = useState([]);
        const [currentIndex, setCurrentIndex] = useState([]);
        const [sections, setSections] = useState([]);
+       const [sectionContents, setSectionContents] = useState([]);
        const navComponents = ['Home', 'About Us', "Products", "Services", "Contact Us"];
        const sectionsItems = [
         {
@@ -17,7 +18,7 @@ export const HomeContext = ({children}) => {
         }
        ]
     return(
-        <Context.Provider value={{header, setHeader, currentIndex, setCurrentIndex, navComponents, sections, setSections}}>
+        <Context.Provider value={{header, setHeader, currentIndex, setCurrentIndex, navComponents, sections, setSections, sectionContents, setSectionContents}}>
             {children}
         </Context.Provider>
     )
