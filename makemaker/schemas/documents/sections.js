@@ -36,26 +36,10 @@ export default {
       ],
     },
     {
-      name: "image",
+      name: "sectionImage",
+      title: "Section Image",
       type: "image",
-      display: {
-        render: (image, context) => {
-          return `<img src="${image.url}" />`;
-        },
-      },
-
-      elements: [
-        {
-          name: "alt",
-          type: "text",
-          options: { hotspot: true },
-          display: {
-            render: (text, context) => {
-              return `<p>${text}</p>`;
-            },
-          },
-        },
-      ],
+      options: { hotspot: true },
     },
   ],
 };

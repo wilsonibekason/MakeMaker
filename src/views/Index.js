@@ -40,12 +40,7 @@ export default function Index() {
     sections,
     setSections,
   } = useStateContext();
-  //const {header, setHeader} = useContext(Context);
-  // useEffect(() => {
-  //   if (urlFor(window.location.href) === "http://localhost:3000") {
-  //     window.scrollTo(0, 0);
-  //     }
-  // },  []);
+
   console.log(header);
   useEffect(() => {
     // sanity fetch headers
@@ -98,8 +93,6 @@ export default function Index() {
                     >
                       Makemaker
                     </a>
-                    {/* . It features multiple HTML elements and it comes with dynamic
-                components for ReactJS, Vue and Angular. */}
                   </p>
                   <div className="mt-12">
                     <a
@@ -158,8 +151,7 @@ export default function Index() {
                   <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500">
                     <img
                       alt="..."
-                      src={urlFor(item?.image)}
-                      // src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
+                      src={urlFor(item?.sectionImage)}
                       className="w-full align-middle rounded-t-lg"
                     />
                     <blockquote className="relative p-8 mb-4">
