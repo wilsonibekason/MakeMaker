@@ -10,6 +10,9 @@ export const HomeContext = ({ children }) => {
   const [sections, setSections] = useState([]);
   const [sectionContents, setSectionContents] = useState([]);
   const [aboutContents, setAboutContents] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [strengthContent, setStrengthContent] = useState([]);
   const navComponents = [
     "Home",
     "About Us",
@@ -50,11 +53,33 @@ export const HomeContext = ({ children }) => {
       );
       throw new error();
     }
+    // quering for strengthContents
+    const strengthQuery = '*[_type == "strengthContent"]';
+    try {
+      client.fetch(strengthQuery).then((data) => setStrengthContent(data));
+    } catch (error) {
+      console.log(
+        `The Error Message ${error?.response?.body?.error?.description}`
+      );
+      throw new error();
+    }
   }, []);
   const aboutTitle = aboutContents.map((item, index) => item?.title);
   const aboutDesc = aboutContents.map((item, index) => item?.description);
   const aboutImageUrl = aboutContents[0];
   const aboutTitleIcon = aboutContents.map((item, index) => item?.icons);
+
+  const strengthTitle = strengthContent.map((item, index) => item?.title);
+  const strengthDesc = strengthContent.map((item, index) => item?.description);
+  const strengthHREF = strengthContent[0]?.linkUrl?.map((item, index) => item);
+  const strengthDescription = strengthContent[0]?.description;
+  const strengthImage = strengthContent[0]?.strengthIcons?.map(
+    (strItem, index) => urlFor(strItem?.logoImage)
+  );
+  const strengthTopic = strengthContent[0]?.strengthItem?.map(
+    (item, index) => item
+  );
+  const strengthTitleIcon = strengthContent.map((item, index) => item?.icons);
   return (
     <Context.Provider
       value={{
@@ -73,6 +98,13 @@ export const HomeContext = ({ children }) => {
         aboutTitle,
         aboutImageUrl,
         aboutTitleIcon,
+        strengthContent,
+        strengthTitle,
+        strengthDesc,
+        strengthHREF,
+        strengthTitleIcon,
+        strengthImage,
+        strengthTopic,
       }}
     >
       {children}

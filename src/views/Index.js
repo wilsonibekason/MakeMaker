@@ -47,6 +47,13 @@ export default function Index() {
     aboutDesc,
     aboutImageUrl,
     aboutTitleIcon,
+    strengthContent,
+    strengthTitle,
+    strengthDesc,
+    strengthHREF,
+    strengthTitleIcon,
+    strengthImage,
+    strengthTopic,
   } = useStateContext();
 
   console.log(header);
@@ -109,13 +116,25 @@ export default function Index() {
   const sectionImageURL = aboutContents?.map((item, index) =>
     urlFor(item?.sectionIcons)
   );
-
+  {
+    /** creating log for strengthContent components */
+  }
+  console.log(strengthDesc);
+  console.log(strengthHREF);
+  console.log(strengthImage);
+  console.log(strengthTitle);
+  console.log(strengthTitleIcon);
+  console.log(strengthTopic);
+  {
+    /**fgrr */
+  }
   const headers = header[currentIndex];
   const aboutSectionItems = aboutContents[0]?.categoriesItem;
   const sectionItem1 = sectionContents[0];
   const sectionItem2 = sectionContents[1];
   const sectionItem3 = sectionContents[2];
   const sectionItem4 = sectionContents[3];
+  console.log(strengthContent);
   return (
     <>
       <IndexNavbar fixed />

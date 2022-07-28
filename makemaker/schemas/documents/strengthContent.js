@@ -44,8 +44,20 @@ export default {
       ],
     },
     {
-      name: "sectionIcons",
-      title: "SectionIcons",
+      name: "strengthItem",
+      title: "StrengthItem",
+      type: "array",
+      of: [
+        // The "of"-property must be set, and it must be an array
+        {
+          type: "string", // type is required
+          title: "items",
+        },
+      ],
+    },
+    {
+      name: "strengthIcons",
+      title: "SectionsIcons",
       type: "array",
       options: { hotspot: true },
       of: [
