@@ -64,18 +64,18 @@ export const HomeContext = ({ children }) => {
         `The Error Message ${error?.response?.body?.error?.description}`
       );
       throw new error();
-    };
+    }
 
     /// define logic to integrate strengthSchema
     const inspireContentQuery = '*[_type == "inspirationContent"]';
     try {
-        client.fetch(inspireContentQuery).then((data) => setInspireContent(data));
-      } catch (error) {
-        console.log(
-          `The Error Message ${error?.response?.body?.error?.description}`
-        );
-        throw new error();
-      };
+      client.fetch(inspireContentQuery).then((data) => setInspireContent(data));
+    } catch (error) {
+      console.log(
+        `The Error Message ${error?.response?.body?.error?.description}`
+      );
+      throw new error();
+    }
   }, []);
   const aboutTitle = aboutContents.map((item, index) => item?.title);
   const aboutDesc = aboutContents.map((item, index) => item?.description);
@@ -97,9 +97,12 @@ export const HomeContext = ({ children }) => {
   );
   const strengthTitleIcon = strengthContent.map((item, index) => item?.icons);
 
-
   // destructure inspireContent items as global variables
-  const inspireContentTitle = inspireContent?.map((item) =>  item?.)
+  const inspireContentTitle = inspireContent?.map((item) => item?.inspireTitle);
+  const inspireContentDesc = inspireContent?.map((item) => item?.description);
+  const inspireContentImage = inspireContent?.map((item) =>
+    urlFor(item?.inspireImage)
+  );
   return (
     <Context.Provider
       value={{
@@ -126,6 +129,9 @@ export const HomeContext = ({ children }) => {
         strengthImage,
         strengthTopic,
         strengthImageCheck,
+        inspireContentImage,
+        inspireContentDesc,
+        inspireContentTitle,
       }}
     >
       {children}
