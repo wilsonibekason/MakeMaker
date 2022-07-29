@@ -13,9 +13,6 @@ export default {
       type: "string",
       description: "title should be assigned only once in the schema",
       required: true,
-      options: {
-        list: [{ value: "Introduction" }, { value: "Advanced" }],
-      },
     },
     {
       name: "description",
@@ -23,9 +20,6 @@ export default {
       type: "string",
       description: "description should be assigned only once in the schema",
       required: true,
-      options: {
-        list: [{ value: "Introduction" }, { value: "Advanced" }],
-      },
     },
     {
       name: "inspireImage",
@@ -34,7 +28,7 @@ export default {
       description: "image should be assigned only once in the schema",
       required: true,
       options: {
-        list: [{ value: "Introduction" }, { value: "Advanced" }],
+        // list: [{ value: "Introduction" }, { value: "Advanced" }],
         hotspot: true,
       },
     },

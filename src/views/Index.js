@@ -55,6 +55,9 @@ export default function Index() {
     strengthImage,
     strengthTopic,
     strengthImageCheck,
+    inspireContentImage,
+    inspireContentDesc,
+    inspireContentTitle,
   } = useStateContext();
 
   console.log(header);
@@ -149,6 +152,10 @@ export default function Index() {
   const sectionItem3 = sectionContents[2];
   const sectionItem4 = sectionContents[3];
   console.log(strengthContent);
+  // checkbox for inspireContents
+  console.log(inspireContentDesc);
+  console.log(inspireContentImage);
+  console.log(inspireContentTitle);
   return (
     <>
       <IndexNavbar fixed />
