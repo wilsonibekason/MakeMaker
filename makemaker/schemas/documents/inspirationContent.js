@@ -1,6 +1,9 @@
+import { TbBulb } from "react-icons/tb";
+
 export default {
   name: "inspirationContent",
   title: "InspirationContent",
+  icon: TbBulb,
   type: "document",
   description: "This is a schema for documenting ",
   fields: [
