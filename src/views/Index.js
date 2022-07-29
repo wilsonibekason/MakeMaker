@@ -59,6 +59,9 @@ const Index = () => {
     inspireContentImage,
     inspireContentDesc,
     inspireContentTitle,
+    reachImg,
+    reachTitle,
+    reachDesc,
   } = useStateContext();
 
   console.log(header);
@@ -157,6 +160,10 @@ const Index = () => {
   console.log(inspireContentDesc);
   console.log(inspireContentImage);
   console.log(inspireContentTitle);
+  // checkout for reachout Schema
+  console.log(reachDesc);
+  console.log(reachTitle);
+  console.log(reachImg);
   return (
     <>
       <IndexNavbar fixed />
@@ -588,13 +595,9 @@ const Index = () => {
                     😍
                   </span>
                 </p>
-                <h3 className="font-semibold text-3xl">
-                  Do you love this Starter Kit?
-                </h3>
+                <h3 className="font-semibold text-3xl">{reachTitle}</h3>
                 <p className="text-blueGray-500 text-lg leading-relaxed mt-4 mb-4">
-                  Cause if you do, it can be yours now. Hit the buttons below to
-                  navigate to get the Free version for your next project. Build
-                  a new web app or give an old project a new look!
+                  {reachDesc}
                 </p>
                 <div className="sm:block flex flex-col mt-10">
                   <a
