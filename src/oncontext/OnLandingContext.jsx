@@ -13,6 +13,8 @@ export const HomeContext = ({ children }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [strengthContent, setStrengthContent] = useState([]);
+  const [scoreContent, setScoreContent] = useState([]);
+  const [inspireContent, setInspireContent] = useState([]);
   const navComponents = [
     "Home",
     "About Us",
@@ -62,7 +64,18 @@ export const HomeContext = ({ children }) => {
         `The Error Message ${error?.response?.body?.error?.description}`
       );
       throw new error();
-    }
+    };
+
+    /// define logic to integrate strengthSchema
+    const inspireContentQuery = '*[_type == "inspirationContent"]';
+    try {
+        client.fetch(inspireContentQuery).then((data) => setInspireContent(data));
+      } catch (error) {
+        console.log(
+          `The Error Message ${error?.response?.body?.error?.description}`
+        );
+        throw new error();
+      };
   }, []);
   const aboutTitle = aboutContents.map((item, index) => item?.title);
   const aboutDesc = aboutContents.map((item, index) => item?.description);
@@ -83,6 +96,10 @@ export const HomeContext = ({ children }) => {
     (item, index) => item
   );
   const strengthTitleIcon = strengthContent.map((item, index) => item?.icons);
+
+
+  // destructure inspireContent items as global variables
+  const inspireContentTitle = inspireContent?.map((item) =>  item?.)
   return (
     <Context.Provider
       value={{
