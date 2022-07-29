@@ -72,10 +72,13 @@ export const HomeContext = ({ children }) => {
   const strengthTitle = strengthContent.map((item, index) => item?.title);
   const strengthDesc = strengthContent.map((item, index) => item?.description);
   const strengthHREF = strengthContent[0]?.linkUrl?.map((item, index) => item);
+
   const strengthDescription = strengthContent[0]?.description;
   const strengthImage = strengthContent[0]?.strengthIcons?.map(
     (strItem, index) => urlFor(strItem?.logoImage)
   );
+  //urlFor(strItem?.logoImage)
+  const strengthImageCheck = strengthContent[0]?.strengthIcons;
   const strengthTopic = strengthContent[0]?.strengthItem?.map(
     (item, index) => item
   );
@@ -105,6 +108,7 @@ export const HomeContext = ({ children }) => {
         strengthTitleIcon,
         strengthImage,
         strengthTopic,
+        strengthImageCheck,
       }}
     >
       {children}
