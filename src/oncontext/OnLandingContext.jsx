@@ -16,6 +16,7 @@ export const HomeContext = ({ children }) => {
   const [scoreContent, setScoreContent] = useState([]);
   const [inspireContent, setInspireContent] = useState([]);
   const [reachOut, setReachOut] = useState([]);
+  const [socialContent, setSocialContents] = useState([]);
   const navComponents = [
     "Home",
     "About Us",
@@ -86,6 +87,16 @@ export const HomeContext = ({ children }) => {
         `The Error Message ${error?.response?.body?.error?.description}`
       );
       throw new error();
+    };
+    // quering for social Contents
+    const socialQuery = '*[_type == "social"]';
+    try {
+      client.fetch(socialQuery).then((data) => setSocialContents(data));
+    } catch (error) {
+      console.log(
+        `The Error Message ${error?.response?.body?.error?.description}`
+      );
+      throw new error();
     }
   }, []);
   const aboutTitle = aboutContents.map((item, index) => item?.title);
@@ -119,6 +130,9 @@ export const HomeContext = ({ children }) => {
   const reachTitle = reachOut?.map((item) => item?.title);
   const reachDesc = reachOut?.map((item) => item?.description);
   const reachImg = reachOut?.map((item) => urlFor(item?.image));
+
+  // destructuring socialContents items as Globsl variables 
+  const socialTitle = socialContent?.map((item) => item?.title);
   return (
     <Context.Provider
       value={{
@@ -151,6 +165,7 @@ export const HomeContext = ({ children }) => {
         reachImg,
         reachTitle,
         reachDesc,
+        socialContent,
       }}
     >
       {children}
