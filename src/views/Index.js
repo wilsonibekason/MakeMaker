@@ -625,4 +625,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default MotionWrap(Index);
