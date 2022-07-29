@@ -15,6 +15,7 @@ export const HomeContext = ({ children }) => {
   const [strengthContent, setStrengthContent] = useState([]);
   const [scoreContent, setScoreContent] = useState([]);
   const [inspireContent, setInspireContent] = useState([]);
+  const [reachOut, setReachOut] = useState([]);
   const navComponents = [
     "Home",
     "About Us",
@@ -76,6 +77,16 @@ export const HomeContext = ({ children }) => {
       );
       throw new error();
     }
+    // quering for reachOut
+    const reachQuery = '*[_type == "reachQuery"]';
+    try {
+      client.fetch(reachQuery).then((data) => setReachOut(data));
+    } catch (error) {
+      console.log(
+        `The Error Message ${error?.response?.body?.error?.description}`
+      );
+      throw new error();
+    }
   }, []);
   const aboutTitle = aboutContents.map((item, index) => item?.title);
   const aboutDesc = aboutContents.map((item, index) => item?.description);
@@ -103,6 +114,11 @@ export const HomeContext = ({ children }) => {
   const inspireContentImage = inspireContent?.map((item) =>
     urlFor(item?.inspireImage)
   );
+
+  // destruting reachoutContent items as global variables
+  const reachTitle = reachOut?.map((item) => item?.title);
+  const reachDesc = reachOut?.map((item) => item?.description);
+  const reachImg = reachOut?.map((item) => urlFor(item?.image));
   return (
     <Context.Provider
       value={{
@@ -132,6 +148,9 @@ export const HomeContext = ({ children }) => {
         inspireContentImage,
         inspireContentDesc,
         inspireContentTitle,
+        reachImg,
+        reachTitle,
+        reachDesc,
       }}
     >
       {children}

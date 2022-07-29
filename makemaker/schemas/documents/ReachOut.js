@@ -1,9 +1,11 @@
+import { MdFamilyRestroom } from "react-icons/md";
+
 export default {
   name: "reactOut",
   title: "Reach Out",
   description: "A reach out of the world.",
   type: "document",
-  icon: "",
+  icon: MdFamilyRestroom,
   fields: [
     {
       name: "title",
@@ -28,8 +30,6 @@ export default {
       title: "Image",
       type: "image",
       required: true,
-      minLength: 1,
-      maxLength: 100,
       description: "This should be assigned only once in the schema",
       options: { hotspot: true },
     },
