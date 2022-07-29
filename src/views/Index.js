@@ -16,7 +16,7 @@ import { client, urlFor } from "../client";
 //import {homeContext } from '../../onContext/onHomeContext';
 
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import Footer from "components/Footers/Footer.js";
+import Footer from "../components/Footers/Footer";
 //import { HomeContext } from "oncontext/OnHomeContext";
 import { useStateContext } from "../oncontext/OnLandingContext";
 import Context from "../oncontext/OnLandingContext";
@@ -590,11 +590,19 @@ const Index = () => {
           <div className="container mx-auto">
             <div className="flex flex-wrap justify-center bg-white shadow-xl rounded-lg -mt-64 py-16 px-12 relative z-10">
               <div className="w-full text-center lg:w-8/12">
+                <img
+                  className="shadow-md rounded-lg max-w-full w-16 mx-auto p-1 bg-white h1"
+                  src={reachImg}
+                  alt="reach_image"
+                />
+                {/*
                 <p className="text-4xl text-center">
+                 
                   <span role="img" aria-label="love">
-                    😍
-                  </span>
+                    {reachImg}
+                  </span> 
                 </p>
+                */}
                 <h3 className="font-semibold text-3xl">{reachTitle}</h3>
                 <p className="text-blueGray-500 text-lg leading-relaxed mt-4 mb-4">
                   {reachDesc}

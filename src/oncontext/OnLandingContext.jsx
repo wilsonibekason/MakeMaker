@@ -78,7 +78,7 @@ export const HomeContext = ({ children }) => {
       throw new error();
     }
     // quering for reachOut
-    const reachQuery = '*[_type == "reachQuery"]';
+    const reachQuery = '*[_type == "reactOut"]';
     try {
       client.fetch(reachQuery).then((data) => setReachOut(data));
     } catch (error) {
