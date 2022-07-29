@@ -20,6 +20,7 @@ import Footer from "components/Footers/Footer.js";
 //import { HomeContext } from "oncontext/OnHomeContext";
 import { useStateContext } from "../oncontext/OnLandingContext";
 import Context from "../oncontext/OnLandingContext";
+import MotionWrap from "../wrapper/MotionWrap";
 // CSS COMPONENTS  DEFINITIONS
 const cssComponent = [
   "Buttons",
@@ -31,7 +32,7 @@ const cssComponent = [
   "ProgressBar",
   "Typography",
 ];
-export default function Index() {
+const Index = () => {
   const {
     header,
     setHeader,
@@ -622,4 +623,6 @@ export default function Index() {
       <Footer />
     </>
   );
-}
+};
+
+export default Index;
