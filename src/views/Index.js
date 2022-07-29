@@ -380,13 +380,10 @@ export default function Index() {
                     <i className="fas fa-file-alt text-xl"></i>
                   </div> */}
                   <h3 className="text-3xl font-semibold">
-                    Complex Documentation
+                    {inspireContentTitle}
                   </h3>
                   <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
-                    This extension comes a lot of fully coded examples that help
-                    you get started faster. You can adjust the colors and also
-                    the programming language. You can change the text and images
-                    and you're good to go.
+                    {inspireContentDesc}
                   </p>
                   <ul className="list-none mt-6">
                     <li className="py-2">
@@ -443,7 +440,7 @@ export default function Index() {
                     transform:
                       "scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)",
                   }}
-                  src={require("assets/img/documentation.png").default}
+                  src={inspireContentImage}
                 />
               </div>
             </div>
@@ -492,7 +489,7 @@ export default function Index() {
                         <img
                           alt="..."
                           className="align-middle border-none max-w-full h-auto rounded-lg"
-                          src={require("assets/img/profile.jpg").default}
+                          src={inspireContentImage}
                         />
                       </div>
                     </Link>

@@ -17,7 +17,8 @@ export default {
     {
       name: "description",
       title: "Description",
-      type: "blockContent",
+      maxLength: 200,
+      type: "string",
       description: "description should be assigned only once in the schema",
       required: true,
     },
