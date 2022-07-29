@@ -19,7 +19,7 @@ export default {
       required: true,
     },
     {
-      name: "strengthIcons",
+      name: "strengthIcon",
       title: "StrengthIcons",
       type: "image",
       options: { hotspot: true },
@@ -57,7 +57,7 @@ export default {
     },
     {
       name: "strengthIcons",
-      title: "SectionsIcons",
+      title: "StrengthIcons",
       type: "array",
       options: { hotspot: true },
       of: [
