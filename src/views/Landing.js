@@ -10,10 +10,16 @@ import { useStateContext } from "../oncontext/OnLandingContext";
 import { urlFor } from "client";
 
 export default function Landing() {
-  const { aboutHeader } = useStateContextAbout();
-  const { sectionItem1, sectionItem2, sectionItem3, sectionItem4 } =
-    useStateContext();
-
+  const {
+    aboutHeader,
+    sectionItem1,
+    sectionItem2,
+    sectionItem3,
+    sectionItem4,
+  } = useStateContextAbout();
+  const { sectionContents } = useStateContext();
+  console.log(sectionItem1);
+  console.log(sectionContents);
   return (
     <>
       <Navbar transparent />
@@ -79,7 +85,7 @@ export default function Landing() {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
-                      <i className={`fas ${sectionItem1?.icon}`}></i>
+                      <i className={`fas ${sectionItem1?.icons}`}></i>
                     </div>
                     <h6 className="text-xl font-semibold">
                       {sectionItem1?.title}
@@ -95,7 +101,7 @@ export default function Landing() {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400">
-                      <i className={`fas ${sectionItem2?.icon}`}></i>
+                      <i className={`fas ${sectionItem2?.icons}`}></i>
                     </div>
                     <h6 className="text-xl font-semibold">
                       {sectionItem2?.title}
@@ -111,7 +117,7 @@ export default function Landing() {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
-                      <i className={`fas ${sectionItem3?.icon}`}></i>
+                      <i className={`fas ${sectionItem3?.icons}`}></i>
                     </div>
                     <h6 className="text-xl font-semibold">
                       {sectionItem3?.title}
