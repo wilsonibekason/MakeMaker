@@ -9,7 +9,14 @@ import { useStateContext } from "../oncontext/aboutContext/onAboutContext";
 import { urlFor } from "client";
 
 export default function Landing() {
-  const { aboutHeader } = useStateContext();
+  const {
+    aboutHeader,
+    sectionItem1,
+    sectionItem2,
+    sectionItem3,
+    sectionItem4,
+  } = useStateContext();
+
   return (
     <>
       <Navbar transparent />
@@ -77,7 +84,9 @@ export default function Landing() {
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
                       <i className="fas fa-award"></i>
                     </div>
-                    <h6 className="text-xl font-semibold">Awarded Agency</h6>
+                    <h6 className="text-xl font-semibold">
+                      {sectionItem1?.title}
+                    </h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
                       Divide details about your product or agency work into
                       parts. A paragraph describing a feature will be enough.

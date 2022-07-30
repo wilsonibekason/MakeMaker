@@ -130,6 +130,12 @@ export const HomeContext = ({ children }) => {
   );
   const strengthTitleIcon = strengthContent.map((item, index) => item?.icons);
 
+  // destructuring for section contents
+  const sectionItem1 = sectionContents[0];
+  const sectionItem2 = sectionContents[1];
+  const sectionItem3 = sectionContents[2];
+  const sectionItem4 = sectionContents[3];
+
   // destructure inspireContent items as global variables
   const inspireContentTitle = inspireContent?.map((item) => item?.inspireTitle);
   const inspireContentDesc = inspireContent?.map((item) => item?.description);
@@ -194,6 +200,10 @@ export const HomeContext = ({ children }) => {
         productSecImage,
         ImageSecTitle,
         Navcomponents,
+        sectionItem1,
+        sectionItem2,
+        sectionItem3,
+        sectionItem4,
       }}
     >
       {children}
