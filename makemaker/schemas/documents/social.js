@@ -58,8 +58,8 @@ export default {
           ],
         },
         {
-          name: "fontItem",
-          title: "Font Item",
+          name: "socialIcon",
+          title: "Social Icon",
           type: "object",
           fields: [
             {
@@ -70,13 +70,6 @@ export default {
           ],
         },
       ],
-    },
-
-    {
-      name: "attachment",
-      type: "image",
-      title: "Attachment",
-      options: { hotspot: true },
     },
   ],
 };
