@@ -23,13 +23,25 @@ export default {
         {
           type: "image",
           name: "image",
+          title: "Image",
+          description: "products images to be shown on the home page",
+          options: { hotspot: true },
         },
         {
-          type: "string",
           name: "imageName",
+          title: "Image Name ",
+          type: "object",
+          description: "products imagesTitle to be shown on the home page",
+
+          fields: [
+            {
+              title: "link",
+              name: "link",
+              type: "string",
+            },
+          ],
         },
       ],
-      options: { hotspot: true },
     },
     {
       name: "imageTitle",
