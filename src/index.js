@@ -19,19 +19,21 @@ import { HomeContext } from "oncontext/OnLandingContext";
 
 ReactDOM.render(
   <BrowserRouter>
-    <HomeContext>
-      <Switch>
-        {/* add routes with layouts */}
-        <Route path="/admin" component={Admin} />
-        <Route path="/auth" component={Auth} />
-        {/* add routes without layouts */}
-        <Route path="/ABOUTUS" exact component={Landing} />
-        <Route path="/profile" exact component={Profile} />
-        <Route path="/" exact component={Index} />
-        {/* add redirect for first page */}
-        <Redirect from="*" to="/" />
-      </Switch>
-    </HomeContext>
+    <AboutProvider>
+      <HomeContext>
+        <Switch>
+          {/* add routes with layouts */}
+          <Route path="/admin" component={Admin} />
+          <Route path="/auth" component={Auth} />
+          {/* add routes without layouts */}
+          <Route path="/ABOUTUS" exact component={Landing} />
+          <Route path="/profile" exact component={Profile} />
+          <Route path="/" exact component={Index} />
+          {/* add redirect for first page */}
+          <Redirect from="*" to="/" />
+        </Switch>
+      </HomeContext>
+    </AboutProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );
