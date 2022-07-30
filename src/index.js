@@ -16,6 +16,7 @@ import Landing from "./views/Landing";
 import Profile from "views/Profile.js";
 import Index from "views/Index.js";
 import { HomeContext } from "oncontext/OnLandingContext";
+import { AboutProvider } from "./oncontext/aboutContent/onAboutContext";
 
 ReactDOM.render(
   <BrowserRouter>
