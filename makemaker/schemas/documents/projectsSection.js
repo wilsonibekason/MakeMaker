@@ -1,6 +1,6 @@
 export default {
   name: "productDisplay",
-  title: "Product",
+  title: "ProductDisplay",
   type: "document",
   description: "Display products to showcase to the customers on the home page",
   fields: [
@@ -17,13 +17,15 @@ export default {
     {
       name: "image",
       title: "Image",
+      description: "length of the images must be three",
       type: "array",
       of: [
         {
           type: "image",
-          url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Customers",
+          name: "image",
         },
       ],
+      options: { hotspot: true },
     },
   ],
 };

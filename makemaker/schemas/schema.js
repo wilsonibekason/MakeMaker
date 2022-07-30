@@ -20,6 +20,7 @@ import strengthContent from "./documents/strengthContent";
 import inspirationContent from "./documents/inspirationContent";
 import blockQuote from "./documents/blockQuote";
 import ReachOut from "./documents/ReachOut";
+import projectsSection from "./documents/projectsSection";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -43,5 +44,6 @@ export default createSchema({
     inspirationContent,
     blockQuote,
     ReachOut,
+    projectsSection,
   ]),
 });
