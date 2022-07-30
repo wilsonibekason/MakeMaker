@@ -43,14 +43,13 @@ export default function Navbar(props) {
             <ul className="flex flex-col lg:flex-row list-none mr-auto">
               {navComponents?.map((navItems, index) => (
                 <li className="flex items-center" key={index + navItems}>
-                  <a
-                    className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                    href={`#${navItems}`}
-                  >
-                    {/**far fa-file-alt */}
-                    <i className="text-blueGray-400  text-lg leading-lg mr-2" />{" "}
-                    {navItems}
-                  </a>
+                  <Link to={`${navItems}`}>
+                    <a className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
+                      {/**far fa-file-alt */}
+                      <i className="text-blueGray-400  text-lg leading-lg mr-2" />{" "}
+                      {navItems}
+                    </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -20,10 +20,10 @@ export const HomeContext = ({ children }) => {
   const [projectSection, setProjectSection] = useState([]);
   const navComponents = [
     "Home",
-    "About Us",
+    "AboutUs",
     "Products",
     "Services",
-    "Contact Us",
+    "ContactUs",
   ];
 
   useEffect(() => {
