@@ -57,6 +57,18 @@ export default {
             },
           ],
         },
+        {
+          name: "fontItem",
+          title: "Font Item",
+          type: "object",
+          fields: [
+            {
+              title: "Name",
+              name: "value",
+              type: "string",
+            },
+          ],
+        },
       ],
     },
 
