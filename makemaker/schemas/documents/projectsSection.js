@@ -24,6 +24,10 @@ export default {
           type: "image",
           name: "image",
         },
+        {
+          type: "string",
+          name: "imageName",
+        },
       ],
       options: { hotspot: true },
     },

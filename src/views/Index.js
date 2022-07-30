@@ -66,7 +66,7 @@ const Index = () => {
     productSecTitle,
     productSecDesc,
     productSecImage,
-    imageSecTitle,
+    ImageSecTitle,
   } = useStateContext();
 
   console.log(header);
@@ -173,7 +173,7 @@ const Index = () => {
   console.log(productSecTitle);
   console.log(productSecDesc);
   console.log(productSecImage);
-  console.log(imageSecTitle);
+  console.log(ImageSecTitle);
   return (
     <>
       <IndexNavbar fixed />
