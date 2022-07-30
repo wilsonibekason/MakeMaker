@@ -67,5 +67,24 @@ export default {
         },
       ],
     },
+    {
+      name: "socialIcons",
+      type: "array",
+      description: "This is a special kind of icons called fontAwesome icons",
+      of: [
+        {
+          name: "icons",
+          title: "icon",
+          type: "object",
+          fields: [
+            {
+              title: "icon",
+              name: "icon",
+              type: "string",
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
