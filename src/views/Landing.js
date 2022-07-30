@@ -5,17 +5,14 @@ import { Link } from "react-router-dom";
 
 import Navbar from "components/Navbars/AuthNavbar.js";
 import Footer from "components/Footers/Footer.js";
-import { useStateContext } from "../oncontext/aboutContext/onAboutContext";
+import { useStateContextAbout } from "../oncontext/aboutContext/onAboutContext";
+import { useStateContext } from "../oncontext/OnLandingContext";
 import { urlFor } from "client";
 
 export default function Landing() {
-  const {
-    aboutHeader,
-    sectionItem1,
-    sectionItem2,
-    sectionItem3,
-    sectionItem4,
-  } = useStateContext();
+  const { aboutHeader } = useStateContextAbout();
+  const { sectionItem1, sectionItem2, sectionItem3, sectionItem4 } =
+    useStateContext();
 
   return (
     <>
@@ -82,14 +79,13 @@ export default function Landing() {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
-                      <i className="fas fa-award"></i>
+                      <i className={`fas ${sectionItem1?.icon}`}></i>
                     </div>
                     <h6 className="text-xl font-semibold">
                       {sectionItem1?.title}
                     </h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
-                      Divide details about your product or agency work into
-                      parts. A paragraph describing a feature will be enough.
+                      {sectionItem1?.description}
                     </p>
                   </div>
                 </div>
@@ -99,12 +95,13 @@ export default function Landing() {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400">
-                      <i className="fas fa-retweet"></i>
+                      <i className={`fas ${sectionItem2?.icon}`}></i>
                     </div>
-                    <h6 className="text-xl font-semibold">Free Revisions</h6>
+                    <h6 className="text-xl font-semibold">
+                      {sectionItem2?.title}
+                    </h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
-                      Keep you user engaged by providing meaningful information.
-                      Remember that by this time, the user is curious.
+                      {sectionItem2?.description}
                     </p>
                   </div>
                 </div>
@@ -114,12 +111,13 @@ export default function Landing() {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
-                      <i className="fas fa-fingerprint"></i>
+                      <i className={`fas ${sectionItem3?.icon}`}></i>
                     </div>
-                    <h6 className="text-xl font-semibold">Verified Company</h6>
+                    <h6 className="text-xl font-semibold">
+                      {sectionItem3?.title}
+                    </h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
-                      Write a few lines about each one. A paragraph describing a
-                      feature will be enough. Keep you user engaged!
+                      {sectionItem3?.description}
                     </p>
                   </div>
                 </div>
