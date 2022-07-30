@@ -17,6 +17,7 @@ export const HomeContext = ({ children }) => {
   const [inspireContent, setInspireContent] = useState([]);
   const [reachOut, setReachOut] = useState([]);
   const [socialContent, setSocialContents] = useState([]);
+  const [projectSection, setProjectSection] = useState([]);
   const navComponents = [
     "Home",
     "About Us",
@@ -98,6 +99,16 @@ export const HomeContext = ({ children }) => {
       );
       throw new error();
     }
+    // quering for projectSections Contents
+    const projectSectionQuery = '*[_type == "productDisplay"]';
+    try {
+      client.fetch(projectSectionQuery).then((data) => setProjectSection(data));
+    } catch (error) {
+      console.log(
+        `The Error Message ${error?.response?.body?.error?.description}`
+      );
+      throw new error();
+    }
   }, []);
   const aboutTitle = aboutContents.map((item, index) => item?.title);
   const aboutDesc = aboutContents.map((item, index) => item?.description);
@@ -136,7 +147,10 @@ export const HomeContext = ({ children }) => {
   const socialDesc = socialContent?.map((item) => item?.description);
   const socialName = socialContent?.map((item) => item?.socialName);
   const socialLink = socialContent?.map((item) => item?.socialLink);
-
+  /// destructuring projectSectionQuery items as Global variables
+  const productSecTitle = projectSection?.map((item) => item?.title);
+  const productSecDesc = projectSection?.map((item) => item?.description);
+  const productSecImage = projectSection?.map((item) => item?.image);
   return (
     <Context.Provider
       value={{
@@ -174,6 +188,9 @@ export const HomeContext = ({ children }) => {
         socialDesc,
         socialLink,
         socialName,
+        productSecTitle,
+        productSecDesc,
+        productSecImage,
       }}
     >
       {children}
