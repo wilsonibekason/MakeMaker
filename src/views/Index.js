@@ -164,6 +164,7 @@ const Index = () => {
   console.log(reachDesc);
   console.log(reachTitle);
   console.log(reachImg);
+
   return (
     <>
       <IndexNavbar fixed />

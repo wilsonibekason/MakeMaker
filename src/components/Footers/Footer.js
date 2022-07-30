@@ -1,6 +1,11 @@
 import React from "react";
-
+import { useStateContext } from "../../oncontext/OnLandingContext";
 export default function Footer() {
+  const { socialContent } = useStateContext();
+  {
+    /** creating logs for footer social contents  */
+  }
+  console.log(socialContent);
   return (
     <>
       <footer className="relative bg-blueGray-200 pt-8 pb-6">

@@ -7,22 +7,59 @@ export default {
   icon: MdPeople,
   fields: [
     {
+      name: "channel",
+      type: "string",
+      description: "check your channels to see the social media links required",
+      options: {
+        list: ["twitter", "linkedIn", "facebook", "instagram"],
+      },
+    },
+    {
       name: "title",
       title: "Title",
       description: "Initials must be a capital letter",
       type: "string",
     },
     {
-      name: "channel",
+      name: "description",
+      title: "Description",
+      description: "Initials must be a capital letter",
       type: "string",
-      options: {
-        list: ["twitter", "linkedIn", "facebook", "instagram"],
-      },
     },
+
     {
-      name: "text",
-      type: "text",
+      name: "socials",
+      type: "array",
+      description:
+        "describe your social media names and links based on the channel list",
+      of: [
+        {
+          name: "name",
+          title: "name",
+          type: "object",
+          fields: [
+            {
+              title: "Name",
+              name: "value",
+              type: "string",
+            },
+          ],
+        },
+        {
+          name: "link",
+          title: "link",
+          type: "object",
+          fields: [
+            {
+              title: "Name",
+              name: "value",
+              type: "string",
+            },
+          ],
+        },
+      ],
     },
+
     {
       name: "attachment",
       type: "image",
