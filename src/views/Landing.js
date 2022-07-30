@@ -186,7 +186,7 @@ export default function Landing() {
                           {cardTitle}
                         </h4>
                         <p className="text-md font-light mt-2 text-white">
-                          {cardTitle}
+                          {cardDesc}
                         </p>
                       </blockquote>
                     </div>

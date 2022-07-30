@@ -194,10 +194,6 @@ export const HomeContext = ({ children }) => {
         productSecImage,
         ImageSecTitle,
         Navcomponents,
-        sectionItem1,
-        sectionItem2,
-        sectionItem3,
-        sectionItem4,
       }}
     >
       {children}
