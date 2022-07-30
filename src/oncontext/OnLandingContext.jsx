@@ -87,7 +87,7 @@ export const HomeContext = ({ children }) => {
         `The Error Message ${error?.response?.body?.error?.description}`
       );
       throw new error();
-    };
+    }
     // quering for social Contents
     const socialQuery = '*[_type == "social"]';
     try {
@@ -131,8 +131,9 @@ export const HomeContext = ({ children }) => {
   const reachDesc = reachOut?.map((item) => item?.description);
   const reachImg = reachOut?.map((item) => urlFor(item?.image));
 
-  // destructuring socialContents items as Globsl variables 
+  // destructuring socialContents items as Globsl variables
   const socialTitle = socialContent?.map((item) => item?.title);
+  const socialDesc = socialContent?.map((item) => item?.description);
   return (
     <Context.Provider
       value={{
