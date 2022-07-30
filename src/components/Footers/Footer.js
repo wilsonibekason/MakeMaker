@@ -1,5 +1,6 @@
 import React from "react";
 import { useStateContext } from "../../oncontext/OnLandingContext";
+import { urlFor } from "../../client";
 export default function Footer() {
   const { socialContent, socialTitle, socialDesc, socialImg1 } =
     useStateContext();
@@ -7,7 +8,11 @@ export default function Footer() {
     /** creating logs for footer social contents  */
   }
   console.log(socialContent);
-  console.log(socialImg1?>);
+  console.log(socialImg1?.link);
+  console.log(socialImg1[0]);
+  console.log(socialImg1[0]?.map((item) => item?.name));
+  console.log(socialImg1);
+
   return (
     <>
       <footer className="relative bg-blueGray-200 pt-8 pb-6">
@@ -37,6 +42,7 @@ export default function Footer() {
               <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
                 {socialDesc}
               </h5>
+
               <div className="mt-6 lg:mb-0 mb-6">
                 <button
                   className="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"

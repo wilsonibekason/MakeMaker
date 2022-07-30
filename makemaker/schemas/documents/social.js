@@ -28,43 +28,39 @@ export default {
     },
 
     {
-      name: "socials",
+      name: "socialName",
       type: "array",
       description:
         "describe your social media names and links based on the channel list",
       of: [
         {
-          name: "name",
+          name: "names",
           title: "name",
           type: "object",
           fields: [
             {
               title: "Name",
-              name: "value",
+              name: "name",
               type: "string",
             },
           ],
         },
+      ],
+    },
+    {
+      name: "socialLink",
+      type: "array",
+      description:
+        "describe your social media names and links based on the channel list",
+      of: [
         {
-          name: "link",
+          name: "links",
           title: "link",
           type: "object",
           fields: [
             {
-              title: "Name",
-              name: "value",
-              type: "string",
-            },
-          ],
-        },
-        {
-          name: "socialIcon",
-          title: "Social Icon",
-          type: "object",
-          fields: [
-            {
-              title: "Name",
-              name: "value",
+              title: "link",
+              name: "link",
               type: "string",
             },
           ],
