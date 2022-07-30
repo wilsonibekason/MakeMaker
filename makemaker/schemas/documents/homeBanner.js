@@ -4,6 +4,27 @@ export default {
   type: "document",
   fields: [
     {
+      name: "imageList",
+      title: "Image List",
+      type: "array",
+      of: [
+        {
+          type: "image",
+          option: { hotspot: true },
+        },
+      ],
+    },
+    {
+      name: "imageName",
+      title: "ImageName",
+      type: "array",
+      of: [
+        {
+          type: "string",
+        },
+      ],
+    },
+    {
       name: "image",
       title: "Image",
       type: "image",
