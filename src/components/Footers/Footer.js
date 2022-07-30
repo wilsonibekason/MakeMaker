@@ -1,11 +1,13 @@
 import React from "react";
 import { useStateContext } from "../../oncontext/OnLandingContext";
 export default function Footer() {
-  const { socialContent } = useStateContext();
+  const { socialContent, socialTitle, socialDesc, socialImg1 } =
+    useStateContext();
   {
     /** creating logs for footer social contents  */
   }
   console.log(socialContent);
+  console.log(socialImg1?>);
   return (
     <>
       <footer className="relative bg-blueGray-200 pt-8 pb-6">
@@ -31,9 +33,9 @@ export default function Footer() {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap text-center lg:text-left">
             <div className="w-full lg:w-6/12 px-4">
-              <h4 className="text-3xl font-semibold">Let's keep in touch!</h4>
+              <h4 className="text-3xl font-semibold">{socialTitle}</h4>
               <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
-                Find us on any of these platforms, we respond 1-2 business days.
+                {socialDesc}
               </h5>
               <div className="mt-6 lg:mb-0 mb-6">
                 <button
