@@ -9,7 +9,7 @@ import { useStateContext } from "../../oncontext/OnLandingContext";
 
 export default function Navbar(props) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
-  const { navComponents, reachImg } = useStateContext();
+  const { navComponents, reachImg, Navcomponents } = useStateContext();
   return (
     <>
       <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-1 py-2 navbar-expand-lg bg-white shadow">

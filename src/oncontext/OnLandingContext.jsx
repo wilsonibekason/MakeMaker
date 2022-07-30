@@ -18,14 +18,14 @@ export const HomeContext = ({ children }) => {
   const [reachOut, setReachOut] = useState([]);
   const [socialContent, setSocialContents] = useState([]);
   const [projectSection, setProjectSection] = useState([]);
-  const navComponents = [
-    "Home",
-    "AboutUs",
-    "Products",
-    "Services",
-    "ContactUs",
-  ];
+  const navComponents = ["AboutUs", "Products", "Services", "ContactUs"];
 
+  const Navcomponents = [
+    {
+      navItems: ["Home", "AboutUs", "Products", "Services", "ContactUs"],
+      navLink: ["", "aboutus", "products", "services", "contactus"],
+    },
+  ];
   useEffect(() => {
     if (currentIndex.length > 0) {
       setCurrentIndex(currentIndex);
@@ -193,6 +193,7 @@ export const HomeContext = ({ children }) => {
         productSecDesc,
         productSecImage,
         ImageSecTitle,
+        Navcomponents,
       }}
     >
       {children}
