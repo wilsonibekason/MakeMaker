@@ -27,5 +27,17 @@ export default {
       ],
       options: { hotspot: true },
     },
+    {
+      name: "imageTitle",
+      title: "Image Title",
+      type: "array",
+      of: [
+        {
+          type: "string",
+          name: "ProductTitle",
+          title: "Product Title",
+        },
+      ],
+    },
   ],
 };

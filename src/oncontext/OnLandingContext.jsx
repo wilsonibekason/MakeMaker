@@ -151,6 +151,7 @@ export const HomeContext = ({ children }) => {
   const productSecTitle = projectSection?.map((item) => item?.title);
   const productSecDesc = projectSection?.map((item) => item?.description);
   const productSecImage = projectSection?.map((item) => item?.image);
+  const ImageSecTitle = projectSection?.map((item) => item?.imageTitle);
   return (
     <Context.Provider
       value={{
@@ -191,6 +192,7 @@ export const HomeContext = ({ children }) => {
         productSecTitle,
         productSecDesc,
         productSecImage,
+        ImageSecTitle,
       }}
     >
       {children}
