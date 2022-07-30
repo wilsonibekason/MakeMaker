@@ -100,7 +100,7 @@ export const HomeContext = ({ children }) => {
       throw new error();
     }
     // quering for projectSections Contents
-    const projectSectionQuery = '*[_type == "productDisplay"]';
+    const projectSectionQuery = '*[_type == "banner"]';
     try {
       client.fetch(projectSectionQuery).then((data) => setProjectSection(data));
     } catch (error) {
@@ -148,10 +148,10 @@ export const HomeContext = ({ children }) => {
   const socialName = socialContent?.map((item) => item?.socialName);
   const socialLink = socialContent?.map((item) => item?.socialLink);
   /// destructuring projectSectionQuery items as Global variables
-  const productSecTitle = projectSection?.map((item) => item?.title);
-  const productSecDesc = projectSection?.map((item) => item?.description);
-  const productSecImage = projectSection?.map((item) => item?.image);
-  const ImageSecTitle = projectSection?.map((item) => item?.imageTitle);
+  const productSecTitle = projectSection?.map((item) => item?.product);
+  const productSecDesc = projectSection?.map((item) => item?.desc);
+  const productSecImage = projectSection?.map((item) => urlFor(item?.image));
+  const ImageSecTitle = projectSection?.map((item) => item?.productNmae);
   return (
     <Context.Provider
       value={{

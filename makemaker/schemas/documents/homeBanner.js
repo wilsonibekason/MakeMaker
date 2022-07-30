@@ -23,9 +23,10 @@ export default {
     },
 
     {
-      name: "saleTime",
-      title: "SaleTime",
+      name: "productNmae",
+      title: "Product Name",
       type: "string",
+      required: true,
     },
   ],
 };

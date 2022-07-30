@@ -21,7 +21,7 @@ import inspirationContent from "./documents/inspirationContent";
 import blockQuote from "./documents/blockQuote";
 import ReachOut from "./documents/ReachOut";
 import projectsSection from "./documents/projectsSection";
-import homeBanner from "./documents/projectsSection";
+import homeBanner from "./documents/homeBanner";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
