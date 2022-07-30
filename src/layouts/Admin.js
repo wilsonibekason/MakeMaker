@@ -11,7 +11,7 @@ import FooterAdmin from "components/Footers/FooterAdmin.js";
 // views
 
 import Dashboard from "views/admin/Dashboard.js";
-import Maps from "views/admin/Maps.js";
+import Maps from ".././views/admin/Maps";
 import Settings from "views/admin/Settings.js";
 import Tables from "views/admin/Tables.js";
 
