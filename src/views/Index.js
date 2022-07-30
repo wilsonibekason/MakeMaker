@@ -21,6 +21,7 @@ import Footer from "../components/Footers/Footer";
 import { useStateContext } from "../oncontext/OnLandingContext";
 import Context from "../oncontext/OnLandingContext";
 import MotionWrap from "../wrapper/MotionWrap";
+import Maps from "./admin/Maps";
 // CSS COMPONENTS  DEFINITIONS
 const cssComponent = [
   "Buttons",
@@ -622,13 +623,14 @@ const Index = () => {
                     className="github-star sm:ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg"
                   >
                     <i className="fab fa-github text-lg mr-1"></i>
-                    <span>Help With a Star</span>
+                    <span>Contact Us</span>
                   </a>
                 </div>
                 <div className="text-center mt-16"></div>
               </div>
             </div>
           </div>
+          <Maps />
         </section>
       </>
 
