@@ -134,7 +134,8 @@ export const HomeContext = ({ children }) => {
   // destructuring socialContents items as Globsl variables
   const socialTitle = socialContent?.map((item) => item?.title);
   const socialDesc = socialContent?.map((item) => item?.description);
-  const socialImg1 = socialContent?.map((item) => item?.socials);
+  const socialName = socialContent?.map((item) => item?.socialName);
+  const socialLink = socialContent?.map((item) => item?.socialLink);
 
   return (
     <Context.Provider
@@ -171,7 +172,8 @@ export const HomeContext = ({ children }) => {
         socialContent,
         socialTitle,
         socialDesc,
-        socialImg1,
+        socialLink,
+        socialName,
       }}
     >
       {children}

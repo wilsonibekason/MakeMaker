@@ -2,16 +2,14 @@ import React from "react";
 import { useStateContext } from "../../oncontext/OnLandingContext";
 import { urlFor } from "../../client";
 export default function Footer() {
-  const { socialContent, socialTitle, socialDesc, socialImg1 } =
+  const { socialContent, socialTitle, socialDesc, socialLink, socialName } =
     useStateContext();
   {
     /** creating logs for footer social contents  */
   }
   console.log(socialContent);
-  console.log(socialImg1?.link);
-  console.log(socialImg1[0]);
-  console.log(socialImg1[0]?.map((item) => item?.name));
-  console.log(socialImg1);
+  console.log(socialLink[0]?.map((item) => item?.link));
+  console.log(socialName[0]?.map((item) => item?.name));
 
   return (
     <>
