@@ -169,6 +169,9 @@ export const HomeContext = ({ children }) => {
         reachTitle,
         reachDesc,
         socialContent,
+        socialTitle,
+        socialDesc,
+        socialImg1,
       }}
     >
       {children}
