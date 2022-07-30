@@ -12,7 +12,7 @@ import Auth from "layouts/Auth.js";
 
 // views without layouts
 
-import Landing from "views/Landing.js";
+import Landing from "./views/Landing";
 import Profile from "views/Profile.js";
 import Index from "views/Index.js";
 import { HomeContext } from "oncontext/OnLandingContext";
