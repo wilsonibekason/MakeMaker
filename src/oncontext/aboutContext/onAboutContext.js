@@ -34,7 +34,7 @@ export const AboutProvider = ({ children }) => {
     const aboutTeamQuery = '*[_type == "aboutTeam"]';
     client.fetch(aboutTeamQuery).then((data) => setAboutTeam(data));
     // querying for the aboutCard contents
-    const aboutTeamCardQuery = '*[_type == "cardContent"]';
+    const aboutTeamCardQuery = '*[_type == "CardContent"]';
     client.fetch(aboutTeamCardQuery).then((data) => setAboutTeamCard(data));
   }, []);
 
