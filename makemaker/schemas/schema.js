@@ -24,6 +24,7 @@ import projectsSection from "./documents/projectsSection";
 import homeBanner from "./documents/homeBanner";
 import aboutHeader from "./about/AboutHeader";
 import aboutSection from "./about/aboutSection";
+import aboutTip from "./about/aboutTip";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -51,5 +52,6 @@ export default createSchema({
     homeBanner,
     aboutHeader,
     aboutSection,
+    aboutTip,
   ]),
 });
