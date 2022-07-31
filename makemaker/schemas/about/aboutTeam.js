@@ -2,7 +2,7 @@ import { MdGroupWork } from "react-icons/md";
 
 export default {
   name: "aboutTeam",
-  title: "Aout Team ",
+  title: "About Team ",
   icon: MdGroupWork,
   description: "This schema is only for Makemakers team",
   type: "document",
