@@ -50,6 +50,9 @@ export const AboutProvider = ({ children }) => {
   const sectionAuthor = aboutSection?.map((item) => item?.companyName);
   const cardTitle = aboutSection?.map((item) => item?.cardTitle);
   const cardDesc = aboutSection?.map((item) => item?.cardDesc);
+  // destructuring for aboutTeam And aboutTeamCard sections
+  const aboutTeamTitle = aboutTeam?.map((item) => item?.title);
+  const aboutTeamDesc = aboutTeam?.map((item) => item?.description);
   return (
     <AboutContext.Provider
       value={{
@@ -61,6 +64,8 @@ export const AboutProvider = ({ children }) => {
         aboutTip,
         aboutTeam,
         aboutTeamCard,
+        aboutTeamTitle,
+        aboutTeamDesc,
       }}
     >
       {children}
