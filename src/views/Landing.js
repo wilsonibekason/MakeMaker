@@ -17,6 +17,7 @@ export default function Landing() {
     sectionItem3,
     sectionItem4,
     aboutSection,
+    aboutTip,
   } = useStateContextAbout();
   const { sectionContents } = useStateContext();
   console.log(sectionItem1);

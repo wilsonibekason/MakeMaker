@@ -13,6 +13,7 @@ export const AboutProvider = ({ children }) => {
   const [aboutHeader, setAboutHeader] = useState();
   const [sectionContents, setSectionContents] = useState([]);
   const [aboutSection, setAboutSection] = useState();
+  const [aboutTip, setAboutTip] = useState();
 
   useEffect(() => {
     // querying for aboutHeader
@@ -24,6 +25,9 @@ export const AboutProvider = ({ children }) => {
     // querying fot about section contents
     const aboutSectioonQuery = '*[_type == "aboutSection"]';
     client.fetch(aboutSectioonQuery).then((data) => setAboutSection(data));
+    // querying for the aboutTip contents
+    const aboutTipQuery = '*[_type == "aboutTip"]';
+    client.fetch(aboutTipQuery).then((data) => setAboutTip(data));
   }, []);
 
   // destructuring for section contents
@@ -46,6 +50,7 @@ export const AboutProvider = ({ children }) => {
         sectionItem2,
         sectionItem3,
         aboutSection,
+        aboutTip,
       }}
     >
       {children}
