@@ -67,5 +67,6 @@ export default createSchema({
     contactCard,
     contactMore,
     ad,
+    brand,
   ]),
 });
