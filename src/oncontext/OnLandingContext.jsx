@@ -209,6 +209,7 @@ export const HomeContext = ({ children }) => {
         length,
         nextSlide,
         prevSlide,
+        current,
       }}
     >
       {children}

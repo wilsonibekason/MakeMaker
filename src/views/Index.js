@@ -69,6 +69,9 @@ const Index = () => {
     productSecDesc,
     productSecImage,
     ImageSecTitle,
+    prevSlide,
+    nextSlide,
+    current,
   } = useStateContext();
 
   console.log(header);
@@ -176,7 +179,8 @@ const Index = () => {
   console.log(productSecDesc);
   console.log(productSecImage);
   console.log(ImageSecTitle);
-
+  const showImg = "absolute top-0 w-full h-full bg-center bg-cover";
+  const hideImg = "absolute top-0 w-full h-full bg-center bg-cover hidden";
   return (
     <>
       <Navbar transparent />
@@ -186,7 +190,7 @@ const Index = () => {
           return (
             <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
               <div
-                className="absolute top-0 w-full h-full bg-center bg-cover"
+                className={index === current ? showImg : hideImg}
                 style={{
                   // backgroundImage:
                   //   "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')",
