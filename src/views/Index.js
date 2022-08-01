@@ -72,6 +72,8 @@ const Index = () => {
     prevSlide,
     nextSlide,
     current,
+    BiLeftArrow,
+    BiRightArrow,
   } = useStateContext();
 
   console.log(header);
@@ -179,6 +181,7 @@ const Index = () => {
   console.log(productSecDesc);
   console.log(productSecImage);
   console.log(ImageSecTitle);
+  console.log(header);
   const showImg = "absolute top-0 w-full h-full bg-center bg-cover";
   const hideImg = "absolute top-0 w-full h-full bg-center bg-cover hidden";
   return (
@@ -210,6 +213,14 @@ const Index = () => {
                       <p className="mt-4 text-sm text-blueGray-200">
                         {description}
                       </p>
+                      <BiLeftArrow
+                        className="absolute left-0 text-3xl inset-y-1/2 text-white cursor-pointer"
+                        onClick={prevSlide}
+                      />
+                      <BiRightArrow
+                        className="absolute right-0 text-3xl inset-y-1/2 text-white cursor-pointer"
+                        onClick={nextSlide}
+                      />
                     </div>
                   </div>
                 </div>

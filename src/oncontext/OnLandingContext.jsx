@@ -1,6 +1,7 @@
 // export const useStateContext = () => useContext(Context);
 import { client, urlFor } from "../client";
 import React, { useState, useContext, useEffect, createContext } from "react";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 
 const Context = createContext({});
 
@@ -210,6 +211,8 @@ export const HomeContext = ({ children }) => {
         nextSlide,
         prevSlide,
         current,
+        BiLeftArrow,
+        BiRightArrow,
       }}
     >
       {children}
