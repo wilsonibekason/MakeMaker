@@ -19,6 +19,8 @@ export const HomeContext = ({ children }) => {
   const [socialContent, setSocialContents] = useState([]);
   const [projectSection, setProjectSection] = useState([]);
   const navComponents = ["AboutUs", "Products", "Services", "ContactUs"];
+  // usestate for slider
+  const [current, setCurrent] = useState(0);
 
   const Navcomponents = [
     {
@@ -152,6 +154,16 @@ export const HomeContext = ({ children }) => {
   const productSecDesc = projectSection?.map((item) => item?.desc);
   const productSecImage = projectSection?.map((item) => urlFor(item?.image));
   const ImageSecTitle = projectSection?.map((item) => item?.productNmae);
+
+  const length = header.length;
+  // image carousel slide
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
+
   return (
     <Context.Provider
       value={{
@@ -194,6 +206,9 @@ export const HomeContext = ({ children }) => {
         productSecImage,
         ImageSecTitle,
         Navcomponents,
+        length,
+        nextSlide,
+        prevSlide,
       }}
     >
       {children}

@@ -2,6 +2,7 @@
 // create imports for internal dependencies
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Carousel } from "@sefailyasoz/react-carousel";
 
 // create import for external dependencies
 
