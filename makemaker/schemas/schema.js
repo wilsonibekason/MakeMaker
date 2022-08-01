@@ -41,6 +41,7 @@ import productVariant from "./ecommerce/productVariant";
 import route from "./ecommerce/route";
 import socials from "./ecommerce/socials";
 import swag from "./ecommerce/swag";
+import vendor from "./ecommerce/vendor";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -85,5 +86,6 @@ export default createSchema({
     route,
     socials,
     swag,
+    vendor,
   ]),
 });
