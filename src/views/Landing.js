@@ -8,6 +8,7 @@ import Footer from "components/Footers/Footer.js";
 import { useStateContextAbout } from "../oncontext/aboutContext/onAboutContext";
 import { useStateContext } from "../oncontext/OnLandingContext";
 import { urlFor } from "client";
+import { useStateContextContact } from "../oncontext/contactContext/onContactContext";
 
 export default function Landing() {
   const {
@@ -21,6 +22,8 @@ export default function Landing() {
     aboutTeamCard,
     aboutTeamTitle,
     aboutTeamDesc,
+  } = useStateContextAbout();
+  const {
     contactHeader,
     contacts,
     handleSubmit,
@@ -31,11 +34,13 @@ export default function Landing() {
     handkeChangeInput,
     loading,
     contactCard,
-  } = useStateContextAbout();
+  } = useStateContextContact();
   const { sectionContents } = useStateContext();
   console.log(sectionItem1);
   console.log(sectionContents);
   console.log(aboutTeamCard);
+  console.log(contactCard);
+  console.log(contactHeader);
   return (
     <>
       <Navbar transparent />
@@ -496,7 +501,7 @@ export default function Landing() {
                             </>
                           ) : (
                             <div>
-                              <h4 className="text-blueGray fontColor ">
+                              <h4 className="text-blueGray ">
                                 Thanking you for getting in touch
                               </h4>
                             </div>

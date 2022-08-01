@@ -13,8 +13,8 @@ import Auth from "layouts/Auth.js";
 // views without layouts
 
 import Landing from "./views/Landing";
-import Profile from "views/Profile.js";
-import Index from "views/Index.js";
+import Profile from "./views/Profile";
+import Index from "./views/Index";
 import { HomeContext } from "oncontext/OnLandingContext";
 import { AboutProvider } from "./oncontext/aboutContext/onAboutContext";
 import { ContactProvider } from "./oncontext/contactContext/onContactContext";

@@ -30,8 +30,7 @@ export default {
     {
       name: "cardIcon",
       title: "Card Icon",
-      type: "image",
-      options: { hostpot: true },
+      type: "string",
     },
   ],
 };

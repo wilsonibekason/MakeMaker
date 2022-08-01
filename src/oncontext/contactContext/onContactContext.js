@@ -3,11 +3,11 @@ import { urlFor, client } from "../../client";
 
 const ContactContext = createContext({});
 export const ContactProvider = ({ children }) => {
-  const [contactHeader, setContactHeader] = useState();
+  const [contactHeader, setContactHeader] = useState([]);
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [contactCard, setContactCard] = useState();
+  const [contactCard, setContactCard] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -58,7 +58,7 @@ export const ContactProvider = ({ children }) => {
     const contactHeaderQuery = '*[_type == "contactHeader"]';
     client.fetch(contactHeaderQuery).then((data) => setContactHeader(data));
     // querying for the contacts schema
-    const contactQuery = '*_type == "contact"';
+    const contactQuery = '*[_type == "contact"]';
     client.fetch(contactQuery).then((data) => setContacts(data));
     // querying for the contactCard schema
     const contactCardQuery = '*[_type == "contactCard"]';
