@@ -4,7 +4,7 @@ import createSchema from "part:@sanity/base/schema-creator";
 // Then import schema types from any plugins that might expose them
 import schemaTypes from "all:part:@sanity/base/schema-type";
 // import schemas
-import social from "./documents/social";
+//import social from "./documents/social";
 import testimonials from "./documents/testimonials";
 import brand from "./documents/brand";
 //import contact from './documents/contact';
@@ -42,6 +42,10 @@ import route from "./ecommerce/route";
 import socials from "./ecommerce/socials";
 import swag from "./ecommerce/swag";
 import vendor from "./ecommerce/vendor";
+import Text from "./locales/Text";
+import String from "./locales/String";
+import BlockContent from "./locales/BlockContent";
+import blockContent from "./ecommerce/blockContent";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -50,7 +54,7 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
-    social,
+    //social,
     testimonials,
     brand,
     contact,
@@ -76,16 +80,21 @@ export default createSchema({
     contactContent,
     contactCard,
     contactMore,
-    ad,
-    brands,
+    //ad,
+    //brands,
     category,
-    page,
-    popup,
+    //page,
+    // popup,
     product,
     productVariant,
-    route,
-    socials,
-    swag,
-    vendor,
+    // route,
+    // socials,
+    // swag,
+    //vendor,
+    // import for locales
+    Text,
+    String,
+    BlockContent,
+    blockContent,
   ]),
 });

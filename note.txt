@@ -401,3 +401,6 @@
         the bulk of the card's content.
       </p>
     </div>
+
+    
+Unknown type: hero. Valid types are: testimonials, brand, contacts, workExperience, logo, header, section, sectionItems, sectionContent, aboutContent, strengthContent, inspirationContent, blockContent, reactOut, banner, aboutHeader, aboutSection, aboutTip, CardContent, aboutTeam, contactHeader, contact, contactCard, contactMore, ad, brands, category, page, popup, product, productVariant, route, social, swag, vendor, localeText, localeString, localeBlockContent, array, block, boolean, datetime, date, document, email, file, geopoint, image, number, object, reference, crossDatasetReference, slug, string, telephone, text and url

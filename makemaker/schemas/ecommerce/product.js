@@ -43,7 +43,7 @@ export default {
     {
       name: "defaultProductVariant",
       title: "DefaultProductVariant",
-      type: "productVarint",
+      type: "productVariant",
     },
     {
       name: "variants",
