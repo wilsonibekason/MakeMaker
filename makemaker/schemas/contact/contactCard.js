@@ -31,6 +31,8 @@ export default {
       name: "cardIcon",
       title: "Card Icon",
       type: "string",
+      description:
+        "Use the fontAwesome CDN to populate the icons your will need for this section",
     },
   ],
 };
