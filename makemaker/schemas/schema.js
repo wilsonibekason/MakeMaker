@@ -71,7 +71,7 @@ export default createSchema({
     //blockQuote,
     ReachOut,
     //projectsSection,
-    homeBanner,
+    //homeBanner,
     aboutHeader,
     aboutSection,
     aboutTip,
