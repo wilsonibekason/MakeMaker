@@ -1,7 +1,7 @@
 import { MdLooks } from "react-icons/md";
 
 export default {
-  name: "brand",
+  name: "brands",
   type: "document",
   title: "Brand",
   icon: MdLooks,
