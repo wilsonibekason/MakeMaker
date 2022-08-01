@@ -21,6 +21,8 @@ export default function Landing() {
     aboutTeamCard,
     aboutTeamTitle,
     aboutTeamDesc,
+    contactHeader,
+    contacts,
   } = useStateContextAbout();
   const { sectionContents } = useStateContext();
   console.log(sectionItem1);
