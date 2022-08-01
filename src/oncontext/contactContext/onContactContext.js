@@ -8,6 +8,39 @@ export const ContactProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [contactCard, setContactCard] = useState();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  // destruturing  formData variables
+  const { name, email, message } = formData;
+  // handle submitting contact form logic
+  const handleSubmit = () => {
+    setLoading(true);
+
+    const contacted = {
+      _type: "contact",
+      name,
+      email,
+      message,
+    };
+
+    client
+      .create(contacted)
+      .then(() => {
+        setLoading(false);
+        setError(null);
+        // setContactHeader(contacted);
+        setIsFormSubmitted(true);
+      })
+      .catch((error) => {
+        setLoading(false);
+        setError(error);
+        setContactHeader(contacted);
+      });
+  };
 
   useEffect(() => {
     /// querying for the contacthEADER schema
@@ -22,7 +55,18 @@ export const ContactProvider = ({ children }) => {
     // querying for
   }, []);
   return (
-    <ContactContext.Provider value={{ contactHeader, contacts, contactCard }}>
+    <ContactContext.Provider
+      value={{
+        contactHeader,
+        contacts,
+        contactCard,
+        handleSubmit,
+        error,
+        isFormSubmitted,
+        name,
+        message,
+      }}
+    >
       {children}
     </ContactContext.Provider>
   );
