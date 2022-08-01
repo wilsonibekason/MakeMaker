@@ -181,7 +181,11 @@ const Index = () => {
   console.log(productSecDesc);
   console.log(productSecImage);
   console.log(ImageSecTitle);
+  const imageSlider = header?.map((item) => item?.imageSlide);
   console.log(header);
+  console.log(header?.map((item) => item?.imageSlide));
+  console.log(header?.map((item) => item?.imageSlide?.imageItem));
+  console.log(imageSlider?.map((item) => item?.imageItem));
   const showImg = "absolute top-0 w-full h-full bg-center bg-cover";
   const hideImg = "absolute top-0 w-full h-full bg-center bg-cover hidden";
   return (
@@ -189,7 +193,7 @@ const Index = () => {
       <Navbar transparent />
       <>
         {header?.map((item, index) => {
-          const { headerImage, description, title } = item;
+          const { headerImage, description, title, imageSlide } = item;
           return (
             <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
               <div
