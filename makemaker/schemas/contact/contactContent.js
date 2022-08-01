@@ -26,9 +26,14 @@ export default {
       title: "Email",
       type: "text",
       required: true,
-      validation: {
-        required: true,
-        pattern: /^[a-zA-Z0-9 ]+$/,
+      display: {
+        placeholder: "Enter Email",
+        rules: [
+          {
+            required: true,
+            message: "Please enter a valid email address",
+          },
+        ],
       },
     },
     {
