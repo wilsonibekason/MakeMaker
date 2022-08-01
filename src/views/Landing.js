@@ -23,6 +23,11 @@ export default function Landing() {
     aboutTeamDesc,
     contactHeader,
     contacts,
+    handleSubmit,
+    error,
+    isFormSubmitted,
+    name,
+    message,
   } = useStateContextAbout();
   const { sectionContents } = useStateContext();
   console.log(sectionItem1);
@@ -436,6 +441,10 @@ export default function Landing() {
             </div>
           </div>
         </section>
+        {contactHeader?.map((item, index) => {
+          {
+          }
+        })}
         <section className="relative block py-24 lg:pt-0 bg-blueGray-800">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap justify-center lg:-mt-64 -mt-48">
