@@ -14,6 +14,7 @@ export const ContactProvider = ({ children }) => {
     message: "",
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [contactMore, setContactMore] = useState();
   // destruturing  formData variables
   const { name, email, message } = formData;
   // handleChangeInput
@@ -62,7 +63,9 @@ export const ContactProvider = ({ children }) => {
     // querying for the contactCard schema
     const contactCardQuery = '*[_type == "contactCard"]';
     client.fetch(contactCardQuery).then((data) => setContactCard(data));
-    // querying for
+    // querying for the CONTACTMORE     schema
+    const contactMoreQuery = '*[_type == "contactMore"]';
+    client.fetch(contactMoreQuery).then((data) => setContactMore(data));
   }, []);
   return (
     <ContactContext.Provider
@@ -77,6 +80,7 @@ export const ContactProvider = ({ children }) => {
         message,
         handleChangeInput,
         loading,
+        contactMore,
       }}
     >
       {children}
