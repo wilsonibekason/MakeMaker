@@ -36,6 +36,8 @@ import brands from "./ecommerce/brands";
 import category from "./ecommerce/category";
 import page from "./ecommerce/page";
 import popup from "./ecommerce/popup";
+import product from "./ecommerce/product";
+import productVariant from "./ecommerce/productVariant";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -75,6 +77,7 @@ export default createSchema({
     category,
     page,
     popup,
-    category,
+    product,
+    productVariant,
   ]),
 });
