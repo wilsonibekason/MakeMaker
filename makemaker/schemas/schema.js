@@ -46,6 +46,7 @@ import Text from "./locales/Text";
 import String from "./locales/String";
 import BlockContent from "./locales/BlockContent";
 import blockContent from "./ecommerce/blockContent";
+import bannerHome from "./ecommerce/bannerHome";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -67,7 +68,7 @@ export default createSchema({
     aboutContent,
     strengthContent,
     inspirationContent,
-    blockQuote,
+    //blockQuote,
     ReachOut,
     //projectsSection,
     homeBanner,
@@ -80,6 +81,7 @@ export default createSchema({
     contactContent,
     contactCard,
     contactMore,
+    bannerHome,
     //ad,
     //brands,
     category,
