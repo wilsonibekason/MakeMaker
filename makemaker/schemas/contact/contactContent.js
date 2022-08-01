@@ -11,9 +11,14 @@ export default {
       title: "Name",
       type: "text",
       required: true,
-      validation: {
-        required: true,
-        pattern: /^[a-zA-Z0-9 ]+$/,
+      display: {
+        placeholder: "Enter Name",
+        rules: [
+          {
+            required: true,
+            message: "Please enter a name",
+          },
+        ],
       },
     },
     {
