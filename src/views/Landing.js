@@ -306,17 +306,18 @@ export default function Landing() {
                 </p>
               </div>
             </div>
-            {aboutTeamCard?.map((item, index) => {
-              const {
-                cardTitle,
-                cardDesc,
-                cardImage,
-                Twitter,
-                LinkedIn,
-                facebook,
-              } = item;
-              return (
-                <div className="flex flex-wrap">
+
+            <div className="flex flex-wrap">
+              {aboutTeamCard?.map((item, index) => {
+                const {
+                  cardTitle,
+                  cardDesc,
+                  cardImage,
+                  Twitter,
+                  LinkedIn,
+                  facebook,
+                } = item;
+                return (
                   <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
                     <div className="px-6">
                       <img
@@ -353,9 +354,9 @@ export default function Landing() {
                       </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </section>
 
