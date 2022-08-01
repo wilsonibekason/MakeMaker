@@ -5,19 +5,34 @@ import { Link } from "react-router-dom";
 // components
 
 import PagesDropdown from "components/Dropdowns/PagesDropdown.js";
+import { useStateContext } from "../../oncontext/OnLandingContext";
 
 export default function Navbar(props) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const { navComponents, reachImg } = useStateContext();
   return (
     <>
       <nav className="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-            <Link
+            {/* <Link
               className="text-white text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
               to="/"
             >
               Notus React
+            </Link> */}
+            <Link
+              to="/"
+              className=" inline-block mr-3 py-0 whitespace-nowrap w-24 px-2"
+            >
+              <img
+                src={reachImg}
+                alt=""
+                className="max-w-full mx-auto p-0 h-auto align-middle my-0"
+                width={150}
+                height={10}
+              />
+              {/**shadow-md rounded-full max-w-full w-16 mx-auto p-0 bg-white */}
             </Link>
             <button
               className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -34,16 +49,19 @@ export default function Navbar(props) {
             }
             id="example-navbar-warning"
           >
+            {/** main navItems */}
             <ul className="flex flex-col lg:flex-row list-none mr-auto">
-              <li className="flex items-center">
-                <a
-                  className="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                  href="https://www.creative-tim.com/learning-lab/tailwind/react/overview/notus?ref=nr-auth-navbar"
-                >
-                  <i className="lg:text-blueGray-200 text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2" />{" "}
-                  Docs
-                </a>
-              </li>
+              {navComponents?.map((navItems, index) => (
+                <li className="flex items-center" key={index + navItems}>
+                  <Link
+                    to={`${navItems}`}
+                    className="text-white hover:text-blueGray-500 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                  >
+                    {/**far fa-file-alt */}
+                    <i className=" text-lg leading-lg mr-2" /> {navItems}
+                  </Link>
+                </li>
+              ))}
             </ul>
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="flex items-center">
