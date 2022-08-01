@@ -31,6 +31,7 @@ import contactHeader from "./contact/contactHeader";
 import contactContent from "./contact/contactContent";
 import contactCard from "./contact/contactCard";
 import contactMore from "./contact/contactMore";
+import ad from "./ecommerce/ad";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -65,5 +66,6 @@ export default createSchema({
     contactContent,
     contactCard,
     contactMore,
+    ad,
   ]),
 });
