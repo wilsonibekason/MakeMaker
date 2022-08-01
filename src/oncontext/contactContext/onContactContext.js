@@ -76,6 +76,7 @@ export const ContactProvider = ({ children }) => {
         name,
         message,
         handleChangeInput,
+        loading,
       }}
     >
       {children}
