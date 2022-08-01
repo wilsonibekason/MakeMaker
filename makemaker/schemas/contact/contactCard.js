@@ -8,6 +8,16 @@ export default {
   type: "document",
   fields: [
     {
+      name: "cardTitle",
+      title: "Card Title",
+      type: "string",
+    },
+    {
+      name: "cardDescription",
+      title: "Card Description",
+      type: "string",
+    },
+    {
       name: "cardName",
       title: "Card Name",
       type: "text",
