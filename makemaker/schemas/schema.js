@@ -29,6 +29,7 @@ import aboutTeamCard from "./about/aboutTeamCard";
 import aboutTeam from "./about/aboutTeam";
 import contactHeader from "./contact/contactHeader";
 import contactContent from "./contact/contactContent";
+import contactCard from "./contact/contactCard";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -61,5 +62,6 @@ export default createSchema({
     aboutTeam,
     contactHeader,
     contactContent,
+    contactCard,
   ]),
 });
