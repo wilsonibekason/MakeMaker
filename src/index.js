@@ -17,22 +17,25 @@ import Profile from "views/Profile.js";
 import Index from "views/Index.js";
 import { HomeContext } from "oncontext/OnLandingContext";
 import { AboutProvider } from "./oncontext/aboutContext/onAboutContext";
+import { ContactProvider } from "./oncontext/contactContext/onContactContext";
 
 ReactDOM.render(
   <BrowserRouter>
     <AboutProvider>
       <HomeContext>
-        <Switch>
-          {/* add routes with layouts */}
-          <Route path="/admin" component={Admin} />
-          <Route path="/auth" component={Auth} />
-          {/* add routes without layouts */}
-          <Route path="/ABOUTUS" exact component={Landing} />
-          <Route path="/profile" exact component={Profile} />
-          <Route path="/" exact component={Index} />
-          {/* add redirect for first page */}
-          <Redirect from="*" to="/" />
-        </Switch>
+        <ContactProvider>
+          <Switch>
+            {/* add routes with layouts */}
+            <Route path="/admin" component={Admin} />
+            <Route path="/auth" component={Auth} />
+            {/* add routes without layouts */}
+            <Route path="/ABOUTUS" exact component={Landing} />
+            <Route path="/profile" exact component={Profile} />
+            <Route path="/" exact component={Index} />
+            {/* add redirect for first page */}
+            <Redirect from="*" to="/" />
+          </Switch>
+        </ContactProvider>
       </HomeContext>
     </AboutProvider>
   </BrowserRouter>,
