@@ -29,7 +29,7 @@ export default function Navbar(props) {
                 src={reachImg}
                 alt=""
                 className="max-w-full mx-auto p-0 h-auto align-middle my-0"
-                width={150}
+                width={130}
                 height={10}
               />
               {/**shadow-md rounded-full max-w-full w-16 mx-auto p-0 bg-white */}
@@ -102,10 +102,10 @@ export default function Navbar(props) {
 
               <li className="flex items-center">
                 <button
-                  className="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+                  className="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded-sm shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
                   type="button"
                 >
-                  <i className="fas fa-arrow-alt-circle-down"></i> Download
+                  <i className="fas fa-arrow-alt-circle-right"></i> Get Started
                 </button>
               </li>
             </ul>
