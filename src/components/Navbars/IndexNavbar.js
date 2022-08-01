@@ -17,14 +17,14 @@ export default function Navbar(props) {
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <Link
               to="/"
-              className=" inline-block mr-3 py-0.5 whitespace-nowrap w-24 px-2"
+              className=" inline-block mr-3 py-0 whitespace-nowrap w-24 px-2"
             >
               <img
                 src={reachImg}
                 alt=""
-                className="max-w-full mx-auto p-0 "
-                width={90}
-                height={30}
+                className="max-w-full mx-auto p-0 h-auto align-middle my-0"
+                width={110}
+                height={10}
               />
               {/**shadow-md rounded-full max-w-full w-16 mx-auto p-0 bg-white */}
             </Link>
