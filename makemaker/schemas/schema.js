@@ -75,5 +75,6 @@ export default createSchema({
     category,
     page,
     popup,
+    category,
   ]),
 });
