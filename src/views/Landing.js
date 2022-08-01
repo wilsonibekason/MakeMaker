@@ -471,7 +471,7 @@ export default function Landing() {
                         <div className="relative w-full mb-3">
                           <label
                             className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                            htmlFor="email"
+                            htmlFor="Enter your email address"
                           >
                             Email
                           </label>
@@ -493,7 +493,8 @@ export default function Landing() {
                             rows="4"
                             cols="80"
                             className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                            placeholder="Type a message..."
+                            placeholder="Type in your  message..."
+                            onClick={ha}
                           />
                         </div>
                         <div className="text-center mt-6">
