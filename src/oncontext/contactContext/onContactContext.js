@@ -16,6 +16,16 @@ export const ContactProvider = ({ children }) => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   // destruturing  formData variables
   const { name, email, message } = formData;
+  // handleChangeInput
+  const handleChangeInput = () => {
+    const name = name.trim();
+    const email = email.trim();
+    const message = message.trim();
+    setFormData({
+      ...formData,
+      [name]: { ...formData[name], message },
+    });
+  };
   // handle submitting contact form logic
   const handleSubmit = () => {
     setLoading(true);
@@ -65,6 +75,7 @@ export const ContactProvider = ({ children }) => {
         isFormSubmitted,
         name,
         message,
+        handleChangeInput,
       }}
     >
       {children}
