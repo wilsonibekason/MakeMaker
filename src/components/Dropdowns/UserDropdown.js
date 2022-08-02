@@ -1,6 +1,7 @@
 import React from "react";
 import { createPopper } from "@popperjs/core";
 import { useStateContextProduct } from "oncontext/productContext/onProductContext";
+import Cart from "views/Cart";
 
 const UserDropdown = () => {
   const { BsCart3 } = useStateContextProduct();
@@ -40,6 +41,10 @@ const UserDropdown = () => {
           </span>
         </div>
       </a>
+      {/* <Cart
+        popoverDropdownRef={popoverDropdownRef}
+        dropdownPopoverShow={dropdownPopoverShow}
+      /> */}
       <div
         ref={popoverDropdownRef}
         className={

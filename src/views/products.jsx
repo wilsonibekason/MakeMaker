@@ -31,7 +31,7 @@ const Product = () => {
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                 <div className="pr-12">
                   <h1 className="text-4xl font-bold text-white">Arduino Kit</h1>
-                  <p className="text-base leading-relaxed text-gray-900">
+                  <p className="text-base leading-relaxed text-white">
                     {" "}
                     This is a powerful arduino kit that have unleased creativity
                     for so many students
