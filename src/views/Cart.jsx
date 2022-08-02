@@ -36,17 +36,34 @@ const Cart = ({ popoverDropdownRef, dropdownPopoverShow }) => {
               </div>
             )}
             {/** render the empty cart content */}
-            {/**product container */}
-            <div className="flex flex-wrap justify-center gap-2 mt-6 w-full">
-              <div className="flex g-2 p-6">
-                <img
-                  src="https://www.pngitem.com/pimgs/m/521-5216062_shopping-cart-transparent-background-shopping-cart-icon-png.png"
-                  alt=""
-                  className="w-16 h-16 rounded-md bg-teal-500"
-                />
+            {/**container */}
+            <div className="container px-4 mx-auto mt-8">
+              <div className="flex flex-wrap">
+                <div className="w-1/3 px-4">
+                  {/* <span className="text-sm block my-4 p-3 text-blueGray-700 rounded border border-solid border-blueGray-100">
+                    One of three columns
+                  </span> */}
+                  <div className="w-16 sm:w-4/12 px-20">
+                    <img
+                      className="shadow-lg rounded-full max-w-full h-auto align-middle border-none"
+                      src="https://www.pngitem.com/pimgs/m/521-5216062_shopping-cart-transparent-background-shopping-cart-icon-png.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div className="w-1/3 px-4">
+                  <span className="text-sm block my-4 p-3 text-blueGray-700 rounded border border-solid border-blueGray-100">
+                    One of three columns
+                  </span>
+                </div>
+                <div className="w-1/3 px-4">
+                  <span className="text-sm block my-4 p-3 text-blueGray-700 rounded border border-solid border-blueGray-100">
+                    One of three columns
+                  </span>
+                </div>
               </div>
             </div>
-            {/**product container */}
+            {/**container */}
           </div>
         </div>
       </main>
