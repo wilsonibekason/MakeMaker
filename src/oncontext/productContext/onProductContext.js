@@ -5,6 +5,7 @@ import React, {
   createContext,
   useReducer,
 } from "react";
+import { BsArrowLeftSquare, BsArrowRightSquare } from "react-icons/bs";
 import { urlFor, client } from "../../client";
 
 const ProductContext = createContext({});
@@ -33,7 +34,9 @@ export const ProductProvider = ({ children }) => {
     client.fetch(productBannerQuery).then((data) => setProductsBanner(data));
   }, []);
   return (
-    <ProductContext.Provider value={{}}>{children}</ProductContext.Provider>
+    <ProductContext.Provider value={{ BsArrowLeftSquare, BsArrowRightSquare }}>
+      {children}
+    </ProductContext.Provider>
   );
 };
 
