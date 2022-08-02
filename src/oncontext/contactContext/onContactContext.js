@@ -27,8 +27,17 @@ export const ContactProvider = ({ children }) => {
       [name]: { ...formData[name], message },
     });
   };
+  const handleMessageInput = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
   // handle submitting contact form logic
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     setLoading(true);
 
     const contacted = {
@@ -49,7 +58,6 @@ export const ContactProvider = ({ children }) => {
       .catch((error) => {
         setLoading(false);
         setError(error);
-        setContactHeader(contacted);
       });
   };
 
@@ -79,8 +87,12 @@ export const ContactProvider = ({ children }) => {
         name,
         message,
         handleChangeInput,
+        handleMessageInput,
+        handleChange,
         loading,
         contactMore,
+        name,
+        email,
       }}
     >
       {children}

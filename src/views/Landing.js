@@ -31,9 +31,12 @@ export default function Landing() {
     isFormSubmitted,
     name,
     message,
-    handkeChangeInput,
+    handleChangeInput,
     loading,
     contactCard,
+    email,
+    handleMessageInput,
+    handleChange,
   } = useStateContextContact();
   const { sectionContents } = useStateContext();
   console.log(sectionItem1);
@@ -454,6 +457,7 @@ export default function Landing() {
                                   type="text"
                                   className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                   placeholder="Enter yout full Name"
+                                  required
                                 />
                               </div>
 
@@ -468,6 +472,9 @@ export default function Landing() {
                                   type="email"
                                   className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                   placeholder="Email"
+                                  value={email}
+                                  onChange={handleChange}
+                                  required
                                 />
                               </div>
 
@@ -483,7 +490,9 @@ export default function Landing() {
                                   cols="80"
                                   className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                                   placeholder="Type in your  message..."
-                                  onChange={handleSubmit}
+                                  onChange={handleMessageInput}
+                                  required
+                                  name={message}
                                   value={message}
                                 />
                               </div>
@@ -491,9 +500,7 @@ export default function Landing() {
                                 <button
                                   className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                   type="button"
-                                  onClick={(e) => {
-                                    e.preventDefault(), handleSubmit;
-                                  }}
+                                  onClick={handleSubmit}
                                 >
                                   {!loading ? "Send Message" : "Sending"}
                                 </button>
