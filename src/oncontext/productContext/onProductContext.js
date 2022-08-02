@@ -5,7 +5,7 @@ import React, {
   createContext,
   useReducer,
 } from "react";
-import { urlFor } from "client";
+import { urlFor, client } from "../../client";
 
 const ProductContext = createContext({});
 
@@ -23,24 +23,15 @@ export const ProductProvider = ({ children }) => {
   const [productErrorMsg, setProductErrorMsg] = useState("");
   const [productSuccessMsg, setProductSuccessMsg] = useState("");
   // declaring reducer actions
-  const ACTIONS = {
-    INCREMENT: "increment",
-    DECREMENT: "decrement",
-  };
-  const { INCREMENT, DECREMENT } = ACTIONS;
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case INCREMENT:
-        return { count: state.count + 1 };
-        break;
-      case DECREMENT:
-        return { count: state.count };
-    }
-  };
-  // TRYING OUT THE USErEDUUCER
-  const [state, dispatch] = useReducer(reducer, { count: 0 });
-  // calling the function
-  dispatch({ type: DECREMENT });
+  //
+  // declaring acti
+  // const [product, dispatch] = useReducer(reducer, { count: 0 });
+  // // calling the function
+  // dispatch({ type: DECREMENT });
+  useEffect(() => {
+    const productBannerQuery = '*[_type == "banner"]';
+    client.fetch(productBannerQuery).then((data) => setProductsBanner(data));
+  }, []);
   return (
     <ProductContext.Provider value={{}}>{children}</ProductContext.Provider>
   );
