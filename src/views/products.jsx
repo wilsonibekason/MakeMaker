@@ -39,7 +39,7 @@ const Product = () => {
           </div>
           <div
             className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-20"
-            style={{ transform: "translate3d(50, 50 , 40)" }}
+            style={{ transform: "translate3d(50, 50, 70)" }}
           >
             <svg
               className="absolute bottom-0 overflow-hidden"
@@ -56,24 +56,21 @@ const Product = () => {
               ></polygon>
             </svg>
           </div>
-          <div
-            className="top-auto bottom-0 left-0 right-auto w-full absolute pointer-events-none overflow-hidden h-16"
-            style={{ transform: "translateY()" }}
-          >
-            <svg
-              className="absolute bottom-0 overflow-hidden"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-              version="1.1"
-              viewBox="0 0 2560 100"
-              x="0"
-              y="0"
-            >
-              <polygon
-                className="text-blueGray-700 fill-current"
-                points="2560 0 2560 100 0 100"
-              ></polygon>
-            </svg>
+        </div>
+
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-full md:w-4/12 px-6 md:px-4 ml-auto mr-auto mt-6">
+            <h3 className="text-2xl font-semibold mb-1 leading-normal">
+              Search categories
+            </h3>
+            <div className="block pb-6">
+              <span className="text-sm font-semibold inline-block py-1 px-2 rounded-full text-blueGray-900 bg-blueGray-200 uppercase last:mr-0 mr-2 mt-4">
+                Science Kits
+              </span>
+              <span className="text-sm font-semibold inline-block py-1 px-2 rounded-full text-blueGray-900 bg-blueGray-200 uppercase last:mr-0 mr-2 mt-4">
+                Science Kits
+              </span>
+            </div>
           </div>
         </div>
       </main>

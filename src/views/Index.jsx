@@ -392,14 +392,13 @@ const Index = () => {
                     </span>
                   ))}
                 </div>
-                <a
-                  href="https://www.creative-tim.com/learning-lab/tailwind/react/alerts/notus?ref=nr-index"
-                  target="_blank"
+                <Link
+                  to="/AboutUs"
                   className="font-bold text-blueGray-700 hover:text-blueGray-500 ease-linear transition-all duration-150"
                 >
                   View All{" "}
                   <i className="fa fa-angle-double-right ml-1 leading-relaxed"></i>
-                </a>
+                </Link>
               </div>
 
               <div className="w-full md:w-6/12 px-4 mr-auto ml-auto mt-32">
