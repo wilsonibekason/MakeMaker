@@ -593,7 +593,7 @@ const Index = () => {
               </div>
 
               <div className="w-full md:w-4/12 px-4 mr-auto ml-auto mt-32 relative">
-                <i className="fab fa-github text-blueGray-700 absolute -top-150-px -right-100 left-auto opacity-80 text-55"></i>
+                <i className="fab fa-github text-blueGray-700 absolute -top-150-px -right-100 left-auto opacity-80 bg-opacity-1 text-55"></i>
               </div>
             </div>
           </div>
