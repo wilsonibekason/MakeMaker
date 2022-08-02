@@ -18,23 +18,28 @@ import Index from "./views/Index";
 import { HomeContext } from "oncontext/OnLandingContext";
 import { AboutProvider } from "./oncontext/aboutContext/onAboutContext";
 import { ContactProvider } from "./oncontext/contactContext/onContactContext";
+import { ProductProvider } from "./oncontext/productContext/onProductContext";
+import Product from "views/products";
 
 ReactDOM.render(
   <BrowserRouter>
     <AboutProvider>
       <HomeContext>
         <ContactProvider>
-          <Switch>
-            {/* add routes with layouts */}
-            <Route path="/admin" component={Admin} />
-            <Route path="/auth" component={Auth} />
-            {/* add routes without layouts */}
-            <Route path="/ABOUTUS" exact component={Landing} />
-            <Route path="/profile" exact component={Profile} />
-            <Route path="/" exact component={Index} />
-            {/* add redirect for first page */}
-            <Redirect from="*" to="/" />
-          </Switch>
+          <ProductProvider>
+            <Switch>
+              {/* add routes with layouts */}
+              <Route path="/admin" component={Admin} />
+              <Route path="/auth" component={Auth} />
+              {/* add routes without layouts */}
+              <Route path="/ABOUTUS" exact component={Landing} />
+              <Route path="/profile" exact component={Profile} />
+              <Route path="/products" component={Product} />
+              <Route path="/" exact component={Index} />
+              {/* add redirect for first page */}
+              <Redirect from="*" to="/" />
+            </Switch>
+          </ProductProvider>
         </ContactProvider>
       </HomeContext>
     </AboutProvider>

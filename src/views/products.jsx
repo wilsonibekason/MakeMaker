@@ -7,7 +7,7 @@ const Product = () => {
   return (
     <>
       <main>
-        <div cla></div>
+        <div className="relative pt-16 pb-32 flex content-center"></div>
       </main>
     </>
   );
