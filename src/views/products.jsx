@@ -6,7 +6,9 @@ import React from "react";
 const Product = () => {
   return (
     <>
-      <main></main>
+      <main>
+        <div cla></div>
+      </main>
     </>
   );
 };
