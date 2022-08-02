@@ -6,6 +6,7 @@ import React, {
   useReducer,
 } from "react";
 import { BsArrowLeftSquare, BsArrowRightSquare, BsCart3 } from "react-icons/bs";
+import { AiOutlineLeft, AiOutlineShopping } from "react-icons/ai";
 import { urlFor, client } from "../../client";
 
 const ProductContext = createContext({});
@@ -35,7 +36,13 @@ export const ProductProvider = ({ children }) => {
   }, []);
   return (
     <ProductContext.Provider
-      value={{ BsArrowLeftSquare, BsArrowRightSquare, BsCart3 }}
+      value={{
+        BsArrowLeftSquare,
+        BsArrowRightSquare,
+        BsCart3,
+        AiOutlineLeft,
+        AiOutlineShopping,
+      }}
     >
       {children}
     </ProductContext.Provider>

@@ -41,10 +41,10 @@ const UserDropdown = () => {
           </span>
         </div>
       </a>
-      {/* <Cart
+      <Cart
         popoverDropdownRef={popoverDropdownRef}
         dropdownPopoverShow={dropdownPopoverShow}
-      /> */}
+      />
       <div
         ref={popoverDropdownRef}
         className={
