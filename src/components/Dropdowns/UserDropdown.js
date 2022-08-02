@@ -1,7 +1,9 @@
 import React from "react";
 import { createPopper } from "@popperjs/core";
+import { useStateContextProduct } from "oncontext/productContext/onProductContext";
 
 const UserDropdown = () => {
+  const { BsCart3 } = useStateContextProduct();
   // dropdown props
   const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
   const btnDropdownRef = React.createRef();
@@ -28,10 +30,12 @@ const UserDropdown = () => {
       >
         <div className="items-center flex">
           <span className="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full">
+            <BsCart3 width={40} />
             <img
               alt="..."
               className="w-full rounded-full align-middle border-none shadow-lg"
-              src={require("assets/img/team-1-800x800.jpg").default}
+              src={require("assets/img/cart.png").default}
+              //src="https://cdn.pixabay.com/photo/2013/07/12/14/53/cart-148964__340.png"
             />
           </span>
         </div>

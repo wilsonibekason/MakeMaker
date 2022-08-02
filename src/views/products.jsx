@@ -1,5 +1,5 @@
 // import for thirdparty and external depencies
-import Navbar from "components/Navbars/AdminNavbar";
+import Navbar from "../components/Navbars/AdminNavbar";
 import { useStateContextProduct } from "../oncontext/productContext/onProductContext";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -7,11 +7,12 @@ import Footer from "components/Footers/Footer";
 
 // import for components
 const Product = () => {
-  const { BsArrowLeftSquare, BsArrowRightSquare } = useStateContextProduct();
+  const { BsArrowLeftSquare, BsArrowRightSquare, BsCart3 } =
+    useStateContextProduct();
 
   return (
     <>
-      <Navbar transparent />
+      <Navbar transparent BsCart3={BsCart3} />
       <main>
         <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
           <div
@@ -66,10 +67,10 @@ const Product = () => {
               Search categories
             </h3>
             <div className="block pb-6">
-              <span className="text-sm font-semibold inline-block py-1 px-2 rounded-full text-blueGray-900 bg-blueGray-200 uppercase last:mr-0 mr-2 mt-4">
+              <span className="hover:text-blueGray-200 hover:bg-blueGray-900 text-sm font-semibold inline-block py-1 px-2 rounded-full text-blueGray-900 bg-blueGray-200 uppercase last:mr-0 mr-2 mt-4">
                 Science Kits
               </span>
-              <span className="text-sm font-semibold inline-block py-1 px-2 rounded-full text-blueGray-900 bg-blueGray-200 uppercase last:mr-0 mr-2 mt-4">
+              <span className="hover:text-blueGray-200 hover:bg-blueGray-90 text-sm font-semibold inline-block py-1 px-2 rounded-full text-blueGray-900 bg-blueGray-200 uppercase last:mr-0 mr-2 mt-4">
                 Science Kits
               </span>
             </div>

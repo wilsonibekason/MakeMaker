@@ -1,8 +1,10 @@
 import React from "react";
 
 import UserDropdown from "components/Dropdowns/UserDropdown.js";
+import { useStateContextProduct } from "oncontext/productContext/onProductContext";
 
 export default function Navbar() {
+  const { BsCart3 } = useStateContextProduct();
   return (
     <>
       {/* Navbar */}
@@ -16,6 +18,7 @@ export default function Navbar() {
           >
             Dashboard
           </a>
+
           {/* Form */}
           <form className="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3">
             <div className="relative flex w-full flex-wrap items-stretch">
@@ -30,6 +33,7 @@ export default function Navbar() {
             </div>
           </form>
           {/* User */}
+          <div className=" fas fa-cart  "></div>
           <ul className="flex-col md:flex-row list-none items-center hidden md:flex">
             <UserDropdown />
           </ul>
