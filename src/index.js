@@ -19,7 +19,7 @@ import { HomeContext } from "oncontext/OnLandingContext";
 import { AboutProvider } from "./oncontext/aboutContext/onAboutContext";
 import { ContactProvider } from "./oncontext/contactContext/onContactContext";
 import { ProductProvider } from "./oncontext/productContext/onProductContext";
-import Product from "views/products";
+import Product from "./views/Products";
 
 ReactDOM.render(
   <BrowserRouter>

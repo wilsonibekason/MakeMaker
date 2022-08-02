@@ -10,4 +10,4 @@ export const ProductProvider = ({ children }) => {
   );
 };
 
-export const onCreateProductContext = () => useContext();
+export const useStateContextProduct = () => useContext(ProductContext);
