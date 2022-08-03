@@ -65,11 +65,15 @@ export default {
     {
       name: "tags",
       title: "Tags",
+      description:
+        "The tag schema query represents th categories for your ecommerce products ",
       type: "array",
       of: [
         {
           name: "tag",
           title: "Tag",
+          description:
+            "Make sure to add lowercase tags that rhyme with the category items you have in the  product section of the website",
           type: "string",
         },
       ],
