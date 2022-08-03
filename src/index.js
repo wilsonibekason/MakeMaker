@@ -21,6 +21,7 @@ import { ContactProvider } from "./oncontext/contactContext/onContactContext";
 import { ProductProvider } from "./oncontext/productContext/onProductContext";
 import Product from "./views/Products";
 import ProductDetails from "./views/ProductDetails";
+import { EcomProvider } from "./oncontext/productContext/onEcomContext";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -28,19 +29,21 @@ ReactDOM.render(
       <HomeContext>
         <ContactProvider>
           <ProductProvider>
-            <Switch>
-              {/* add routes with layouts */}
-              <Route path="/admin" component={Admin} />
-              <Route path="/auth" component={Auth} />
-              {/* add routes without layouts */}
-              <Route path="/ABOUTUS" exact component={Landing} />
-              <Route path="/profile" exact component={Profile} />
-              <Route path="/products" component={Product} />
-              <Route path="/productsid" component={ProductDetails} />
-              <Route path="/" exact component={Index} />
-              {/* add redirect for first page */}
-              <Redirect from="*" to="/" />
-            </Switch>
+            <EcomProvider>
+              <Switch>
+                {/* add routes with layouts */}
+                <Route path="/admin" component={Admin} />
+                <Route path="/auth" component={Auth} />
+                {/* add routes without layouts */}
+                <Route path="/ABOUTUS" exact component={Landing} />
+                <Route path="/profile" exact component={Profile} />
+                <Route path="/products" component={Product} />
+                <Route path="/productsid" component={ProductDetails} />
+                <Route path="/" exact component={Index} />
+                {/* add redirect for first page */}
+                <Redirect from="*" to="/" />
+              </Switch>
+            </EcomProvider>
           </ProductProvider>
         </ContactProvider>
       </HomeContext>
