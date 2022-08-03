@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { BsArrowLeftSquare, BsArrowRightSquare, BsCart3 } from "react-icons/bs";
 import { AiOutlineLeft, AiOutlineShopping, AiFillStar } from "react-icons/ai";
+import { format } from "date-fns";
 import { urlFor, client } from "../../client";
 import { useParams } from "react-router-dom";
 
@@ -40,7 +41,11 @@ export const ProductProvider = ({ children }) => {
     const productQuery = '*[_type == "product"]';
     client.fetch(productQuery).then((data) => setProducts(data));
   }, []);
-
+  // destructuring and converting product published time
+  const publishedAt = productBanner?.map((item) => item?.publishedAt);
+  const convertedDate = publishedAt
+    ? format(new Date(publishedAt), "p, dd/MM/YYYY")
+    : "no date to show";
   return (
     <ProductContext.Provider
       value={{
@@ -53,6 +58,7 @@ export const ProductProvider = ({ children }) => {
         AiOutlineShopping,
         AiFillStar,
         products,
+        convertedDate,
       }}
     >
       {children}

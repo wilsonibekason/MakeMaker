@@ -16,10 +16,11 @@ const Product = () => {
     productBanner,
     productHeader,
     products,
+    convertedDate,
   } = useStateContextProduct();
   console.log(productHeader);
   console.log(products);
-  console.log(productBanner);
+  console.log(convertedDate);
   return (
     <>
       <Navbar transparent BsCart3={BsCart3} />
@@ -154,7 +155,7 @@ const Product = () => {
                               </div>
                               <div className="">
                                 <h4 className="text-xl font-bold text-white">
-                                  {publishedAt}
+                                  {""}
                                 </h4>
                                 <p className="text-md font-light mt-2 text-white">
                                   {price}
