@@ -495,7 +495,7 @@ const Index = () => {
             <div className="w-full md:w-6/12 px-12 md:px-4">
               <h2 className="font-semibold text-4xl">{productSecTitle}</h2>
               <p className="text-lg leading-relaxed mt-4 mb-4 text-blueGray-500">
-                {productSecDesc}
+                {productSecDesc}rrrgrgrg
               </p>
             </div>
           </div>
@@ -510,7 +510,7 @@ const Index = () => {
                     <h5 className="text-xl font-semibold pb-4 text-center">
                       Our Products
                     </h5>
-                    <Link to="/Products">
+                    <Link to="/products">
                       <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg ease-linear transition-all duration-150">
                         <img
                           alt="..."
@@ -524,7 +524,7 @@ const Index = () => {
                     <h5 className="text-xl font-semibold pb-4 text-center">
                       About Us
                     </h5>
-                    <Link to="/Aboutus">
+                    <Link to="/ABOUTUS">
                       <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg ease-linear transition-all duration-150">
                         <img
                           alt="..."

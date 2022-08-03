@@ -103,7 +103,7 @@ export const HomeContext = ({ children }) => {
       throw new error();
     }
     // quering for projectSections Contents
-    const projectSectionQuery = '*[_type == "banner"]';
+    const projectSectionQuery = '*[_type == "banners"]';
     try {
       client.fetch(projectSectionQuery).then((data) => setProjectSection(data));
     } catch (error) {
