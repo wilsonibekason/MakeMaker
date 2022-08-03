@@ -90,12 +90,13 @@ const Product = () => {
               Search categories
             </h3>
             <div className="block pb-6">
-              {["All, 'Arduino", "CAD", "Electronics"]?.map((item, index) => (
+              {["All", "Arduino", "CAD", "Electronics"]?.map((item, index) => (
                 <span
                   className={`${
                     animateFilter === item ? activeFilterBtn : inActiveFilterBtn
                   }`}
                   key={index}
+                  onClick={() => handleProductFilter(item)}
                 >
                   {item}
                 </span>
