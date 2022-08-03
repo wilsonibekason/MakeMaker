@@ -7,7 +7,7 @@ import Footer from "components/Footers/Footer";
 
 // import for components
 const Product = () => {
-  const { BsArrowLeftSquare, BsArrowRightSquare, BsCart3 } =
+  const { BsArrowLeftSquare, BsArrowRightSquare, BsCart3, productBanner } =
     useStateContextProduct();
 
   return (
