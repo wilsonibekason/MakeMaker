@@ -90,7 +90,7 @@ const ProductDetails = () => {
                 </p>
                 <div className="flex flex-wrap">
                   <div class="flex">
-                    <div class="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-xl  my-4 py-3 ">
+                    <div class="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow hover:shadow-lg my-4 py-3 bg-lightBlue-500 text-white active:bg-lightBlue-600  ease-linear transition-all duration-150">
                       <h2>Quantity</h2>
                     </div>
                     <div class="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md  my-4 py-3 ">
@@ -183,11 +183,12 @@ const ProductDetails = () => {
                         </a>
                       </li>
                     ))}
+                    {"  "}
                     {renderMoreProductsItems2?.map((item, index) => (
                       <li key={index}>
                         <a
                           href="#pablo"
-                          className="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-lightBlue-500 bg-white text-lightBlue-500 uppercase"
+                          className="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-lightBlue-500 bg-white text-lightBlue-900 uppercase"
                         >
                           {item}
                         </a>
