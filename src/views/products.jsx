@@ -36,6 +36,8 @@ const Product = () => {
                     This is a powerful arduino kit that have unleased creativity
                     for so many students
                   </p>
+                  <BsArrowLeftSquare className="absolute left-0 text-3xl md:text-xl sm:text-sm inset-y-1/2 text-white hover:bg-lightBlue-300 cursor-pointer" />
+                  <BsArrowRightSquare className="absolute right-0 text-3xl md:text-xl sm:text-sm inset-y-1/2 text-white cursor-pointer" />
                 </div>
               </div>
             </div>
