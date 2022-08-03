@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 export default {
   name: "banner",
   type: "document",
@@ -22,6 +24,11 @@ export default {
       title: "Description",
       placeholder: "What is the description of this banner?",
       required: true,
+    },
+    {
+      name: "publishedAt",
+      title: "Published At",
+      type: "datetime",
     },
     {
       name: "discount",
@@ -56,4 +63,17 @@ export default {
       description: "The time at which the sale will be active",
     },
   ],
+  preview: {
+    select: {
+      description: "Select the product you want to preview",
+      publishedAt: "publishedAt",
+    },
+    prepare({ publishedAt }) {
+      return {
+        subtitle: publishedAt
+          ? format(new Date(publishedAt), "p, dd/MM/YYYY")
+          : "",
+      };
+    },
+  },
 };
