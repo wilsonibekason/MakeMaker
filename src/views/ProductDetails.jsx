@@ -1,5 +1,6 @@
 //import for thirdparty dependencies
 
+import Footer from "components/Footers/Footer";
 import Navbar from "components/Navbars/AdminNavbar";
 import Sidebar from "components/Sidebar/Sidebar";
 
@@ -160,7 +161,32 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
+        {/**   other products components  */}
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-full md:w-4/12 px-6 md:px-4 ml-auto mr-auto mt-6">
+            <h3 className="text-2xl font-semibold mb-1 leading-normal">
+              <div className="py-2  items-center justify-center">
+                <nav className="block">
+                  <ul className="flex pl-0 rounded list-none flex-wrap">
+                    <li>
+                      <a
+                        href="#pablo"
+                        className="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-lightBlue-500 bg-white text-lightBlue-500"
+                      >
+                        1
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </h3>
+          </div>
+        </div>
+
+        {/**   other products components  */}
       </section>
+
+      <Footer />
     </>
   );
 };
