@@ -508,9 +508,9 @@ const Index = () => {
                 <div className="flex flex-wrap">
                   <div className="w-full lg:w-4/12 px-4">
                     <h5 className="text-xl font-semibold pb-4 text-center">
-                      Profile Page
+                      Our Products
                     </h5>
-                    <Link to="/profile">
+                    <Link to="/Products">
                       <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg ease-linear transition-all duration-150">
                         <img
                           alt="..."
@@ -522,23 +522,24 @@ const Index = () => {
                   </div>
                   <div className="w-full lg:w-4/12 px-4">
                     <h5 className="text-xl font-semibold pb-4 text-center">
-                      {ImageSecTitle}
+                      About Us
                     </h5>
-                    <Link to="/landing">
+                    <Link to="/Aboutus">
                       <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg ease-linear transition-all duration-150">
                         <img
                           alt="..."
                           className="align-middle border-none max-w-full h-auto rounded-lg"
-                          src={productSecImage}
+                          //src={productSecImage}
+                          src={require("assets/img/login.jpg").default}
                         />
                       </div>
                     </Link>
                   </div>
                   <div className="w-full lg:w-4/12 px-4">
                     <h5 className="text-xl font-semibold pb-4 text-center">
-                      ijdciie
+                      Our Blogs
                     </h5>
-                    <Link to="/auth/login">
+                    <Link to="/blogs">
                       <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg ease-linear transition-all duration-150">
                         <img
                           alt="..."
