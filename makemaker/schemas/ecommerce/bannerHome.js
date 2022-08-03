@@ -10,6 +10,13 @@ export default {
       options: { hotspot: true },
     },
     {
+      name: "title",
+      type: "string",
+      title: "Title",
+      description:
+        "This is the title that would appear on the products section displayed on the home page ",
+    },
+    {
       name: "description",
       type: "text",
       title: "Description",

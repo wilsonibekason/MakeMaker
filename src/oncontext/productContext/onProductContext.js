@@ -8,10 +8,12 @@ import React, {
 import { BsArrowLeftSquare, BsArrowRightSquare, BsCart3 } from "react-icons/bs";
 import { AiOutlineLeft, AiOutlineShopping, AiFillStar } from "react-icons/ai";
 import { urlFor, client } from "../../client";
+import { useParams } from "react-router-dom";
 
 const ProductContext = createContext({});
 
 export const ProductProvider = ({ children }) => {
+  const categoryID = useParams();
   const [products, setProducts] = useState([]);
   const [productBanner, setProductsBanner] = useState([]);
   const [productHeader, setProductHeader] = useState([]);
@@ -31,9 +33,12 @@ export const ProductProvider = ({ children }) => {
     const productBannerQuery = '*[_type == "banner"]';
     client.fetch(productBannerQuery).then((data) => setProductsBanner(data));
     // querying for product header
+
     const productHeaderQuery = '*[_type == "productHeader"]';
     client.fetch(productHeaderQuery).then((data) => setProductHeader(data));
-    // querying for
+    // querying for product
+    const productQuery = '*[_type == "product"]';
+    client.fetch(productQuery).then((data) => setProducts(data));
   }, []);
 
   return (
@@ -47,6 +52,7 @@ export const ProductProvider = ({ children }) => {
         AiOutlineLeft,
         AiOutlineShopping,
         AiFillStar,
+        products,
       }}
     >
       {children}

@@ -14,8 +14,10 @@ const Product = () => {
     BsCart3,
     productBanner,
     productHeader,
+    products,
   } = useStateContextProduct();
   console.log(productHeader);
+  console.log(products);
   return (
     <>
       <Navbar transparent BsCart3={BsCart3} />
@@ -42,7 +44,7 @@ const Product = () => {
                 <div className="items-center flex flex-wrap">
                   <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                     <div className="pr-12">
-                      <h1 className="text-4xl font-bold text-white">{name}</h1>
+                      <h1 className="text-2xl font-bold text-white">{name}</h1>
                       <p className="text-base leading-relaxed text-white">
                         {" "}
                         {desc}
