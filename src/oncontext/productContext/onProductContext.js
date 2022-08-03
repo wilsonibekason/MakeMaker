@@ -70,7 +70,7 @@ export const ProductProvider = ({ children }) => {
         ? setFilterProducts(productBanner)
         : setFilterProducts(
             productBanner?.filter((product) =>
-              product?.tags.includes(productItem)
+              product?.tags?.includes(productItem)
             )
           );
     }, 1000);
