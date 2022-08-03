@@ -44,6 +44,9 @@ const UserDropdown = () => {
       <Cart
         popoverDropdownRef={popoverDropdownRef}
         dropdownPopoverShow={dropdownPopoverShow}
+        btnDropdownRef={btnDropdownRef}
+        closeDropdownPopover={closeDropdownPopover}
+        openDropdownPopover={openDropdownPopover}
       />
       <div
         ref={popoverDropdownRef}

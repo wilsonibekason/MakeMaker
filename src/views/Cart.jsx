@@ -2,7 +2,13 @@ import { useStateContextProduct } from "oncontext/productContext/onProductContex
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Cart = ({ popoverDropdownRef, dropdownPopoverShow }) => {
+const Cart = ({
+  popoverDropdownRef,
+  dropdownPopoverShow,
+  openDropdownPopover,
+  closeDropdownPopover,
+  btnDropdownRef,
+}) => {
   const { AiOutlineLeft, AiOutlineShopping } = useStateContextProduct();
   return (
     <>
@@ -10,18 +16,29 @@ const Cart = ({ popoverDropdownRef, dropdownPopoverShow }) => {
         className={` ${dropdownPopoverShow ? "block" : "hidden"} bg-gray-100`}
         ref={popoverDropdownRef}
       >
-        <div className="w-6/12 bg-blueGray-400 fixed right-0 top-0 z-100 ease-linear transition-all duration-150">
+        <div className="w-4/12 h-full bg-blueGray-400 fixed right-0 top-0 z-100 ease-linear transition-all duration-150">
           <div className="w-full h-full bg-white float-right p-3 relative">
-            <button className="flex center text-sm font-bold gap-2 ml-2 border-none bg-transparent">
-              <AiOutlineLeft />
-              <span className="ml-2">Your Cart</span>
-              <span className="ml-2 text-gray-600">10</span>
+            <button
+              className="flex center text-sm font-bold gap-2 ml-2 border-none bg-transparent mt-4"
+              ref={btnDropdownRef}
+              onClick={(e) => {
+                e.preventDefault();
+                dropdownPopoverShow
+                  ? closeDropdownPopover()
+                  : openDropdownPopover();
+              }}
+            >
+              <AiOutlineLeft size={30} />
+              <span className="ml-2 font-base text-xl sm:text-sm md:text-md">
+                Your Cart
+              </span>
+              <span className="ml-2 text-gray-600 text-xl sm:text-sm md:text-md">
+                (10)
+              </span>
             </button>
 
             {/** render the empty cart content */}
-            {/* <p className="text-base text-gray-600 dark:text-gray-300">
-              There are no items in your cart.
-            </p> */}
+
             {false && (
               <div className="m-24 text-center align-center">
                 <AiOutlineShopping size={150} className="" />
@@ -37,33 +54,62 @@ const Cart = ({ popoverDropdownRef, dropdownPopoverShow }) => {
             )}
             {/** render the empty cart content */}
             {/**container */}
-            <div className="container px-4 mx-auto mt-8">
-              <div className="flex flex-wrap">
+            <div className="container px-4 mx-auto mt-12">
+              <div className="flex justify-between">
                 <div className="w-1/3 px-4">
-                  {/* <span className="text-sm block my-4 p-3 text-blueGray-700 rounded border border-solid border-blueGray-100">
-                    One of three columns
-                  </span> */}
-                  <div className="w-16 sm:w-4/12 px-20">
+                  <div className="w-full sm:w-4/12 p-4 bg-blueGray-500">
                     <img
-                      className="shadow-lg rounded-full max-w-full h-auto align-middle border-none"
-                      src="https://www.pngitem.com/pimgs/m/521-5216062_shopping-cart-transparent-background-shopping-cart-icon-png.png"
-                      alt=""
+                      //className="shadow-lg rounded-xl max-w-full h-auto align-middle border-none"
+                      className="w-20 h-20 rounded-lg bg-lightBlue-400"
+                      src="https://image.shutterstock.com/image-vector/phone-controls-diy-robot-car-260nw-1624097389.jpg"
+                      alt="Shopping Cart"
                     />
                   </div>
                 </div>
-                <div className="w-1/3 px-4">
-                  <span className="text-sm block my-4 p-3 text-blueGray-700 rounded border border-solid border-blueGray-100">
-                    One of three columns
-                  </span>
+
+                <div class="flex">
+                  <div class="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md  my-4 py-3 ">
+                    +
+                  </div>
+                  <div class="w-1/6 bg-gray-500 h-12 px-4 border border-solid   shadow-md my-4 py-3 ">
+                    4
+                  </div>
+                  <div class="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 ">
+                    -
+                  </div>
                 </div>
-                <div className="w-1/3 px-4">
-                  <span className="text-sm block my-4 p-3 text-blueGray-700 rounded border border-solid border-blueGray-100">
-                    One of three columns
-                  </span>
+                <div className=" flex flex-col px-4 ml-16">
+                  <div class="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-1 py-3 rounded-tr-full text-center">
+                    $30
+                  </div>
+                  <div class="w-1/6 bg-gray-500 h-12 px-4 border border-solid  shadow-xl my-1 py-3 rounded-tr-full">
+                    cancel
+                  </div>
                 </div>
               </div>
             </div>
             {/**container */}
+
+            {/** cart bottom */}
+            <div className="absolute bottom-0 right-2  w-full p-16 text-center my-4">
+              <div className="flex justify-between">
+                <h3 className="text-md sm:text-sm text-blueGray-900 font-bold">
+                  Subtotal
+                </h3>
+                <h3 className="text-md sm:text-sm text-blueGray-900 mr-4 font-bold">
+                  $30
+                </h3>
+              </div>
+              <div className="w-40 m-auto ">
+                <button
+                  className=" w-1/2 text-lightBlue-500 bg-transparent border border-solid border-lightBlue-500 hover:bg-lightBlue-500 hover:text-white active:bg-lightBlue-600 font-bold uppercase text-sm px-6 py-3 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                  type="button"
+                >
+                  pay with stripe
+                </button>
+              </div>
+            </div>
+            {/** cart bottom */}
           </div>
         </div>
       </main>
