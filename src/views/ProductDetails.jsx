@@ -3,6 +3,7 @@
 import Footer from "components/Footers/Footer";
 import Navbar from "components/Navbars/AdminNavbar";
 import Sidebar from "components/Sidebar/Sidebar";
+import { useStateContextEcom } from "oncontext/productContext/onEcomContext";
 
 const {
   useStateContextProduct,
@@ -12,6 +13,10 @@ const {
 
 const ProductDetails = () => {
   const { AiFillStar } = useStateContextProduct();
+  const { renderMoreProductsItems1, renderMoreProductsItems2 } =
+    useStateContextEcom();
+  // main items
+  const items = renderMoreProductsItems1?.concat(renderMoreProductsItems2);
   return (
     <>
       <Navbar Transparent />
@@ -168,14 +173,26 @@ const ProductDetails = () => {
               <div className="py-2  items-center justify-center">
                 <nav className="block">
                   <ul className="flex pl-0 rounded list-none flex-wrap">
-                    <li>
-                      <a
-                        href="#pablo"
-                        className="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-lightBlue-500 bg-white text-lightBlue-500"
-                      >
-                        1
-                      </a>
-                    </li>
+                    {renderMoreProductsItems1?.map((item, index) => (
+                      <li key={index}>
+                        <a
+                          href="#pablo"
+                          className="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-lightBlue-500 bg-white text-lightBlue-500 uppercase"
+                        >
+                          {item}
+                        </a>
+                      </li>
+                    ))}
+                    {renderMoreProductsItems2?.map((item, index) => (
+                      <li key={index}>
+                        <a
+                          href="#pablo"
+                          className="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-lightBlue-500 bg-white text-lightBlue-500 uppercase"
+                        >
+                          {item}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </nav>
               </div>
