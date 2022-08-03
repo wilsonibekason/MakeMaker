@@ -26,10 +26,12 @@ const Product = () => {
     activeFilterBtn,
     inActiveFilterBtn,
     animateFilter,
+    productBannerID,
   } = useStateContextProduct();
   console.log(productHeader);
-  console.log(products);
+  console.log(productBannerID);
   console.log(convertedDate);
+  console.log(productBanner);
   return (
     <>
       <Navbar transparent BsCart3={BsCart3} />
@@ -112,7 +114,7 @@ const Product = () => {
         {/** add products for makeMaker */}
         <section className="block relative z-1 bg-blueGray-600 ">
           <div className="container mx-auto">
-            <Link to={`/productDestail${_id}`}>
+            <Link to={`/productDestail`}>
               <div className="justify-center flex flex-wrap">
                 <div className="w-full lg:w-12/12 px-4 mt-24 mb-24">
                   <div className="flex flex-wrap">

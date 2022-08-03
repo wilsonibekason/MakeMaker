@@ -48,6 +48,7 @@ export const ProductProvider = ({ children }) => {
   }, []);
   // destructuring and converting product published time
   const publishedAt = productBanner?.map((item) => item?.publishedAt);
+  const productBannerID = productBanner?.map((item) => item?._id);
   const convertedDate = publishedAt
     ? moment(publishedAt).utc().format("YYYY-MM-DD")
     : "";
@@ -102,6 +103,7 @@ export const ProductProvider = ({ children }) => {
         activeFilterBtn,
         inActiveFilterBtn,
         animateFilter,
+        productBannerID,
       }}
     >
       {children}
