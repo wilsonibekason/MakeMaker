@@ -4,65 +4,77 @@ import { useStateContextProduct } from "../oncontext/productContext/onProductCon
 import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "components/Footers/Footer";
+import { urlFor } from "client";
 
 // import for components
 const Product = () => {
-  const { BsArrowLeftSquare, BsArrowRightSquare, BsCart3, productBanner } =
-    useStateContextProduct();
-
+  const {
+    BsArrowLeftSquare,
+    BsArrowRightSquare,
+    BsCart3,
+    productBanner,
+    productHeader,
+  } = useStateContextProduct();
+  console.log(productHeader);
   return (
     <>
       <Navbar transparent BsCart3={BsCart3} />
       <main>
-        <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
-          <div
-            className="absolute top-0 w-full h-full bg-center bg-cover"
-            style={{
-              backgroundImage: `url("https://st2.depositphotos.com/5512422/8058/i/950/depositphotos_80588416-stock-photo-arduino-electronic-platform-for-hobbyists.jpg")`,
-            }}
-          >
-            <span
-              id="blackOverlay"
-              className="w-full h-full absolute opacity-75 bg-black"
-            ></span>
-          </div>
-          <div className="container relative mx-auto">
-            <div className="items-center flex flex-wrap">
-              <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-                <div className="pr-12">
-                  <h1 className="text-4xl font-bold text-white">Arduino Kit</h1>
-                  <p className="text-base leading-relaxed text-white">
-                    {" "}
-                    This is a powerful arduino kit that have unleased creativity
-                    for so many students
-                  </p>
-                  <BsArrowLeftSquare className="absolute left-0 text-3xl md:text-xl sm:text-sm inset-y-1/2 text-white hover:bg-lightBlue-300 cursor-pointer" />
-                  <BsArrowRightSquare className="absolute right-0 text-3xl md:text-xl sm:text-sm inset-y-1/2 text-white cursor-pointer" />
+        {productHeader?.map((item, index) => {
+          const { name, desc, image } = item;
+          return (
+            <div
+              className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75"
+              key={index + name}
+            >
+              <div
+                className="absolute top-0 w-full h-full bg-center bg-cover"
+                style={{
+                  backgroundImage: `url(${urlFor(image)})`,
+                }}
+              >
+                <span
+                  id="blackOverlay"
+                  className="w-full h-full absolute opacity-75 bg-black"
+                ></span>
+              </div>
+              <div className="container relative mx-auto">
+                <div className="items-center flex flex-wrap">
+                  <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+                    <div className="pr-12">
+                      <h1 className="text-4xl font-bold text-white">{name}</h1>
+                      <p className="text-base leading-relaxed text-white">
+                        {" "}
+                        {desc}
+                      </p>
+                      <BsArrowLeftSquare className="absolute left-0 text-3xl md:text-xl sm:text-sm inset-y-1/2 text-white hover:bg-lightBlue-300 cursor-pointer" />
+                      <BsArrowRightSquare className="absolute right-0 text-3xl md:text-xl sm:text-sm inset-y-1/2 text-white cursor-pointer" />
+                    </div>
+                  </div>
                 </div>
               </div>
+              <div
+                className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-20"
+                style={{ transform: "translate3d(50, 50, 70)" }}
+              >
+                <svg
+                  className="absolute bottom-0 overflow-hidden"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none"
+                  version="1.1"
+                  viewBox="0 0 2560 100"
+                  x="0"
+                  y="0"
+                >
+                  <polygon
+                    className="text-blueGray-200 fill-current"
+                    points="2560 0 2560 100 0 100"
+                  ></polygon>
+                </svg>
+              </div>
             </div>
-          </div>
-          <div
-            className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-20"
-            style={{ transform: "translate3d(50, 50, 70)" }}
-          >
-            <svg
-              className="absolute bottom-0 overflow-hidden"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-              version="1.1"
-              viewBox="0 0 2560 100"
-              x="0"
-              y="0"
-            >
-              <polygon
-                className="text-blueGray-200 fill-current"
-                points="2560 0 2560 100 0 100"
-              ></polygon>
-            </svg>
-          </div>
-        </div>
-
+          );
+        })}
         <div className="flex flex-col items-center justify-center">
           <div className="w-full md:w-4/12 px-6 md:px-4 ml-auto mr-auto mt-6">
             <h3 className="text-2xl font-semibold mb-1 leading-normal">

@@ -14,10 +14,7 @@ const ProductContext = createContext({});
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [productBanner, setProductsBanner] = useState([]);
-  const [productTitle, setProductTitle] = useState("");
-  const [productDescription, setProductDescription] = useState("");
-  const [productImage, setProductImage] = useState("");
-  const [productPrice, setProductPrice] = useState("");
+  const [productHeader, setProductHeader] = useState([]);
   const [productIsLoading, setProductIsLoading] = useState(false);
   const [productIsLoaded, setProductIsLoaded] = useState(false);
   const [productError, setProductError] = useState(false);
@@ -33,12 +30,17 @@ export const ProductProvider = ({ children }) => {
   useEffect(() => {
     const productBannerQuery = '*[_type == "banner"]';
     client.fetch(productBannerQuery).then((data) => setProductsBanner(data));
+    // querying for product header
+    const productHeaderQuery = '*[_type == "productHeader"]';
+    client.fetch(productHeaderQuery).then((data) => setProductHeader(data));
+    // querying for
   }, []);
 
   return (
     <ProductContext.Provider
       value={{
         productBanner,
+        productHeader,
         BsArrowLeftSquare,
         BsArrowRightSquare,
         BsCart3,
