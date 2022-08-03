@@ -10,7 +10,7 @@ const {
 // import for internal dependencies
 
 const ProductDetails = () => {
-  const {} = useStateContextProduct();
+  const { AiFillStar } = useStateContextProduct();
   return (
     <>
       <Navbar Transparent />
@@ -61,16 +61,25 @@ const ProductDetails = () => {
             </div>
 
             <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
-              <div className="md:pr-12">
-                <h1 className="mb-12 text-2xl font-bold">Arduino Kit</h1>
-                <h3 className="text-3xl font-semibold">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Libero!
-                </h3>
-                <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Porro magnam quidem tempora laboriosam eius corrupti aliquid,
-                  doloremque eaque sit id.
+              <div className="md:pr-12 mb-12">
+                <h1 className=" text-2xl font-bold">Arduino Kit</h1>
+                <div className="text-Amber-400 mt-4 flex gap-2 align-center">
+                  <AiFillStar />
+                  <AiFillStar />
+                  <AiFillStar />
+                  <AiFillStar />
+                  <AiFillStar />
+                  <p className="mb-4 text-sm">(20)</p>
+                </div>
+                <h4 className="text-lg font-bold">Description</h4>
+                <p className="mt-4 text-sm leading-relaxed text-blueGray-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Atque, corrupti? Laboriosam deleniti ad eius. Ipsa distinctio
+                  molestiae, ad aperiam odio natus nesciunt pariatur atque velit
+                  facilis omnis cumque excepturi suscipit quam culpa, ducimus
+                  quidem, rem corporis quaerat iste? Cumque doloremque sapiente
+                  accusamus ullam temporibus error voluptatem necessitatibus
+                  eligendi explicabo velit.
                 </p>
                 <ul className="list-none mt-6">
                   <li className="py-2">
