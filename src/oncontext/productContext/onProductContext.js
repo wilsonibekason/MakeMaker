@@ -34,9 +34,11 @@ export const ProductProvider = ({ children }) => {
     const productBannerQuery = '*[_type == "banner"]';
     client.fetch(productBannerQuery).then((data) => setProductsBanner(data));
   }, []);
+
   return (
     <ProductContext.Provider
       value={{
+        productBanner,
         BsArrowLeftSquare,
         BsArrowRightSquare,
         BsCart3,
