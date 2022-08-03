@@ -3,9 +3,11 @@ import React from "react";
 import UserDropdown from "components/Dropdowns/UserDropdown.js";
 import { useStateContextProduct } from "oncontext/productContext/onProductContext";
 import { Link } from "react-router-dom";
+import { useStateContext } from "oncontext/OnLandingContext";
 
 export default function Navbar() {
   const { BsCart3 } = useStateContextProduct();
+  const { reachImg } = useStateContext();
   return (
     <>
       {/* Navbar */}
@@ -16,7 +18,13 @@ export default function Navbar() {
             to={"/"}
             className="text-white text-sm uppercase hidden lg:inline-block font-semibold"
           >
-            Dashboard
+            <img
+              src={reachImg}
+              alt=""
+              className="max-w-full mx-auto p-0 h-auto align-middle my-0"
+              width={110}
+              height={10}
+            />
           </Link>
 
           {/* Form */}
