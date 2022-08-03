@@ -101,6 +101,7 @@ export const ProductProvider = ({ children }) => {
         handleProductFilter,
         activeFilterBtn,
         inActiveFilterBtn,
+        animateFilter,
       }}
     >
       {children}

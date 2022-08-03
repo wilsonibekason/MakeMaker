@@ -17,6 +17,10 @@ const Product = () => {
     productHeader,
     products,
     convertedDate,
+    handleProductFilter,
+    activeFilterBtn,
+    inActiveFilterBtn,
+    animateFilter,
   } = useStateContextProduct();
   console.log(productHeader);
   console.log(products);
@@ -86,12 +90,16 @@ const Product = () => {
               Search categories
             </h3>
             <div className="block pb-6">
-              <span className="hover:text-blueGray-200 hover:bg-blueGray-900 text-sm font-semibold inline-block py-1 px-2 rounded-full text-blueGray-900 bg-blueGray-200 uppercase last:mr-0 mr-2 mt-4">
-                Science Kits
-              </span>
-              <span className="hover:text-blueGray-200 hover:bg-blueGray-90 text-sm font-semibold inline-block py-1 px-2 rounded-full text-blueGray-900 bg-blueGray-200 uppercase last:mr-0 mr-2 mt-4">
-                Science Kits
-              </span>
+              {["All, 'Arduino", "CAD", "Electronics"]?.map((item, index) => (
+                <span
+                  className={`${
+                    animateFilter === item ? activeFilterBtn : inActiveFilterBtn
+                  }`}
+                  key={index}
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
         </div>
