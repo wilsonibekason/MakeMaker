@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { BsArrowLeftSquare, BsArrowRightSquare, BsCart3 } from "react-icons/bs";
 import { AiOutlineLeft, AiOutlineShopping, AiFillStar } from "react-icons/ai";
-import { format } from "date-fns";
+import { format, set } from "date-fns";
 import moment from "moment";
 import { urlFor, client } from "../../client";
 import { useParams } from "react-router-dom";
@@ -25,6 +25,10 @@ export const ProductProvider = ({ children }) => {
   const [productSuccess, setProductSuccess] = useState(false);
   const [productErrorMsg, setProductErrorMsg] = useState("");
   const [productSuccessMsg, setProductSuccessMsg] = useState("");
+  // STATES FOR FILTERING PRODUCTS
+  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+  const [filterProducts, setFilterProducts] = useState([]);
+  const [animateFilter, setAnimateFilter] = useState("All");
   // declaring reducer actions
   //
   // declaring acti
@@ -44,13 +48,34 @@ export const ProductProvider = ({ children }) => {
   }, []);
   // destructuring and converting product published time
   const publishedAt = productBanner?.map((item) => item?.publishedAt);
-  // const convertedDate = publishedAt
-  //   ? format(new Date(publishedAt), "p, dd/MM/YYYY")
-  //   : "no date to show";
   const convertedDate = publishedAt
     ? moment(publishedAt).utc().format("YYYY-MM-DD")
     : "";
-  console.log(publishedAt);
+
+  // SECTION FOR FILTERING PRODUCTS
+
+  const filterStocks = (stocks) => {
+    const filteredStocks = stocks.filter((item) => {
+      return item.status === "ACTIVE";
+    });
+    return filteredStocks ? filteredStocks : [];
+  };
+
+  const handleProductFilter = (productItem) => {
+    setAnimateFilter(productItem);
+    setAnimateCard({ y: 100, opacity: 0 });
+    setTimeout(() => {
+      setAnimateCard({ y: 0, opacity: 100 });
+      productItem === "All"
+        ? setFilterProducts(productBanner)
+        : setFilterProducts(
+            productBanner?.filter((product) =>
+              product?.tags.includes(productItem)
+            )
+          );
+    }, 1000);
+  };
+  // SECTION FOR FILTERING PRODUCTS
   return (
     <ProductContext.Provider
       value={{
@@ -64,6 +89,7 @@ export const ProductProvider = ({ children }) => {
         AiFillStar,
         products,
         convertedDate,
+        handleProductFilter,
       }}
     >
       {children}
