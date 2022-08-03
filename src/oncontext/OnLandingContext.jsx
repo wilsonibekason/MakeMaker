@@ -151,7 +151,7 @@ export const HomeContext = ({ children }) => {
   const socialName = socialContent?.map((item) => item?.socialName);
   const socialLink = socialContent?.map((item) => item?.socialLink);
   /// destructuring projectSectionQuery items as Global variables
-  const productSecTitle = projectSection?.map((item) => item?.product);
+  const productSecTitle = projectSection?.map((item) => item?.pageName);
   const productSecDesc = projectSection?.map((item) => item?.desc);
   const productSecImage = projectSection?.map((item) => urlFor(item?.image));
   const ImageSecTitle = projectSection?.map((item) => item?.productNmae);

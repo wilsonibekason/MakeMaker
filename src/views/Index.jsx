@@ -495,7 +495,7 @@ const Index = () => {
             <div className="w-full md:w-6/12 px-12 md:px-4">
               <h2 className="font-semibold text-4xl">{productSecTitle}</h2>
               <p className="text-lg leading-relaxed mt-4 mb-4 text-blueGray-500">
-                {productSecDesc}rrrgrgrg
+                {productSecDesc}
               </p>
             </div>
           </div>
@@ -529,8 +529,8 @@ const Index = () => {
                         <img
                           alt="..."
                           className="align-middle border-none max-w-full h-auto rounded-lg"
-                          //src={productSecImage}
-                          src={require("assets/img/login.jpg").default}
+                          src={productSecImage}
+                          //src={require("assets/img/login.jpg").default}
                         />
                       </div>
                     </Link>
