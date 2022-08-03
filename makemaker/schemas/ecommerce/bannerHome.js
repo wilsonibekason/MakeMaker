@@ -62,6 +62,18 @@ export default {
       required: true,
       description: "The time at which the sale will be active",
     },
+    {
+      name: "tags",
+      title: "Tags",
+      type: "array",
+      of: [
+        {
+          name: "tag",
+          title: "Tag",
+          type: "string",
+        },
+      ],
+    },
   ],
   // preview: {
   //   select: {
