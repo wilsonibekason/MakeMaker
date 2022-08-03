@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Footer from "components/Footers/Footer";
 import { urlFor } from "client";
 import ProductItem from "./ProductItem";
+import moment from "moment";
 
 // import for components
 const Product = () => {
@@ -86,8 +87,8 @@ const Product = () => {
         })}
         <div className="flex flex-col items-center justify-center">
           <div className="w-full md:w-4/12 px-6 md:px-4 ml-auto mr-auto mt-6">
-            <h3 className="text-2xl font-semibold mb-1 leading-normal">
-              Search categories
+            <h3 className="text-2xl  text-blueGray-900 font-semibold mb-1 leading-normal align-center uppercase">
+              Filter categories
             </h3>
             <div className="block pb-6">
               {["All", "Arduino", "CAD", "Electronics"]?.map((item, index) => (
@@ -129,7 +130,11 @@ const Product = () => {
                       publishedAt,
                       image,
                     } = item;
+
                     const desc = `${description?.slice(0, 10)}..`;
+                    const displayDate = publishedAt
+                      ? moment(publishedAt).utc().format("YYYY-MM-DD")
+                      : "";
                     return (
                       <div
                         className="w-full md:w-4/12 px-4 mr-auto ml-auto"
@@ -138,7 +143,6 @@ const Product = () => {
                         <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500 ease-linear transition-all duration-150">
                           <img
                             alt="..."
-                            //src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
                             src={urlFor(image)}
                             className="w-full align-middle rounded-t-lg"
                           />
@@ -168,7 +172,7 @@ const Product = () => {
                                   {desc}
                                 </h4>
                                 <p className="text-md font-light mt-2 text-white">
-                                  {convertedDate}
+                                  {displayDate}
                                 </p>
                               </div>
                             </div>
