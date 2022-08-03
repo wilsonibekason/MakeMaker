@@ -69,6 +69,7 @@ const ProductDetails = () => {
                   <AiFillStar />
                   <AiFillStar />
                   <AiFillStar />
+                  {"  "}
                   <p className="mb-4 text-sm">(20)</p>
                 </div>
                 <h4 className="text-lg font-bold">Description</h4>
@@ -81,6 +82,36 @@ const ProductDetails = () => {
                   accusamus ullam temporibus error voluptatem necessitatibus
                   eligendi explicabo velit.
                 </p>
+                <div className="flex flex-wrap">
+                  <div class="flex">
+                    <div class="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-xl  my-4 py-3 ">
+                      <h2>Quantity</h2>
+                    </div>
+                    <div class="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md  my-4 py-3 ">
+                      +
+                    </div>
+                    <div class="w-1/6 bg-gray-500 h-12 px-4 border border-solid   shadow-md my-4 py-3 ">
+                      4
+                    </div>
+                    <div class="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 ">
+                      -
+                    </div>
+                  </div>
+                </div>
+                <div className="flex justify-between">
+                  <button
+                    className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    type="button"
+                  >
+                    Add To Cart
+                  </button>
+                  <button
+                    className="border border-lightBlue-500 text-lightBlue-500 active:bg-lightBlue-600 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    type="button"
+                  >
+                    Buy Now
+                  </button>
+                </div>
                 <ul className="list-none mt-6">
                   <li className="py-2">
                     <div className="flex items-center">
