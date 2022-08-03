@@ -63,17 +63,17 @@ export default {
       description: "The time at which the sale will be active",
     },
   ],
-  preview: {
-    select: {
-      description: "Select the product you want to preview",
-      publishedAt: "publishedAt",
-    },
-    prepare({ publishedAt }) {
-      return {
-        subtitle: publishedAt
-          ? format(new Date(publishedAt), "p, dd/MM/YYYY")
-          : "",
-      };
-    },
-  },
+  // preview: {
+  //   select: {
+  //     description: "Select the product you want to preview",
+  //     publishedAt: "publishedAt",
+  //   },
+  //   prepare({ publishedAt }) {
+  //     return {
+  //       subtitle: publishedAt
+  //         ? format(new Date(publishedAt), "p, dd/MM/YYYY")
+  //         : "",
+  //     };
+  //   },
+  // },
 };

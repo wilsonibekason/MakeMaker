@@ -120,6 +120,7 @@ const Product = () => {
                       publishedAt,
                       image,
                     } = item;
+                    const desc = `${description?.slice(0, 10)}..`;
                     return (
                       <div
                         className="w-full md:w-4/12 px-4 mr-auto ml-auto"
@@ -155,10 +156,10 @@ const Product = () => {
                               </div>
                               <div className="">
                                 <h4 className="text-xl font-bold text-white">
-                                  {""}
+                                  {desc}
                                 </h4>
                                 <p className="text-md font-light mt-2 text-white">
-                                  {price}
+                                  {convertedDate}
                                 </p>
                               </div>
                             </div>

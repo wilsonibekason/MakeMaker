@@ -8,6 +8,7 @@ import React, {
 import { BsArrowLeftSquare, BsArrowRightSquare, BsCart3 } from "react-icons/bs";
 import { AiOutlineLeft, AiOutlineShopping, AiFillStar } from "react-icons/ai";
 import { format } from "date-fns";
+import moment from "moment";
 import { urlFor, client } from "../../client";
 import { useParams } from "react-router-dom";
 
@@ -43,9 +44,13 @@ export const ProductProvider = ({ children }) => {
   }, []);
   // destructuring and converting product published time
   const publishedAt = productBanner?.map((item) => item?.publishedAt);
+  // const convertedDate = publishedAt
+  //   ? format(new Date(publishedAt), "p, dd/MM/YYYY")
+  //   : "no date to show";
   const convertedDate = publishedAt
-    ? format(new Date(publishedAt), "p, dd/MM/YYYY")
-    : "no date to show";
+    ? moment(publishedAt).utc().format("YYYY-MM-DD")
+    : "";
+  console.log(publishedAt);
   return (
     <ProductContext.Provider
       value={{
