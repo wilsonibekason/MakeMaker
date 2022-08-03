@@ -13,11 +13,11 @@ const Cart = ({
   return (
     <>
       <main
-        className={` ${dropdownPopoverShow ? "block" : "hidden"} bg-gray-100`}
+        className={` ${dropdownPopoverShow ? "block" : "hidden"} bg-gray-100 `}
         ref={popoverDropdownRef}
       >
         <div className="w-4/12 h-full bg-blueGray-400 fixed right-0 top-0 z-100 ease-linear transition-all duration-150">
-          <div className="w-full h-full bg-white float-right p-3 relative">
+          <div className="w-full h-full bg-white shadow-xl float-right p-3 relative">
             <button
               className="flex center text-sm font-bold gap-2 ml-2 border-none bg-transparent mt-4"
               ref={btnDropdownRef}

@@ -20,6 +20,7 @@ import { AboutProvider } from "./oncontext/aboutContext/onAboutContext";
 import { ContactProvider } from "./oncontext/contactContext/onContactContext";
 import { ProductProvider } from "./oncontext/productContext/onProductContext";
 import Product from "./views/Products";
+import ProductDetails from "./views/ProductDetails";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -35,6 +36,7 @@ ReactDOM.render(
               <Route path="/ABOUTUS" exact component={Landing} />
               <Route path="/profile" exact component={Profile} />
               <Route path="/products" component={Product} />
+              <Route path="/productsid" component={ProductDetails} />
               <Route path="/" exact component={Index} />
               {/* add redirect for first page */}
               <Redirect from="*" to="/" />
