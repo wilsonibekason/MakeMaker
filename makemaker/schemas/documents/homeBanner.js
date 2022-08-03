@@ -1,29 +1,8 @@
 export default {
   name: "banners",
-  title: "Banner",
+  title: "PageSection",
   type: "document",
   fields: [
-    {
-      name: "imageList",
-      title: "Image List",
-      type: "array",
-      of: [
-        {
-          type: "image",
-          option: { hotspot: true },
-        },
-      ],
-    },
-    {
-      name: "imageName",
-      title: "ImageName",
-      type: "array",
-      of: [
-        {
-          type: "string",
-        },
-      ],
-    },
     {
       name: "image",
       title: "Image",
@@ -32,11 +11,7 @@ export default {
         hotspot: true,
       },
     },
-    {
-      name: "product",
-      title: "Product",
-      type: "string",
-    },
+
     {
       name: "desc",
       title: "Desc",
@@ -44,8 +19,8 @@ export default {
     },
 
     {
-      name: "productNmae",
-      title: "Product Name",
+      name: "pageName",
+      title: "Page Name",
       type: "string",
       required: true,
     },
