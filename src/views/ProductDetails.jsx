@@ -263,7 +263,7 @@ const ProductDetails = () => {
           </div>
         </div>
 
-        <ProductDetailsMore />
+        <ProductDetailsMore description={productDetails?.description} />
 
         {/**   other products components  */}
         <div className="flex flex-col items-center justify-center">

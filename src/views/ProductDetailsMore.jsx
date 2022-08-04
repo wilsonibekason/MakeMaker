@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ProductDetailsMore = () => {
+const ProductDetailsMore = ({ description }) => {
   const [openTab, setOpenTab] = useState(1);
 
   return (
@@ -65,7 +65,8 @@ const ProductDetailsMore = () => {
                 href="#link3"
                 role="tablist"
               >
-                reviews (0)
+                reviews{" "}
+                <span className="text-teal-400 font-semibold"> (0)</span>
               </a>
             </li>
           </ul>
@@ -74,9 +75,7 @@ const ProductDetailsMore = () => {
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                   <p>
-                    Collaboratively administrate empowered markets via
-                    plug-and-play networks. Dynamically procrastinate B2C users
-                    after installed base benefits.
+                    {description}
                     <br />
                     <br /> Dramatically visualize customer directed convergence
                     without revolutionary ROI.
@@ -95,9 +94,7 @@ const ProductDetailsMore = () => {
                 </div>
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
                   <p>
-                    Efficiently unleash cross-media information without
-                    cross-media value. Quickly maximize timely deliverables for
-                    real-time schemas.
+                    send us a review
                     <br />
                     <br /> Dramatically maintain clicks-and-mortar solutions
                     without functional solutions.
