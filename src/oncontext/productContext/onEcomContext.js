@@ -216,6 +216,8 @@ export const EcomProvider = ({ children }) => {
         productQuantity,
         totalQuantities,
         toggleCartItemsQuantities,
+        showCart,
+        setShowCart,
       }}
     >
       {children}

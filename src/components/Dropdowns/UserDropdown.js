@@ -2,12 +2,14 @@ import React from "react";
 import { createPopper } from "@popperjs/core";
 import { useStateContextProduct } from "oncontext/productContext/onProductContext";
 import Cart from "views/Cart";
+import { useStateContextEcom } from "../../oncontext/productContext/onEcomContext";
 
 const UserDropdown = () => {
   const { BsCart3 } = useStateContextProduct();
   // dropdown props
   const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
   const btnDropdownRef = React.createRef();
+  const { showCart, setShowCart, totalQuantities } = useStateContextEcom();
   const popoverDropdownRef = React.createRef();
   const openDropdownPopover = () => {
     createPopper(btnDropdownRef.current, popoverDropdownRef.current, {
@@ -29,6 +31,9 @@ const UserDropdown = () => {
           dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
         }}
       >
+        <span className="absolute -right-2 text-sm text-blueGray-200 w-5 rounded-full text-center font-semibold h-4 bg-blueGray-600">
+          {totalQuantities}
+        </span>
         <div className="items-center flex">
           <span className="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full">
             <BsCart3 width={40} />
