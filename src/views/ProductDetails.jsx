@@ -155,7 +155,6 @@ const ProductDetails = () => {
                 {productDetails?.productImage &&
                   productDetails?.productImage?.map((image, index) => (
                     <img
-                      //src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
                       src={urlFor(image)}
                       alt=""
                       key={index}
@@ -163,11 +162,6 @@ const ProductDetails = () => {
                       onMouseEnter={() => setIndex(index)}
                     />
                   ))}
-                <img
-                  src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-                  alt=""
-                  className="rounded-lg bg-red-500 w-16 h-16 cursor-pointer mr-4"
-                />
               </div>
             </div>
 
