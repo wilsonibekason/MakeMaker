@@ -38,7 +38,8 @@ ReactDOM.render(
                 <Route path="/ABOUTUS" exact component={Landing} />
                 <Route path="/profile" exact component={Profile} />
                 <Route path="/products" component={Product} />
-                <Route path="/productsid" component={ProductDetails} />
+
+                <Route path="/productdetails/:id" component={ProductDetails} />
                 <Route path="/" exact component={Index} />
                 {/* add redirect for first page */}
                 <Redirect from="*" to="/" />
