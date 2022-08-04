@@ -2,6 +2,7 @@ import { client } from "../../client";
 import React, { useState, useEffect, createContext, useContext } from "react";
 import { productDetailQuery, productDetailMoreQuery } from "../../utils/data";
 import { useParams } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const EcomContext = createContext({});
 
@@ -81,6 +82,26 @@ export const EcomProvider = ({ children }) => {
 
   let itemIndex;
   let foundProduct;
+
+  const onAdd = (product, quantity) => {
+    const checkProductInCart = cartItems.find(
+      (item) => item?.id === product?.id
+    );
+    setTotalPrice((previousPrice) => previousPrice + product?.price * quantity);
+    setTotalQuantities((previousQuantity) => previousQuantity + quantity);
+    if (checkProductInCart) {
+      const updatedCartItems = cartItems.map((cartProduct) => {
+        if (cartProduct?.id == product?.id) {
+          return { ...cartItems, quantity: cartProduct?.quantity + quantity };
+        }
+      });
+      setCartItems(updatedCartItems);
+    }  else{
+      product?.quantity = quantity;
+      setCartItems([...cartItems, {...product}])
+    }
+   toast.success(`${quantity} ${product?.title} added to the cart`);
+  };
 
   ////////// ***************************************************************************************    PRODUCTS MAIN LOGIC ***************************************** ////////////////
 
