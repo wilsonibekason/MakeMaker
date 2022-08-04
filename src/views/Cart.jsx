@@ -69,7 +69,9 @@ const Cart = ({
 
             {cartItems?.length < 1 && (
               <div className="m-24 text-center align-center">
-                <AiOutlineShopping size={150} className="" />
+                <div className="pl-16 ">
+                  <AiOutlineShopping size={150} className="" />
+                </div>
                 <h3 className="font-bold text-xl">
                   Your Shopping Cart Is Empty
                 </h3>
