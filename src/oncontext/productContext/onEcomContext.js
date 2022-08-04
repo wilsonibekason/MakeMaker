@@ -67,7 +67,12 @@ export const EcomProvider = ({ children }) => {
   // LOGS
   return (
     <EcomContext.Provider
-      value={{ renderMoreProductsItems1, renderMoreProductsItems2 }}
+      value={{
+        renderMoreProductsItems1,
+        renderMoreProductsItems2,
+        productDetails,
+        products,
+      }}
     >
       {children}
     </EcomContext.Provider>
