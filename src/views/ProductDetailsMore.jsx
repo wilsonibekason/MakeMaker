@@ -6,7 +6,7 @@ const ProductDetailsMore = () => {
   return (
     <>
       <div className="flex flex-wrap">
-        <div className=" mx-auto w-1/2 m-4">
+        <div className=" mx-auto w-1/2 mt-16">
           <ul
             className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
             role="tablist"
@@ -27,7 +27,7 @@ const ProductDetailsMore = () => {
                 href="#link1"
                 role="tablist"
               >
-                Profile
+                description
               </a>
             </li>
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -46,7 +46,7 @@ const ProductDetailsMore = () => {
                 href="#link2"
                 role="tablist"
               >
-                Settings
+                additional information
               </a>
             </li>
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -65,7 +65,7 @@ const ProductDetailsMore = () => {
                 href="#link3"
                 role="tablist"
               >
-                Options
+                reviews (0)
               </a>
             </li>
           </ul>
