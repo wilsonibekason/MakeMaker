@@ -1,4 +1,6 @@
 import { useStateContextProduct } from "oncontext/productContext/onProductContext";
+import { useStateContextEcom } from "../oncontext/productContext/onEcomContext";
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -10,6 +12,21 @@ const Cart = ({
   btnDropdownRef,
 }) => {
   const { AiOutlineLeft, AiOutlineShopping } = useStateContextProduct();
+  const {
+    increaseQuantity,
+    decreQuantity,
+    onRemove,
+    decreaseQuantity,
+    inQTY,
+    onAdd,
+    productQuantity,
+    totalQuantities,
+    totalPrice,
+    toggleCartItemsQuantities,
+    showCart,
+    cartItems,
+    setShowCart,
+  } = useStateContextEcom();
   return (
     <>
       <main

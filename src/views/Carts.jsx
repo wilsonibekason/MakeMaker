@@ -1,6 +1,22 @@
+import { useStateContextEcom } from "../oncontext/productContext/onEcomContext";
 import React from "react";
 
 const Carts = () => {
+  const {
+    increaseQuantity,
+    decreQuantity,
+    onRemove,
+    decreaseQuantity,
+    inQTY,
+    onAdd,
+    productQuantity,
+    totalQuantities,
+    totalPrice,
+    toggleCartItemsQuantities,
+    showCart,
+    cartItems,
+    setShowCart,
+  } = useStateContextEcom();
   return (
     <div className="cart-wrapper" ref={"cartRef"}>
       <div className="cart-container">

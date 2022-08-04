@@ -215,9 +215,12 @@ export const EcomProvider = ({ children }) => {
         onAdd,
         productQuantity,
         totalQuantities,
+        totalPrice,
         toggleCartItemsQuantities,
         showCart,
         setShowCart,
+        onRemove,
+        cartItems,
       }}
     >
       {children}
