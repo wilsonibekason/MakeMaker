@@ -458,6 +458,8 @@ export default function Landing() {
                                   className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                   placeholder="Enter yout full Name"
                                   required
+                                  name="name"
+                                  value={name}
                                 />
                               </div>
 
@@ -472,6 +474,7 @@ export default function Landing() {
                                   type="email"
                                   className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                   placeholder="Email"
+                                  name="email"
                                   value={email}
                                   onChange={handleChange}
                                   required
@@ -492,7 +495,7 @@ export default function Landing() {
                                   placeholder="Type in your  message..."
                                   onChange={handleMessageInput}
                                   required
-                                  name={message}
+                                  name="message"
                                   value={message}
                                 />
                               </div>

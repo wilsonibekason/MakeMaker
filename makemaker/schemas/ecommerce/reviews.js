@@ -19,5 +19,11 @@ export default {
       type: "text",
       required: true,
     },
+    {
+      name: "message",
+      title: "Message",
+      required: true,
+      type: "textarea",
+    },
   ],
 };

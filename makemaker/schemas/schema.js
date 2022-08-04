@@ -48,6 +48,7 @@ import BlockContent from "./locales/BlockContent";
 import blockContent from "./ecommerce/blockContent";
 import bannerHome from "./ecommerce/bannerHome";
 import productHeader from "./ecommerce/productHeader";
+import reviews from "./ecommerce/reviews";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -100,5 +101,6 @@ export default createSchema({
     BlockContent,
     blockContent,
     productHeader,
+    reviews,
   ]),
 });
