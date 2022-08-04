@@ -15,10 +15,18 @@ const {
 const ProductDetails = () => {
   const { pinId } = useParams();
   const { AiFillStar } = useStateContextProduct();
-  const { renderMoreProductsItems1, renderMoreProductsItems2 } =
-    useStateContextEcom();
+  const {
+    renderMoreProductsItems1,
+    renderMoreProductsItems2,
+    productDetails,
+    products,
+  } = useStateContextEcom();
   // main items
   const items = renderMoreProductsItems1?.concat(renderMoreProductsItems2);
+  console.log("====================================");
+  console.log(products);
+  console.log(productDetails);
+  console.log("====================================");
   return (
     <>
       <Navbar Transparent />
