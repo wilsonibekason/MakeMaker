@@ -29,6 +29,13 @@ const ProductDetails = () => {
     renderMoreProductsItems2,
     index,
     setIndex,
+    increaseQuantity,
+    decreQuantity,
+    increQty,
+    decreaseQuantity,
+    inQTY,
+    onAdd,
+    productQuantity,
   } = useStateContextEcom();
   // main items
   const items = renderMoreProductsItems1?.concat(renderMoreProductsItems2);
@@ -181,13 +188,19 @@ const ProductDetails = () => {
                     <div className="w-1/6  h-12 px-4 border border-solid  shadow hover:shadow-lg my-4 py-3 bg-lightBlue-500 text-white active:bg-lightBlue-600  ease-linear transition-all duration-150">
                       <h2 className="font-bold text-md">Quantity</h2>
                     </div>
-                    <div className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md  my-4 py-3 font-bold">
+                    <div
+                      className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md  my-4 py-3 font-bold"
+                      onClick={inQTY}
+                    >
                       +
                     </div>
                     <div className="w-1/6 bg-gray-500 h-12 px-4 border border-solid   shadow-md my-4 py-3 font-bold">
-                      4
+                      {productQuantity}
                     </div>
-                    <div className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 font-bold text-blueGray-500">
+                    <div
+                      className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 font-bold text-blueGray-500"
+                      onClick={decreQuantity}
+                    >
                       -
                     </div>
                   </div>
@@ -196,6 +209,7 @@ const ProductDetails = () => {
                   <button
                     className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
+                    onClick={() => onAdd(productDetails, productQuantity)}
                   >
                     Add To Cart
                   </button>

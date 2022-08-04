@@ -82,7 +82,7 @@ export const EcomProvider = ({ children }) => {
 
   let itemIndex;
   let foundProduct;
-//-----------------------ADDING LOGIC---------------------//
+  //-----------------------ADDING LOGIC---------------------//
   const onAdd = (product, quantity) => {
     const checkProductInCart = cartItems.find(
       (item) => item?.id === product?.id
@@ -96,98 +96,104 @@ export const EcomProvider = ({ children }) => {
         }
       });
       setCartItems(updatedCartItems);
-    }  else{
-      product?.quantity = quantity;
-      setCartItems([...cartItems, {...product}])
+    } else {
+      product.quantity = quantity;
+      setCartItems([...cartItems, { ...product }]);
     }
-   toast.success(`${quantity} ${product?.title} added to the cart`);
+    toast.success(`${quantity} ${product?.title} added to the cart`);
   };
   //-----------------------ADDING LOGIC---------------------//
-     
+
   //-----------------------REMVING LOGIC---------------------//
   const onRemove = (product) => {
-  foundProduct = cartItems?.find((item) => item?.id === product?.id);
-  const newCartItem = cartItems?.filter((item) => item?._id != product?._id)
-  setTotalPrice((previousPrice) => previousPrice - product?.price * quantity);
-  setTotalQuantities((previousQuantity) => previousQuantity - foundProduct?.quantity);
+    foundProduct = cartItems?.find((item) => item?.id === product?.id);
+    const newCartItem = cartItems?.filter((item) => item?._id != product?._id);
+    setTotalPrice(
+      (previousPrice) =>
+        previousPrice - foundProduct?.price * foundProduct?.quantity
+    );
+    setTotalQuantities(
+      (previousQuantity) => previousQuantity - foundProduct?.quantity
+    );
     setCartItems(newCartItem);
-    toast.success(`${quantity} ${product?.title} removed from the cart`);
-  }
+    toast.success(
+      `${foundProduct?.quantity} ${product?.title} removed from the cart`
+    );
+  };
   //-----------------------REMOVING LOGIC---------------------//
- //-----------------------CART_ITEMS TOGGLE LOGIC---------------------//
- 
-   const toggleCartItemsQuantities = (id, value) => {
-          foundProduct = cartItems?.find((item) => item._id === id);
-          itemIndex = cartItems.findIndex((product) => product?._id === id);
-          const newCartItem = cartItems.filter((item) => item?.id != id);
-          if(value = "increase"){
-            let newCartItems = [
-              ...newCartItem,
-              {
-                ...foundProduct, quantity: foundProduct?.quantity + 1
-              }
-            ];
-            setCartItems(newCartItems);
-            setTotalPrice((previousPrice) => previousPrice + foundProduct?.price);
-            setTotalQuantities((previousQuantity) => previousQuantity + 1)
-          }
-          else if(value = "decrease"){
-            if(foundProduct?.quantity > 1){
-              let newCartItems = [
-               ...newCartItem, 
-               {
-                ...foundProduct, quantity: foundProduct?.quantity - 1
-               }
-              ];
-              setCartItems(newCartItems);
-              setTotalPrice((previousPrice) => previousPrice + foundProduct?.price);
-              setTotalQuantities((previousQuantity) => previousQuantity + 1)  
-            }
-                              }
-   }
-//-----------------------CART_ITEMS TOGGLE LOGIC---------------------//
-//-----------------------ADDING LOGIC---------------------//
-const increaseQuantity = ()=> {
-  let newCartItem = {
-    ...cartItems[0],
-    quantity: cartItems.length - 1
+  //-----------------------CART_ITEMS TOGGLE LOGIC---------------------//
+
+  const toggleCartItemsQuantities = (id, value) => {
+    foundProduct = cartItems?.find((item) => item._id === id);
+    itemIndex = cartItems.findIndex((product) => product?._id === id);
+    const newCartItem = cartItems.filter((item) => item?.id != id);
+    if ((value = "increase")) {
+      let newCartItems = [
+        ...newCartItem,
+        {
+          ...foundProduct,
+          quantity: foundProduct?.quantity + 1,
+        },
+      ];
+      setCartItems(newCartItems);
+      setTotalPrice((previousPrice) => previousPrice + foundProduct?.price);
+      setTotalQuantities((previousQuantity) => previousQuantity + 1);
+    } else if ((value = "decrease")) {
+      if (foundProduct?.quantity > 1) {
+        let newCartItems = [
+          ...newCartItem,
+          {
+            ...foundProduct,
+            quantity: foundProduct?.quantity - 1,
+          },
+        ];
+        setCartItems(newCartItems);
+        setTotalPrice((previousPrice) => previousPrice + foundProduct?.price);
+        setTotalQuantities((previousQuantity) => previousQuantity + 1);
+      }
+    }
   };
-  setCartItems(newCartItem);
-  setTotalPrice((previousPrice) =>
-  previousPrice + (cartItems.length - 1)
-  );
-}
-
-const increQty = () => {
-  let newCartItem = {
-   ...cartItems[cartItems.length - 1],
-   quantity: cartItems.length - 1
+  //-----------------------CART_ITEMS TOGGLE LOGIC---------------------//
+  //-----------------------ADDING LOGIC---------------------//
+  const increaseQuantity = () => {
+    let newCartItem = {
+      ...cartItems[0],
+      quantity: cartItems.length - 1,
+    };
+    setCartItems(newCartItem);
+    setTotalPrice((previousPrice) => previousPrice + (cartItems.length - 1));
   };
-  setCartItems(newCartItem);
-  setTotalPrice
-  setTotalQuantities((previousQuantity) => previousQuantity + 1)
-  setTotalPrice(0);
-}
 
-const inQTY = ( ) => {
-  setProductQuantity((previousQuantity) => previousQuantity + 1)
-}
-
-const decreaseQuantity = () => {
-  let newCartItem = {
-  ...cartItems[0],
-  quantity: cartItems.length - 1
+  const increQty = () => {
+    let newCartItem = {
+      ...cartItems[cartItems.length - 1],
+      quantity: cartItems.length - 1,
+    };
+    setCartItems(newCartItem);
+    setTotalQuantities((previousQuantity) => previousQuantity + 1);
+    setTotalPrice(0);
   };
-  setCartItems(newCartItem);
-  setTotalPrice((previousPrice) =>
-  previousPrice - (cartItems.length - 1)
-  );
-}
-
-const decreQuantity = () => {
-  setProductQuantity((previousQuantity) => previousQuantity - 1 < 1 ? 1 : previousQuantity - 1);
-}
-//-----------------------ADDING LOGIC---------------------//
+  // ----------------------- MAIN INCREASE LOGIC---------------------//
+  const inQTY = () => {
+    setProductQuantity((previousQuantity) => previousQuantity + 1);
+  };
+  //-----------------------MAIN INCREASE LOGIC---------------------//
+  const decreaseQuantity = () => {
+    let newCartItem = {
+      ...cartItems[0],
+      quantity: cartItems.length - 1,
+    };
+    setCartItems(newCartItem);
+    setTotalPrice((previousPrice) => previousPrice - (cartItems.length - 1));
+  };
+  //----------------------- MAIN DECREASE LOGIC---------------------//
+  const decreQuantity = () => {
+    setProductQuantity((previousQuantity) =>
+      previousQuantity - 1 < 1 ? 1 : previousQuantity - 1
+    );
+  };
+  //-----------------------MAIN DECREASE LOGIC---------------------//
+  //-----------------------increase && decrease products  LOGIC---------------------//
 
   ////////// ***************************************************************************************    PRODUCTS MAIN LOGIC ***************************************** ////////////////
 
@@ -205,7 +211,11 @@ const decreQuantity = () => {
         decreQuantity,
         increQty,
         decreaseQuantity,
-        inQTY
+        inQTY,
+        onAdd,
+        productQuantity,
+        totalQuantities,
+        toggleCartItemsQuantities,
       }}
     >
       {children}
