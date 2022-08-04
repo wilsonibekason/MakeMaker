@@ -201,6 +201,11 @@ const decreQuantity = () => {
         productId,
         index,
         setIndex,
+        increaseQuantity,
+        decreQuantity,
+        increQty,
+        decreaseQuantity,
+        inQTY
       }}
     >
       {children}
