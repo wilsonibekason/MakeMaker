@@ -127,7 +127,7 @@ export const EcomProvider = ({ children }) => {
     foundProduct = cartItems?.find((item) => item._id === id);
     itemIndex = cartItems.findIndex((product) => product?._id === id);
     const newCartItem = cartItems.filter((item) => item?._id != id);
-    if ((value = "increase")) {
+    if (value === "increase") {
       let newCartItems = [
         ...newCartItem,
         {
@@ -138,7 +138,7 @@ export const EcomProvider = ({ children }) => {
       setCartItems(newCartItems);
       setTotalPrice((previousPrice) => previousPrice + foundProduct?.price);
       setTotalQuantities((previousQuantity) => previousQuantity + 1);
-    } else if ((value = "decrease")) {
+    } else if (value === "decrease") {
       if (foundProduct?.quantity > 1) {
         let newCartItems = [
           ...newCartItem,
@@ -148,8 +148,8 @@ export const EcomProvider = ({ children }) => {
           },
         ];
         setCartItems(newCartItems);
-        setTotalPrice((previousPrice) => previousPrice + foundProduct?.price);
-        setTotalQuantities((previousQuantity) => previousQuantity + 1);
+        setTotalPrice((previousPrice) => previousPrice - foundProduct?.price);
+        setTotalQuantities((previousQuantity) => previousQuantity - 1);
       }
     }
   };

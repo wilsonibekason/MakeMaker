@@ -89,7 +89,7 @@ const Cart = ({
                               <img
                                 className="w-20 h-20 rounded-lg bg-lightBlue-400"
                                 //src="https://image.shutterstock.com/image-vector/phone-controls-diy-robot-car-260nw-1624097389.jpg"
-                                src={urlFor(cartItem?.image[0])}
+                                src={urlFor(cartItem?.image)}
                                 alt="Shopping Cart"
                               />
                             </div>
