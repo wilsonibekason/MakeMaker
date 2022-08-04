@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 const EcomContext = createContext({});
 
 export const EcomProvider = ({ children }) => {
-  const renderMoreProductsItems1 = ["M", "o", "r", "e"];
+  const renderMoreProductsItems1 = ["r", "e", "l", "a", "t", "e", "d"];
   const renderMoreProductsItems2 = ["p", "r", "o", "d", "u", "c", "t", "s"];
   let id = useParams();
   let productId = id?.id;

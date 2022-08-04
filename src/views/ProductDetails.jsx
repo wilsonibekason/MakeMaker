@@ -267,7 +267,7 @@ const ProductDetails = () => {
 
         {/**   other products components  */}
         <div className="flex flex-col items-center justify-center">
-          <div className="w-full md:w-4/12 px-6 md:px-4 ml-auto mr-auto mt-6">
+          <div className="w-full md:w-6/12 px-6 md:px-4 ml-auto mr-auto mt-6">
             <h3 className="text-2xl font-semibold mb-1 leading-normal">
               <div className="py-2  items-center justify-center">
                 <nav className="block">
