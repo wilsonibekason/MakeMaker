@@ -82,7 +82,7 @@ export const EcomProvider = ({ children }) => {
 
   let itemIndex;
   let foundProduct;
-
+//-----------------------ADDING LOGIC---------------------//
   const onAdd = (product, quantity) => {
     const checkProductInCart = cartItems.find(
       (item) => item?.id === product?.id
@@ -102,7 +102,17 @@ export const EcomProvider = ({ children }) => {
     }
    toast.success(`${quantity} ${product?.title} added to the cart`);
   };
-
+  //-----------------------ADDING LOGIC---------------------//
+     
+  //-----------------------ADDING LOGIC---------------------//
+  const onRemove = (product) => {
+  foundProduct = cartItems?.find((item) => item?.id === product?.id);
+  const newCartItem = cartItems?.filter((item) => item?._id != product?._id)
+  setTotalPrice((previousPrice) => previousPrice - product?.price * quantity);
+  setTotalQuantities((previousQuantity) => previousQuantity - foundProduct?.quantity);
+    setCartItems(newCartItem);
+    toast.success(`${quantity} ${product?.title} removed from the cart`);
+  }
   ////////// ***************************************************************************************    PRODUCTS MAIN LOGIC ***************************************** ////////////////
 
   return (
