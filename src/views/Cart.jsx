@@ -12,8 +12,14 @@ const Cart = ({
   closeDropdownPopover,
   btnDropdownRef,
 }) => {
-  const { AiOutlineLeft, AiOutlineShopping, AiOutlineRight } =
-    useStateContextProduct();
+  const {
+    AiOutlineLeft,
+    AiOutlineShopping,
+    AiOutlineRight,
+    AiOutlinePlus,
+    AiOutlineMinus,
+    TiDeleteOutline,
+  } = useStateContextProduct();
   const {
     increaseQuantity,
     decreQuantity,
@@ -105,7 +111,7 @@ const Cart = ({
                                 )
                               }
                             >
-                              +
+                              <AiOutlinePlus />
                             </div>
                             <div className="w-1/6 bg-gray-500 h-12 px-4 border border-solid   shadow-md my-4 py-3 ">
                               {cartItem?.quantity}
@@ -119,7 +125,7 @@ const Cart = ({
                                 )
                               }
                             >
-                              -
+                              <AiOutlineMinus />
                             </div>
                           </div>
                           <div className=" flex flex-col px-4 ml-16">
@@ -130,7 +136,7 @@ const Cart = ({
                               className="w-1/6 bg-gray-500 h-12 px-4 border border-solid  shadow-xl my-1 py-3 rounded-tr-full"
                               onClick={() => onRemove(cartItem)}
                             >
-                              cancel
+                              <TiDeleteOutline />
                             </div>
                           </div>
                         </div>

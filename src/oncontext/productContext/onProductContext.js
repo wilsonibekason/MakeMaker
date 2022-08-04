@@ -10,8 +10,11 @@ import {
   AiOutlineLeft,
   AiOutlineRight,
   AiOutlineShopping,
+  AiOutlinePlus,
+  AiOutlineMinus,
   AiFillStar,
 } from "react-icons/ai";
+import { TiDeleteOutline } from "react-icons/ti";
 import { format, set } from "date-fns";
 import moment from "moment";
 import { urlFor, client } from "../../client";
@@ -101,6 +104,9 @@ export const ProductProvider = ({ children }) => {
         BsCart3,
         AiOutlineLeft,
         AiOutlineRight,
+        AiOutlinePlus,
+        AiOutlineMinus,
+        TiDeleteOutline,
         AiOutlineShopping,
         AiFillStar,
         products,
