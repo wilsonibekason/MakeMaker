@@ -8,7 +8,7 @@ const ProductDetailsMore = ({ description }) => {
       <div className="flex flex-wrap">
         <div className=" mx-auto w-1/2 mt-16">
           <ul
-            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
+            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row sm:flex-col"
             role="tablist"
           >
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -96,7 +96,7 @@ const ProductDetailsMore = ({ description }) => {
                   {/** Title */}
                   <div className="mb-4">
                     <p className="text-blueGray-400 text-lg font-semibold uppercase">
-                      send us a woth it's worth it
+                      send us a review it's worth it
                     </p>
                   </div>
 
@@ -127,7 +127,7 @@ const ProductDetailsMore = ({ description }) => {
                   <div class="relative flex w-full flex-wrap items-stretch mb-3">
                     <input
                       type="text"
-                      placeholder="Review Number"
+                      placeholder="Your Review"
                       class="px-2 py-1 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:shadow-outline w-full pr-10"
                     />
                     <span class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1">

@@ -166,22 +166,24 @@ const ProductDetails = () => {
                   {"  "}
                   <p className="mb-4 text-sm">(20)</p>
                 </div>
-                <h4 className="text-lg font-bold">Description</h4>
+                <h4 className=" text-blueGray-500 text-sm font-semibold">
+                  Description
+                </h4>
                 <p className="mt-4 text-sm leading-relaxed text-blueGray-500">
                   {productDetails ? productDetails?.description : "Description"}
                 </p>
                 <div className="flex flex-wrap">
                   <div className="flex">
                     <div className="w-1/6  h-12 px-4 border border-solid  shadow hover:shadow-lg my-4 py-3 bg-lightBlue-500 text-white active:bg-lightBlue-600  ease-linear transition-all duration-150">
-                      <h2>Quantity</h2>
+                      <h2 className="font-bold text-md">Quantity</h2>
                     </div>
-                    <div className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md  my-4 py-3 ">
+                    <div className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md  my-4 py-3 font-bold">
                       +
                     </div>
-                    <div className="w-1/6 bg-gray-500 h-12 px-4 border border-solid   shadow-md my-4 py-3 ">
+                    <div className="w-1/6 bg-gray-500 h-12 px-4 border border-solid   shadow-md my-4 py-3 font-bold">
                       4
                     </div>
-                    <div className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 ">
+                    <div className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 font-bold text-blueGray-500">
                       -
                     </div>
                   </div>
