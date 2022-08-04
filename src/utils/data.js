@@ -15,6 +15,7 @@ export const productDetailQuery = (productId) => {
         product,
         publishedAt,
         discount,
+        productImage
     }`;
   return query;
 };
@@ -33,6 +34,7 @@ export const productDetailMoreQuery = (product) => {
     publishedAt,
     description,
     price,   
+    productImage
    }`;
   return query;
 };

@@ -21,6 +21,14 @@ export const EcomProvider = ({ children }) => {
   // products hover state
   const [index, setIndex] = useState(0);
 
+  // LOGIC STATES
+  const [showCart, setShowCart] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalQuantities, setTotalQuantities] = useState(0);
+  const [productQuantity, setProductQuantity] = useState(1);
+  // LOGIC STATES
+
   // DEFINE STATES
 
   // fetching productDetails
@@ -69,6 +77,12 @@ export const EcomProvider = ({ children }) => {
   console.log(productId);
   console.log("====================================");
   // LOGS
+  ////////// ***************************************************************************************    PRODUCTS MAIN LOGIC ***************************************** ////////////////
+
+  let itemIndex;
+  let foundProduct;
+
+  ////////// ***************************************************************************************    PRODUCTS MAIN LOGIC ***************************************** ////////////////
 
   return (
     <EcomContext.Provider
