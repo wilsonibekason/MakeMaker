@@ -1,6 +1,6 @@
 //import for thirdparty dependencies
 
-import { client } from "../client";
+import { client, urlFor } from "../client";
 import Footer from "components/Footers/Footer";
 import Navbar from "components/Navbars/AdminNavbar";
 import Sidebar from "components/Sidebar/Sidebar";
@@ -9,6 +9,7 @@ import { useStateContextEcom } from "../oncontext/productContext/onEcomContext";
 import { productDetailQuery, productDetailMoreQuery } from "../utils/data";
 // import { productDetailMoreQuery } from "utils/data";
 import { useEffect, useState } from "react";
+import moment from "moment";
 
 const {
   useStateContextProduct,
@@ -125,13 +126,20 @@ const ProductDetails = () => {
               <img
                 alt="..."
                 className="max-w-full rounded-lg shadow-2xl"
-                src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                //src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                src={
+                  productDetails
+                    ? productDetails?.image &&
+                      urlFor(productDetails?.image).url()
+                    : "https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                }
                 // src={urlFor(headImageUrl)}
               />
 
               <div className="flex flex-row gap-4 mt-4 ml-4 px-4">
                 <img
-                  src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                  //src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                  src={""}
                   alt=""
                   className="rounded-lg bg-red-500 w-16 h-16 cursor-pointer mr-4"
                 />
@@ -159,6 +167,7 @@ const ProductDetails = () => {
                 </div>
                 <h4 className="text-lg font-bold">Description</h4>
                 <p className="mt-4 text-sm leading-relaxed text-blueGray-500">
+                  {productDetails ? productDetails?.description : "Description"}
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Atque, corrupti? Laboriosam deleniti ad eius. Ipsa distinctio
                   molestiae, ad aperiam odio natus nesciunt pariatur atque velit
@@ -206,8 +215,17 @@ const ProductDetails = () => {
                         </span>
                       </div>
                       <div>
-                        <h4 className="text-blueGray-500">
-                          Carefully crafted components
+                        <h4 className="text-blueGray-500 text-sm">
+                          <span className="uppercase text-red-200">
+                            {" "}
+                            Date Added :
+                          </span>
+                          {"  "}
+                          {productDetails
+                            ? moment(productDetails?.publishedAt)
+                                .utc()
+                                .format("YYYY-MM-DD")
+                            : "DATE ADDED"}
                         </h4>
                       </div>
                     </div>
@@ -221,7 +239,9 @@ const ProductDetails = () => {
                       </div>
                       <div>
                         <h4 className="text-blueGray-500">
-                          Amazing page examples
+                          {productDetails
+                            ? productDetails?.saleTime
+                            : "Always Available"}
                         </h4>
                       </div>
                     </div>

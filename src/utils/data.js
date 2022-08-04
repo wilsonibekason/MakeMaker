@@ -15,7 +15,6 @@ export const productDetailQuery = (productId) => {
         product,
         publishedAt,
         discount,
-        
     }`;
   return query;
 };
