@@ -4,6 +4,7 @@ export default {
   name: "reviews",
   title: "Reviews",
   icon: GrContact,
+  type: "document",
   description: "A collection of reviews from the customers .",
   usage: "review",
   options: [

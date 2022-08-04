@@ -34,10 +34,8 @@ export const EcomProvider = ({ children }) => {
   const [revenue, setRevenue] = useState(0);
   const [revenueMore, setRevenueMore] = useState(false);
   const [revenueDetails, setRevenueDetails] = useState;
+  const [isReviewCreated, setIsReviewCreated] = useState(false);
 
-  const reviewDetails = {
-    _type,
-  };
   // RVIEWS STATES
 
   // DEFINE STATES
@@ -206,6 +204,31 @@ export const EcomProvider = ({ children }) => {
   //-----------------------increase && decrease products  LOGIC---------------------//
 
   ////////// ***************************************************************************************    PRODUCTS MAIN LOGIC ***************************************** ////////////////
+
+  ////////// ***************************************************************************************    REVIEWS MAIN LOGIC ***************************************** ////////////////
+  const handleReviewSubmit = (e) => {
+    e.preventDefault();
+    const reviewDetails = {
+      _type: "reviews",
+      name,
+      email,
+      message,
+    };
+
+    client
+      .create(reviewDetails)
+      .then(() => {
+        console.log("Successfully created review");
+        toast.success("Successfully created review");
+        setIsReviewCreated(true);
+      })
+      .catch((error) => {
+        console.log("Error creating review", error);
+        toast.error("Error creating review");
+        setIsReviewCreated(false);
+      });
+  };
+  ////////// ***************************************************************************************    REVIEWS MAIN LOGIC ***************************************** ////////////////
 
   return (
     <EcomContext.Provider
