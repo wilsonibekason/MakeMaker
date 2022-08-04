@@ -1,4 +1,4 @@
-const productDetailQuery = (productId) => {
+export const productDetailQuery = (productId) => {
   const query = `*[_type == "banner" && _id == '${productId}']{
         image{
             asset->{
@@ -19,7 +19,7 @@ const productDetailQuery = (productId) => {
   return query;
 };
 
-const productDetailMoreQuery = (product) => {
+export const productDetailMoreQuery = (product) => {
   const query = `*[_type == "banner" && tag == '${product?.tag}' && _id != '${product?._id}']{
     image{
         asset->{
