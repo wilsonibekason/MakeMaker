@@ -31,9 +31,11 @@ export const EcomProvider = ({ children }) => {
   // LOGIC STATES
 
   // REVIEWS STATES
-  const [revenue, setRevenue] = useState(0);
-  const [revenueMore, setRevenueMore] = useState(false);
-  const [revenueDetails, setRevenueDetails] = useState;
+  const [reviewData, setReviewData] = useState({
+    name: "",
+    email: "",
+    review: "",
+  });
   const [isReviewCreated, setIsReviewCreated] = useState(false);
 
   // RVIEWS STATES
@@ -212,7 +214,7 @@ export const EcomProvider = ({ children }) => {
       _type: "reviews",
       name,
       email,
-      message,
+      review,
     };
 
     client
@@ -228,6 +230,20 @@ export const EcomProvider = ({ children }) => {
         setIsReviewCreated(false);
       });
   };
+
+  ///  --------------- onchange for reviews contents
+  // destructure reviewdata
+  const { name, email, review } = reviewData;
+  const handleReviewChange = (event) => {
+    const name = reviewData.name.trim();
+    const email = reviewData.email.trim();
+    const review = reviewData.review.trim();
+    setReviewData({
+      ...reviewData,
+      [name]: { ...reviewData[name], review },
+    });
+  };
+  ///  --------------- onchange for reviews contents
   ////////// ***************************************************************************************    REVIEWS MAIN LOGIC ***************************************** ////////////////
 
   return (
@@ -254,6 +270,11 @@ export const EcomProvider = ({ children }) => {
         setShowCart,
         onRemove,
         cartItems,
+        handleReviewSubmit,
+        handleReviewChange,
+        name,
+        email,
+        review,
       }}
     >
       {children}
