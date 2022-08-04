@@ -1,3 +1,4 @@
+// initialising productDetailQuery
 export const productDetailQuery = (productId) => {
   const query = `*[_type == "banner" && _id == '${productId}']{
         image{
@@ -19,6 +20,7 @@ export const productDetailQuery = (productId) => {
   return query;
 };
 
+// initialising productDetailMoreQuery
 export const productDetailMoreQuery = (product) => {
   const query = `*[_type == "banner" && tag == '${product?.tag}' && _id != '${product?._id}']{
     image{
@@ -31,8 +33,7 @@ export const productDetailMoreQuery = (product) => {
     product,
     publishedAt,
     description,
-    price,
-    
+    price,   
    }`;
   return query;
 };

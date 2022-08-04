@@ -1,14 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+  Redirect,
+  Navigate,
+  Router,
+  Routes,
+} from "react-router-dom";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "assets/styles/tailwind.css";
 
 // layouts
 
-import Admin from "layouts/Admin.js";
-import Auth from "layouts/Auth.js";
+import Admin from "./layouts/Admin";
+import Auth from "./layouts/Auth.js";
 
 // views without layouts
 
@@ -30,20 +38,23 @@ ReactDOM.render(
         <ContactProvider>
           <ProductProvider>
             <EcomProvider>
-              <Switch>
+              <Routes>
                 {/* add routes with layouts */}
-                <Route path="/admin" component={Admin} />
-                <Route path="/auth" component={Auth} />
+                <Route path="/admin" element={<Admin />} />
+                <Route path="/auth" element={<Auth />} />
                 {/* add routes without layouts */}
-                <Route path="/ABOUTUS" exact component={Landing} />
-                <Route path="/profile" exact component={Profile} />
-                <Route path="/products" component={Product} />
+                <Route path="/ABOUTUS" exact element={<Landing />} />
+                <Route path="/profile" exact element={<Profile />} />
+                <Route path="/products" element={<Product />} />
 
-                <Route path="/productdetails/:id" component={ProductDetails} />
-                <Route path="/" exact component={Index} />
+                <Route
+                  path="/productdetails/:id"
+                  element={<ProductDetails />}
+                />
+                <Route path="/" exact element={<Index />} />
                 {/* add redirect for first page */}
-                <Redirect from="*" to="/" />
-              </Switch>
+                <Route path="/" element={<Navigate replace to="/" />} />
+              </Routes>
             </EcomProvider>
           </ProductProvider>
         </ContactProvider>
