@@ -48,7 +48,7 @@ ReactDOM.render(
                 <Route path="/products" element={<Product />} />
 
                 <Route
-                  path="/productdetails/:id"
+                  path="products/productdetails/:id"
                   element={<ProductDetails />}
                 />
                 <Route path="/" exact element={<Index />} />

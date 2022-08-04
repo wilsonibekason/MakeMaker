@@ -3,8 +3,8 @@
 import Footer from "components/Footers/Footer";
 import Navbar from "components/Navbars/AdminNavbar";
 import Sidebar from "components/Sidebar/Sidebar";
-import { useStateContextEcom } from "../oncontext/productContext/onEcomContext";
 import { useParams } from "react-router-dom";
+import { useStateContextEcom } from "../oncontext/productContext/onEcomContext";
 
 const {
   useStateContextProduct,
@@ -13,7 +13,7 @@ const {
 // import for internal dependencies
 
 const ProductDetails = () => {
-  let { pinId } = useParams();
+  const { pinId } = useParams();
 
   const { AiFillStar } = useStateContextProduct();
   const {
@@ -101,17 +101,17 @@ const ProductDetails = () => {
                   eligendi explicabo velit.
                 </p>
                 <div className="flex flex-wrap">
-                  <div class="flex">
-                    <div class="w-1/6  h-12 px-4 border border-solid  shadow hover:shadow-lg my-4 py-3 bg-lightBlue-500 text-white active:bg-lightBlue-600  ease-linear transition-all duration-150">
+                  <div className="flex">
+                    <div className="w-1/6  h-12 px-4 border border-solid  shadow hover:shadow-lg my-4 py-3 bg-lightBlue-500 text-white active:bg-lightBlue-600  ease-linear transition-all duration-150">
                       <h2>Quantity</h2>
                     </div>
-                    <div class="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md  my-4 py-3 ">
+                    <div className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md  my-4 py-3 ">
                       +
                     </div>
-                    <div class="w-1/6 bg-gray-500 h-12 px-4 border border-solid   shadow-md my-4 py-3 ">
+                    <div className="w-1/6 bg-gray-500 h-12 px-4 border border-solid   shadow-md my-4 py-3 ">
                       4
                     </div>
-                    <div class="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 ">
+                    <div className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 ">
                       -
                     </div>
                   </div>

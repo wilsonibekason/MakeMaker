@@ -67,22 +67,22 @@ const Cart = ({
                   </div>
                 </div>
 
-                <div class="flex">
-                  <div class="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md  my-4 py-3 ">
+                <div className="flex">
+                  <div className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md  my-4 py-3 ">
                     +
                   </div>
-                  <div class="w-1/6 bg-gray-500 h-12 px-4 border border-solid   shadow-md my-4 py-3 ">
+                  <div className="w-1/6 bg-gray-500 h-12 px-4 border border-solid   shadow-md my-4 py-3 ">
                     4
                   </div>
-                  <div class="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 ">
+                  <div className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 ">
                     -
                   </div>
                 </div>
                 <div className=" flex flex-col px-4 ml-16">
-                  <div class="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-1 py-3 rounded-tr-full text-center">
+                  <div className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-1 py-3 rounded-tr-full text-center">
                     $30
                   </div>
-                  <div class="w-1/6 bg-gray-500 h-12 px-4 border border-solid  shadow-xl my-1 py-3 rounded-tr-full">
+                  <div className="w-1/6 bg-gray-500 h-12 px-4 border border-solid  shadow-xl my-1 py-3 rounded-tr-full">
                     cancel
                   </div>
                 </div>
@@ -102,7 +102,7 @@ const Cart = ({
               </div>
               <div className="w-40 m-auto ">
                 <button
-                  className=" w-1/2 text-lightBlue-500 bg-transparent border border-solid border-lightBlue-500 hover:bg-lightBlue-500 hover:text-white active:bg-lightBlue-600 font-bold uppercase text-sm px-6 py-3 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                  className=" w-1/2 text-lightBlue-500  bg-transparent border border-solid border-lightBlue-500 hover:bg-lightBlue-500 hover:text-white active:bg-lightBlue-600 font-bold uppercase text-sm px-6 py-3 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                   type="button"
                 >
                   pay with stripe

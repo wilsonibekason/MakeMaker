@@ -7,9 +7,9 @@ export default function Footer() {
   {
     /** creating logs for footer social contents  */
   }
-  console.log(socialContent);
-  console.log(socialLink[0]?.map((item) => item?.link));
-  console.log(socialName[0]?.map((item) => item?.name));
+  // console.log(socialContent);
+  // console.log(socialLink[0]?.map((item) => item?.link));
+  // console.log(socialName[0]?.map((item) => item?.name));
 
   return (
     <>
