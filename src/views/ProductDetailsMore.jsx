@@ -74,7 +74,7 @@ const ProductDetailsMore = ({ description }) => {
             <div className="px-4 py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
-                  <p>
+                  <p className="text-blueGray-400 text-sm font-semibold">
                     {description}
                     <br />
                     <br /> Dramatically visualize customer directed convergence
@@ -82,7 +82,7 @@ const ProductDetailsMore = ({ description }) => {
                   </p>
                 </div>
                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">
-                  <p>
+                  <p className="text-blueGray-500 text-sm font-semibold font-sans">
                     Completely synergize resource taxing relationships via
                     premier niche markets. Professionally cultivate one-to-one
                     customer service with robust ideas.
@@ -93,12 +93,47 @@ const ProductDetailsMore = ({ description }) => {
                   </p>
                 </div>
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
-                  <p>
-                    send us a review
-                    <br />
-                    <br /> Dramatically maintain clicks-and-mortar solutions
-                    without functional solutions.
-                  </p>
+                  {/** Title */}
+                  <div className="mb-4">
+                    <p className="text-blueGray-400 text-lg font-semibold uppercase">
+                      send us a woth it's worth it
+                    </p>
+                  </div>
+
+                  {/** username */}
+                  <div class="relative flex w-full flex-wrap items-stretch mb-3">
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      class="px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:shadow-outline w-full pr-10"
+                    />
+                    <span class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                  {/** useremail */}
+                  <div class="relative flex w-full flex-wrap items-stretch mb-3">
+                    <input
+                      type="text"
+                      placeholder="Email Address"
+                      class="px-2 py-1 placeholder-blueGray-300 text-blueGray-600
+                      bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:shadow-outline w-full pr-10"
+                    />
+                    <span class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
+                  {/** userreview */}
+                  <div class="relative flex w-full flex-wrap items-stretch mb-3">
+                    <input
+                      type="text"
+                      placeholder="Review Number"
+                      class="px-2 py-1 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:shadow-outline w-full pr-10"
+                    />
+                    <span class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1">
+                      <i class="fas fa-star"></i>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
