@@ -10,6 +10,7 @@ import { productDetailQuery, productDetailMoreQuery } from "../utils/data";
 // import { productDetailMoreQuery } from "utils/data";
 import { useEffect, useState } from "react";
 import moment from "moment";
+import ProductDetailsMore from "./ProductDetailsMore";
 
 const {
   useStateContextProduct,
@@ -261,6 +262,9 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
+
+        <ProductDetailsMore />
+
         {/**   other products components  */}
         <div className="flex flex-col items-center justify-center">
           <div className="w-full md:w-4/12 px-6 md:px-4 ml-auto mr-auto mt-6">
