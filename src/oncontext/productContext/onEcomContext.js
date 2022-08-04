@@ -104,7 +104,7 @@ export const EcomProvider = ({ children }) => {
   };
   //-----------------------ADDING LOGIC---------------------//
      
-  //-----------------------ADDING LOGIC---------------------//
+  //-----------------------REMVING LOGIC---------------------//
   const onRemove = (product) => {
   foundProduct = cartItems?.find((item) => item?.id === product?.id);
   const newCartItem = cartItems?.filter((item) => item?._id != product?._id)
@@ -113,6 +113,40 @@ export const EcomProvider = ({ children }) => {
     setCartItems(newCartItem);
     toast.success(`${quantity} ${product?.title} removed from the cart`);
   }
+  //-----------------------REMOVING LOGIC---------------------//
+ //-----------------------CART_ITEMS TOGGLE LOGIC---------------------//
+ 
+   const toggleCartItemsQuantities = (id, value) => {
+          foundProduct = cartItems?.find((item) => item._id === id);
+          itemIndex = cartItems.findIndex((product) => product?._id === id);
+          const newCartItem = cartItems.filter((item) => item?.id != id);
+          if(value = "increase"){
+            let newCartItems = [
+              ...newCartItem,
+              {
+                ...foundProduct, quantity: foundProduct?.quantity + 1
+              }
+            ];
+            setCartItems(newCartItems);
+            setTotalPrice((previousPrice) => previousPrice + foundProduct?.price);
+            setTotalQuantities((previousQuantity) => previousQuantity + 1)
+          }
+          else if(value = "decrease"){
+            if(foundProduct?.quantity > 1){
+              let newCartItems = [
+               ...newCartItem, 
+               {
+                ...foundProduct, quantity: foundProduct?.quantity - 1
+               }
+              ];
+              setCartItems(newCartItems);
+              setTotalPrice((previousPrice) => previousPrice + foundProduct?.price);
+              setTotalQuantities((previousQuantity) => previousQuantity + 1)  
+            }
+                              }
+   }
+//-----------------------CART_ITEMS TOGGLE LOGIC---------------------//
+
   ////////// ***************************************************************************************    PRODUCTS MAIN LOGIC ***************************************** ////////////////
 
   return (
