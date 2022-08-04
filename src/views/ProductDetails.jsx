@@ -4,6 +4,7 @@ import Footer from "components/Footers/Footer";
 import Navbar from "components/Navbars/AdminNavbar";
 import Sidebar from "components/Sidebar/Sidebar";
 import { useStateContextEcom } from "oncontext/productContext/onEcomContext";
+import { useParams } from "react-router-dom";
 
 const {
   useStateContextProduct,
@@ -12,6 +13,7 @@ const {
 // import for internal dependencies
 
 const ProductDetails = () => {
+  const { pinId } = useParams();
   const { AiFillStar } = useStateContextProduct();
   const { renderMoreProductsItems1, renderMoreProductsItems2 } =
     useStateContextEcom();
