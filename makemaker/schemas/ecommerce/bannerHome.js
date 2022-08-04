@@ -12,6 +12,21 @@ export default {
       options: { hotspot: true },
     },
     {
+      name: "productImage",
+      title: " ProductImage",
+      description:
+        "This is the main image to be displayed on the products page",
+      type: "array",
+      of: [
+        {
+          type: "array",
+          name: "imageItem",
+          description: "The maxlength of the image should be three",
+          options: {hotspot: true}
+        },
+      ],
+    },
+    {
       name: "title",
       type: "string",
       title: "Title",

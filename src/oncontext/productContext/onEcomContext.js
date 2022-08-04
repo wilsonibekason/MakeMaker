@@ -18,6 +18,8 @@ export const EcomProvider = ({ children }) => {
   const [productDetail, setProductDetail] = useState();
   const [productDetailMore, setProductDetailMore] = useState();
   const [error, setError] = useState(null);
+  // products hover state
+  const [index, setIndex] = useState(0);
 
   // DEFINE STATES
 
@@ -76,6 +78,8 @@ export const EcomProvider = ({ children }) => {
         productDetails,
         products,
         productId,
+        index,
+        setIndex,
       }}
     >
       {children}

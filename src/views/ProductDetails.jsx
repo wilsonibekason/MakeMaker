@@ -24,8 +24,12 @@ const ProductDetails = () => {
   let productId = id?.id;
 
   const { AiFillStar } = useStateContextProduct();
-  const { renderMoreProductsItems1, renderMoreProductsItems2 } =
-    useStateContextEcom();
+  const {
+    renderMoreProductsItems1,
+    renderMoreProductsItems2,
+    index,
+    setIndex,
+  } = useStateContextEcom();
   // main items
   const items = renderMoreProductsItems1?.concat(renderMoreProductsItems2);
   ///////////////
