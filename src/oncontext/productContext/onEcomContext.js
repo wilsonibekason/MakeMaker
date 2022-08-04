@@ -30,6 +30,16 @@ export const EcomProvider = ({ children }) => {
   const [productQuantity, setProductQuantity] = useState(1);
   // LOGIC STATES
 
+  // REVIEWS STATES
+  const [revenue, setRevenue] = useState(0);
+  const [revenueMore, setRevenueMore] = useState(false);
+  const [revenueDetails, setRevenueDetails] = useState;
+
+  const reviewDetails = {
+    _type,
+  };
+  // RVIEWS STATES
+
   // DEFINE STATES
 
   // fetching productDetails
