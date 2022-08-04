@@ -6,8 +6,8 @@ import Navbar from "components/Navbars/AdminNavbar";
 import Sidebar from "components/Sidebar/Sidebar";
 import { useParams } from "react-router-dom";
 import { useStateContextEcom } from "../oncontext/productContext/onEcomContext";
-import { productDetailQuery } from "utils/data";
-import { productDetailMoreQuery } from "utils/data";
+import { productDetailQuery, productDetailMoreQuery } from "../utils/data";
+// import { productDetailMoreQuery } from "utils/data";
 import { useEffect, useState } from "react";
 
 const {
@@ -40,9 +40,9 @@ const ProductDetails = () => {
   // fetching productDetails
   const fetchProductDetails = () => {
     const query = productDetailQuery(productId);
-    if (query) {
+    if (productDetailQuery(productId)) {
       client
-        .fetch(`${query}`)
+        .fetch(query)
         .then((data) => {
           setProductDetails(data[0]);
           console.log(data);
@@ -82,6 +82,18 @@ const ProductDetails = () => {
   console.log(products);
   console.log("====================================");
   // LOGS
+  ///DESTRUCTURINGS
+  // const {
+  //   title,
+  //   description,
+  //   publishedAt,
+  //   discount,
+  //   price,
+  //   product,
+  //   tags,
+  //   saleTime,
+  // } = productDetails;
+  ///DESTRUCTURINGS
   return (
     <>
       <Navbar Transparent />
@@ -133,7 +145,9 @@ const ProductDetails = () => {
 
             <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
               <div className="md:pr-12 mb-12">
-                <h1 className=" text-2xl font-bold">Arduino Kit</h1>
+                <h1 className=" text-2xl font-bold">
+                  {productDetails ? productDetails?.title : "Title"}
+                </h1>
                 <div className="text-Amber-400 mt-4 flex gap-2 align-center">
                   <AiFillStar />
                   <AiFillStar />
