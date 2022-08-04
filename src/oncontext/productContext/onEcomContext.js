@@ -146,6 +146,48 @@ export const EcomProvider = ({ children }) => {
                               }
    }
 //-----------------------CART_ITEMS TOGGLE LOGIC---------------------//
+//-----------------------ADDING LOGIC---------------------//
+const increaseQuantity = ()=> {
+  let newCartItem = {
+    ...cartItems[0],
+    quantity: cartItems.length - 1
+  };
+  setCartItems(newCartItem);
+  setTotalPrice((previousPrice) =>
+  previousPrice + (cartItems.length - 1)
+  );
+}
+
+const increQty = () => {
+  let newCartItem = {
+   ...cartItems[cartItems.length - 1],
+   quantity: cartItems.length - 1
+  };
+  setCartItems(newCartItem);
+  setTotalPrice
+  setTotalQuantities((previousQuantity) => previousQuantity + 1)
+  setTotalPrice(0);
+}
+
+const inQTY = ( ) => {
+  setProductQuantity((previousQuantity) => previousQuantity + 1)
+}
+
+const decreaseQuantity = () => {
+  let newCartItem = {
+  ...cartItems[0],
+  quantity: cartItems.length - 1
+  };
+  setCartItems(newCartItem);
+  setTotalPrice((previousPrice) =>
+  previousPrice - (cartItems.length - 1)
+  );
+}
+
+const decreQuantity = () => {
+  setProductQuantity((previousQuantity) => previousQuantity - 1 < 1 ? 1 : previousQuantity - 1);
+}
+//-----------------------ADDING LOGIC---------------------//
 
   ////////// ***************************************************************************************    PRODUCTS MAIN LOGIC ***************************************** ////////////////
 
