@@ -2,7 +2,7 @@
 import Navbar from "../components/Navbars/AdminNavbar";
 import { useStateContextProduct } from "../oncontext/productContext/onProductContext";
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Footer from "components/Footers/Footer";
 import { urlFor } from "client";
 import ProductItem from "./ProductItem";
@@ -12,8 +12,10 @@ import moment from "moment";
 const Product = () => {
   // const [products, setProducts] = useStateContextProduct();
 
-  // const product = products.find((p) => p.id === Math.floor(Math.random() * 1000));
-  const navigate = useHistory();
+  // const product = products.find((p) => p.id === Math.floor(Math.random() * 1000)); use
+  //const navigate = useHistory();
+  const navigate = useNavigate();
+
   const {
     BsArrowLeftSquare,
     BsArrowRightSquare,
@@ -138,46 +140,53 @@ const Product = () => {
                         className="w-full md:w-4/12 px-4 mr-auto ml-auto"
                         key={index}
                       >
-                        <Link to={`/productdetails/${_id}`}>
-                          <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500 ease-linear transition-all duration-150">
-                            <img
-                              alt="..."
-                              src={urlFor(image)}
-                              className="w-full align-middle rounded-t-lg"
-                            />
-                            <blockquote className="relative p-8 mb-4">
-                              <svg
-                                preserveAspectRatio="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 583 95"
-                                className="absolute left-0 w-full block h-95-px -top-94-px"
-                              >
-                                <polygon
-                                  points="-30,95 583,95 583,65"
-                                  className="text-lightBlue-500 fill-current"
-                                ></polygon>
-                              </svg>
-                              <div className="flex justify-between sm:flex-row">
-                                <div className="px-4 ">
-                                  <h4 className="text-xl font-bold text-white">
-                                    {title}
-                                  </h4>
-                                  <p className="text-md font-light mt-2 text-white">
-                                    {`$${price}`}
-                                  </p>
-                                </div>
-                                <div className="">
-                                  <h4 className="text-xl font-bold text-white">
-                                    {desc}
-                                  </h4>
-                                  <p className="text-md font-light mt-2 text-white">
-                                    {displayDate}
-                                  </p>
-                                </div>
+                        {/* <Link to={`/productdetails/${_id}`}> */}
+                        <div
+                          className="hover:-mt-4 relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500 ease-linear transition-all duration-150"
+                          onClick={() =>
+                            navigate(`productdetails/${_id}`, {
+                              replace: true,
+                            })
+                          }
+                        >
+                          <img
+                            alt="..."
+                            src={urlFor(image)}
+                            className="w-full align-middle rounded-t-lg"
+                          />
+                          <blockquote className="relative p-8 mb-4">
+                            <svg
+                              preserveAspectRatio="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 583 95"
+                              className="absolute left-0 w-full block h-95-px -top-94-px"
+                            >
+                              <polygon
+                                points="-30,95 583,95 583,65"
+                                className="text-lightBlue-500 fill-current"
+                              ></polygon>
+                            </svg>
+                            <div className="flex justify-between sm:flex-row">
+                              <div className="px-4 ">
+                                <h4 className="text-xl font-bold text-white">
+                                  {title}
+                                </h4>
+                                <p className="text-md font-light mt-2 text-white">
+                                  {`$${price}`}
+                                </p>
                               </div>
-                            </blockquote>
-                          </div>
-                        </Link>
+                              <div className="">
+                                <h4 className="text-xl font-bold text-white">
+                                  {desc}
+                                </h4>
+                                <p className="text-md font-light mt-2 text-white">
+                                  {displayDate}
+                                </p>
+                              </div>
+                            </div>
+                          </blockquote>
+                        </div>
+                        {/* </Link> */}
                       </div>
                     );
                   })}

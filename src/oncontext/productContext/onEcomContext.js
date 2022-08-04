@@ -21,14 +21,14 @@ export const EcomProvider = ({ children }) => {
   // DEFINE STATES
 
   // fetching productDetails
-  const fetchProuctDetails = () => {
+  const fetchProductDetails = () => {
     const query = productDetailQuery(productId);
     if (query) {
       client
         .fetch(`${query}`)
         .then((data) => {
           setProductDetails(data[0]);
-
+          console.log(data);
           setLoading(false);
           if (data[0]) {
             const queryMore = productDetailMoreQuery(data[0]);
@@ -55,7 +55,7 @@ export const EcomProvider = ({ children }) => {
 
   // CALL FUNCTIONS
   useEffect(() => {
-    fetchProuctDetails();
+    fetchProductDetails();
   }, [productId]);
   // CALL FUNCTIONS
 
@@ -63,8 +63,10 @@ export const EcomProvider = ({ children }) => {
   console.log("====================================");
   console.log(products);
   console.log(productDetails);
+  console.log(productId);
   console.log("====================================");
   // LOGS
+
   return (
     <EcomContext.Provider
       value={{
