@@ -168,13 +168,6 @@ const ProductDetails = () => {
                 <h4 className="text-lg font-bold">Description</h4>
                 <p className="mt-4 text-sm leading-relaxed text-blueGray-500">
                   {productDetails ? productDetails?.description : "Description"}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Atque, corrupti? Laboriosam deleniti ad eius. Ipsa distinctio
-                  molestiae, ad aperiam odio natus nesciunt pariatur atque velit
-                  facilis omnis cumque excepturi suscipit quam culpa, ducimus
-                  quidem, rem corporis quaerat iste? Cumque doloremque sapiente
-                  accusamus ullam temporibus error voluptatem necessitatibus
-                  eligendi explicabo velit.
                 </p>
                 <div className="flex flex-wrap">
                   <div className="flex">
@@ -218,9 +211,9 @@ const ProductDetails = () => {
                         <h4 className="text-blueGray-500 text-sm">
                           <span className="uppercase text-red-200">
                             {" "}
-                            Date Added :
-                          </span>
-                          {"  "}
+                            Date Added
+                          </span>{" "}
+                          :{"  "}
                           {productDetails
                             ? moment(productDetails?.publishedAt)
                                 .utc()
@@ -238,7 +231,8 @@ const ProductDetails = () => {
                         </span>
                       </div>
                       <div>
-                        <h4 className="text-blueGray-500">
+                        <h4 className="text-blueGray-500 text-sm">
+                          WHEN TO BUY :{" "}
                           {productDetails
                             ? productDetails?.saleTime
                             : "Always Available"}
@@ -254,8 +248,10 @@ const ProductDetails = () => {
                         </span>
                       </div>
                       <div>
-                        <h4 className="text-blueGray-500">
-                          Dynamic components
+                        <h4 className="text-blueGray-500 text-sm">
+                          {ProductDetails?.discount
+                            ? ProductDetails?.discount
+                            : "No discount for now"}
                         </h4>
                       </div>
                     </div>
@@ -276,7 +272,7 @@ const ProductDetails = () => {
                       <li key={index}>
                         <a
                           href="#pablo"
-                          className="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-lightBlue-500 bg-white text-lightBlue-500 uppercase"
+                          className="first:ml-0 text-xs font-bold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-lightBlue-500 bg-white text-lightBlue-500 uppercase"
                         >
                           {item}
                         </a>
@@ -287,7 +283,7 @@ const ProductDetails = () => {
                       <li key={index}>
                         <a
                           href="#pablo"
-                          className="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-lightBlue-500 bg-white text-lightBlue-900 uppercase"
+                          className="first:ml-0 text-xs flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid font-bold border-lightBlue-500 bg-white text-lightBlue-900 uppercase"
                         >
                           {item}
                         </a>
