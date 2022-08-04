@@ -141,24 +141,32 @@ const ProductDetails = () => {
                 //src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
                 src={
                   productDetails
-                    ? productDetails?.image &&
-                      urlFor(productDetails?.image).url()
+                    ? productDetails?.productImage &&
+                      urlFor(
+                        productDetails?.productImage &&
+                          productDetails?.productImage[index]
+                      ).url()
                     : "https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
                 }
                 // src={urlFor(headImageUrl)}
               />
 
               <div className="flex flex-row gap-4 mt-4 ml-4 px-4">
-                <img
-                  //src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-                  src={""}
-                  alt=""
-                  className="rounded-lg bg-red-500 w-16 h-16 cursor-pointer mr-4"
-                />
+                {productDetails?.productImage &&
+                  productDetails?.productImage?.map((image, index) => (
+                    <img
+                      //src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                      src={urlFor(image)}
+                      alt=""
+                      key={index}
+                      className="rounded-lg bg-red-500 w-16 h-16 cursor-pointer mr-4"
+                      onMouseEnter={() => setIndex(index)}
+                    />
+                  ))}
                 <img
                   src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
                   alt=""
-                  className="rounded-lg bg-blueGray-400 w-16 h-16 cursor-pointer"
+                  className="rounded-lg bg-red-500 w-16 h-16 cursor-pointer mr-4"
                 />
               </div>
             </div>
