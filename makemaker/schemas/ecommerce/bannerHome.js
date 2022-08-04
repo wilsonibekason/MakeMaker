@@ -19,10 +19,10 @@ export default {
       type: "array",
       of: [
         {
-          type: "array",
+          type: "image",
           name: "imageItem",
           description: "The maxlength of the image should be three",
-          options: {hotspot: true}
+          options: { hotspot: true },
         },
       ],
     },
