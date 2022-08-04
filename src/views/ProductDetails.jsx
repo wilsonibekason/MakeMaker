@@ -1,10 +1,14 @@
 //import for thirdparty dependencies
 
+import { client } from "../client";
 import Footer from "components/Footers/Footer";
 import Navbar from "components/Navbars/AdminNavbar";
 import Sidebar from "components/Sidebar/Sidebar";
 import { useParams } from "react-router-dom";
 import { useStateContextEcom } from "../oncontext/productContext/onEcomContext";
+import { productDetailQuery } from "utils/data";
+import { productDetailMoreQuery } from "utils/data";
+import { useEffect, useState } from "react";
 
 const {
   useStateContextProduct,
@@ -14,21 +18,70 @@ const {
 
 const ProductDetails = () => {
   const { pinId } = useParams();
+  let id = useParams();
+  let productId = id?.id;
 
   const { AiFillStar } = useStateContextProduct();
-  const {
-    renderMoreProductsItems1,
-    renderMoreProductsItems2,
-    productDetails,
-    products,
-  } = useStateContextEcom();
+  const { renderMoreProductsItems1, renderMoreProductsItems2 } =
+    useStateContextEcom();
   // main items
   const items = renderMoreProductsItems1?.concat(renderMoreProductsItems2);
+  ///////////////
+  // DEFINE STATES
+  const [products, setProducts] = useState();
+  const [loading, setLoading] = useState(true);
+  const [productDetails, setProductDetails] = useState();
+  const [productDetailsMore, setProductDetailsMore] = useState();
+
+  const [error, setError] = useState(null);
+
+  // DEFINE STATES
+
+  // fetching productDetails
+  const fetchProductDetails = () => {
+    const query = productDetailQuery(productId);
+    if (query) {
+      client
+        .fetch(`${query}`)
+        .then((data) => {
+          setProductDetails(data[0]);
+          console.log(data);
+          setLoading(false);
+          if (data[0]) {
+            const queryMore = productDetailMoreQuery(data[0]);
+            client
+              .fetch(queryMore)
+              .then((data) => {
+                setProducts(data);
+              })
+              .catch((error) => {
+                console.log("====================================");
+                console.log(error);
+                console.log("====================================");
+                setError(error?.response?.message);
+              });
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          setLoading(false);
+          setError(error?.response?.message);
+        });
+    }
+  };
+
+  // CALL FUNCTIONS
+  useEffect(() => {
+    fetchProductDetails();
+  }, [productId]);
+  // CALL FUNCTIONS
+  // LOGS
   console.log("====================================");
-  console.log(products);
+  console.log(productId);
   console.log(productDetails);
-  console.log(pinId);
+  console.log(products);
   console.log("====================================");
+  // LOGS
   return (
     <>
       <Navbar Transparent />

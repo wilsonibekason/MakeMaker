@@ -2,7 +2,7 @@
 import Navbar from "../components/Navbars/AdminNavbar";
 import { useStateContextProduct } from "../oncontext/productContext/onProductContext";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "components/Footers/Footer";
 import { urlFor } from "client";
 import ProductItem from "./ProductItem";
@@ -140,53 +140,53 @@ const Product = () => {
                         className="w-full md:w-4/12 px-4 mr-auto ml-auto"
                         key={index}
                       >
-                        {/* <Link to={`/productdetails/${_id}`}> */}
-                        <div
-                          className="hover:-mt-4 relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500 ease-linear transition-all duration-150"
-                          onClick={() =>
-                            navigate(`productdetails/${_id}`, {
-                              replace: true,
-                            })
-                          }
-                        >
-                          <img
-                            alt="..."
-                            src={urlFor(image)}
-                            className="w-full align-middle rounded-t-lg"
-                          />
-                          <blockquote className="relative p-8 mb-4">
-                            <svg
-                              preserveAspectRatio="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 583 95"
-                              className="absolute left-0 w-full block h-95-px -top-94-px"
-                            >
-                              <polygon
-                                points="-30,95 583,95 583,65"
-                                className="text-lightBlue-500 fill-current"
-                              ></polygon>
-                            </svg>
-                            <div className="flex justify-between sm:flex-row">
-                              <div className="px-4 ">
-                                <h4 className="text-xl font-bold text-white">
-                                  {title}
-                                </h4>
-                                <p className="text-md font-light mt-2 text-white">
-                                  {`$${price}`}
-                                </p>
+                        <Link to={`/productdetails/${_id}`}>
+                          <div
+                            className="hover:-mt-4 relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500 ease-linear transition-all duration-150"
+                            // onClick={() =>
+                            //   navigate(`productdetails/${_id}`, {
+                            //     replace: true,
+                            //   })
+                            // }
+                          >
+                            <img
+                              alt="..."
+                              src={urlFor(image)}
+                              className="w-full align-middle rounded-t-lg"
+                            />
+                            <blockquote className="relative p-8 mb-4">
+                              <svg
+                                preserveAspectRatio="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 583 95"
+                                className="absolute left-0 w-full block h-95-px -top-94-px"
+                              >
+                                <polygon
+                                  points="-30,95 583,95 583,65"
+                                  className="text-lightBlue-500 fill-current"
+                                ></polygon>
+                              </svg>
+                              <div className="flex justify-between sm:flex-row">
+                                <div className="px-4 ">
+                                  <h4 className="text-xl font-bold text-white">
+                                    {title}
+                                  </h4>
+                                  <p className="text-md font-light mt-2 text-white">
+                                    {`$${price}`}
+                                  </p>
+                                </div>
+                                <div className="">
+                                  <h4 className="text-xl font-bold text-white">
+                                    {desc}
+                                  </h4>
+                                  <p className="text-md font-light mt-2 text-white">
+                                    {displayDate}
+                                  </p>
+                                </div>
                               </div>
-                              <div className="">
-                                <h4 className="text-xl font-bold text-white">
-                                  {desc}
-                                </h4>
-                                <p className="text-md font-light mt-2 text-white">
-                                  {displayDate}
-                                </p>
-                              </div>
-                            </div>
-                          </blockquote>
-                        </div>
-                        {/* </Link> */}
+                            </blockquote>
+                          </div>
+                        </Link>
                       </div>
                     );
                   })}

@@ -1,14 +1,15 @@
 import { client } from "../../client";
 import React, { useState, useEffect, createContext, useContext } from "react";
-import { useParams } from "react-router-dom";
 import { productDetailQuery, productDetailMoreQuery } from "../../utils/data";
+import { useParams } from "react-router-dom";
 
 const EcomContext = createContext({});
 
 export const EcomProvider = ({ children }) => {
   const renderMoreProductsItems1 = ["M", "o", "r", "e"];
   const renderMoreProductsItems2 = ["p", "r", "o", "d", "u", "c", "t", "s"];
-  const { productId } = useParams();
+  let id = useParams();
+  let productId = id?.id;
   // DEFINE STATES
   const [products, setProducts] = useState();
   const [loading, setLoading] = useState(true);
@@ -74,6 +75,7 @@ export const EcomProvider = ({ children }) => {
         renderMoreProductsItems2,
         productDetails,
         products,
+        productId,
       }}
     >
       {children}
