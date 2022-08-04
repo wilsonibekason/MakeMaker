@@ -6,7 +6,12 @@ import React, {
   useReducer,
 } from "react";
 import { BsArrowLeftSquare, BsArrowRightSquare, BsCart3 } from "react-icons/bs";
-import { AiOutlineLeft, AiOutlineShopping, AiFillStar } from "react-icons/ai";
+import {
+  AiOutlineLeft,
+  AiOutlineRight,
+  AiOutlineShopping,
+  AiFillStar,
+} from "react-icons/ai";
 import { format, set } from "date-fns";
 import moment from "moment";
 import { urlFor, client } from "../../client";
@@ -95,6 +100,7 @@ export const ProductProvider = ({ children }) => {
         BsArrowRightSquare,
         BsCart3,
         AiOutlineLeft,
+        AiOutlineRight,
         AiOutlineShopping,
         AiFillStar,
         products,

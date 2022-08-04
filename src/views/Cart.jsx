@@ -1,4 +1,4 @@
-import { useStateContextProduct } from "oncontext/productContext/onProductContext";
+import { useStateContextProduct } from "../oncontext/productContext/onProductContext";
 import { useStateContextEcom } from "../oncontext/productContext/onEcomContext";
 
 import React from "react";
