@@ -12,7 +12,8 @@ const Cart = ({
   closeDropdownPopover,
   btnDropdownRef,
 }) => {
-  const { AiOutlineLeft, AiOutlineShopping } = useStateContextProduct();
+  const { AiOutlineLeft, AiOutlineShopping, AiOutlineRight } =
+    useStateContextProduct();
   const {
     increaseQuantity,
     decreQuantity,
@@ -28,6 +29,9 @@ const Cart = ({
     cartItems,
     setShowCart,
   } = useStateContextEcom();
+  console.log("====================================");
+  console.log(cartItems);
+  console.log("====================================");
   return (
     <>
       <main
@@ -46,12 +50,12 @@ const Cart = ({
                   : openDropdownPopover();
               }}
             >
-              <AiOutlineLeft size={30} />
+              <AiOutlineRight size={30} />
               <span className="ml-2 font-base text-xl sm:text-sm md:text-md">
                 Your Cart
               </span>
               <span className="ml-2 text-gray-600 text-xl sm:text-sm md:text-md">
-                (10)
+                {totalQuantities}
               </span>
             </button>
 

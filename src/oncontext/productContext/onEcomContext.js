@@ -85,13 +85,13 @@ export const EcomProvider = ({ children }) => {
   //-----------------------ADDING LOGIC---------------------//
   const onAdd = (product, quantity) => {
     const checkProductInCart = cartItems.find(
-      (item) => item?.id === product?.id
+      (item) => item?._id === product?._id
     );
     setTotalPrice((previousPrice) => previousPrice + product?.price * quantity);
     setTotalQuantities((previousQuantity) => previousQuantity + quantity);
     if (checkProductInCart) {
       const updatedCartItems = cartItems.map((cartProduct) => {
-        if (cartProduct?.id == product?.id) {
+        if (cartProduct?._id == product?._id) {
           return { ...cartItems, quantity: cartProduct?.quantity + quantity };
         }
       });
@@ -106,8 +106,8 @@ export const EcomProvider = ({ children }) => {
 
   //-----------------------REMVING LOGIC---------------------//
   const onRemove = (product) => {
-    foundProduct = cartItems?.find((item) => item?.id === product?.id);
-    const newCartItem = cartItems?.filter((item) => item?._id != product?._id);
+    foundProduct = cartItems?.find((item) => item?._id === product?._id);
+    const newCartItem = cartItems?.filter((item) => item?._id !== product?._id);
     setTotalPrice(
       (previousPrice) =>
         previousPrice - foundProduct?.price * foundProduct?.quantity
@@ -126,7 +126,7 @@ export const EcomProvider = ({ children }) => {
   const toggleCartItemsQuantities = (id, value) => {
     foundProduct = cartItems?.find((item) => item._id === id);
     itemIndex = cartItems.findIndex((product) => product?._id === id);
-    const newCartItem = cartItems.filter((item) => item?.id != id);
+    const newCartItem = cartItems.filter((item) => item?._id != id);
     if ((value = "increase")) {
       let newCartItems = [
         ...newCartItem,
