@@ -8,17 +8,19 @@ import { Link } from "react-router-dom";
 import { useStateBlogContext } from "../../oncontext/blogContext/OnBlogContext";
 import moment from "moment";
 import { urlFor } from "../../client";
+import { blogDetailQuery } from "utils/data";
 
 const Blog = () => {
   const { nextSlide, prevSlide, current, BiLeftArrow, BiRightArrow } =
     useStateContext();
+
   const {
     animateFilter,
     handleProductFilter,
     activeFilterBtn,
     inActiveFilterBtn,
   } = useStateContextProduct();
-  const { blogAuthor } = useStateBlogContext();
+
   // image carousel slide
   const showImg = "absolute top-0 w-full h-full bg-center bg-cover";
   const hideImg = "absolute top-0 w-full h-full bg-center bg-cover hidden";

@@ -6,7 +6,7 @@ const BlogContext = createContext({});
 
 export const BlogContextProvider = ({ children }) => {
   const [blogAuthor, setBlogAuthor] = useState([]);
-  const [product, setProducts] = useState([]);
+  const [moreBlogs, setMoreBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [BlogDetails, setBlogDetails] = useState([]);
 
@@ -27,7 +27,17 @@ export const BlogContextProvider = ({ children }) => {
   console.log(blogAuthor);
   console.log("====================================");
   return (
-    <BlogContext.Provider value={{ blogAuthor }}>
+    <BlogContext.Provider
+      value={{
+        blogAuthor,
+        moreBlogs,
+        setMoreBlogs,
+        loading,
+        setLoading,
+        BlogDetails,
+        setBlogDetails,
+      }}
+    >
       {children}
     </BlogContext.Provider>
   );
