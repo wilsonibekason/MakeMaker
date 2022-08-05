@@ -6,6 +6,9 @@ const BlogContext = createContext({});
 
 export const BlogContextProvider = ({ children }) => {
   const [blogAuthor, setBlogAuthor] = useState([]);
+  const [product, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [BlogDetails, setBlogDetails] = useState([]);
 
   // fetching blogAuthorQuery
   useEffect(() => {

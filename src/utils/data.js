@@ -15,7 +15,21 @@ export const postBlogQuery = `*[_type == "post"]{
   }`;
 
 export const blogDetailQuery = (blogId) => {
-  const query = `*[_type == ""]`;
+  const query = `*[_type == "post" && _id == '${blogId}']{
+    _id,
+    _createdAt,
+    title,
+    author ->{
+      name,
+      image,
+    } ,
+    'blogComments': *[_type == "blogComments" && post._ref == ^._id && approved == true],
+    description,
+    mainImage,
+    slug,
+    body
+  }`;
+  return query;
 };
 
 // initialising productDetailQuery
