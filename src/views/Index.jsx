@@ -17,7 +17,7 @@ import { client, urlFor } from "../client";
 //import {homeContext } from '../../onContext/onHomeContext';
 
 //import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import Navbar from "components/Navbars/AuthNavbar.js";
+import Navbar from "../components/Navbars/AuthNavbar.js";
 import Footer from "../components/Footers/Footer";
 //import { HomeContext } from "oncontext/OnHomeContext";
 import { useStateContext } from "../oncontext/OnLandingContext";

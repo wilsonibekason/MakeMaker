@@ -1,6 +1,6 @@
 /*eslint-disable*/
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // components
 
@@ -10,6 +10,7 @@ import { useStateContext } from "../../oncontext/OnLandingContext";
 export default function Navbar(props) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   const { navComponents, reachImg } = useStateContext();
+  const navigate = useNavigate();
   return (
     <>
       <nav className="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg">
@@ -53,13 +54,18 @@ export default function Navbar(props) {
             <ul className="flex flex-col lg:flex-row list-none mr-auto">
               {navComponents?.map((navItems, index) => (
                 <li className="flex items-center" key={index + navItems}>
-                  <Link
+                  {/* <Link
                     to={`${navItems}`}
+                 
+                  > */}
+                  <span
                     className="text-white hover:text-blueGray-500 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                    onClick={() => navigate(`${navItems}`, { replace: true })}
                   >
                     {/**far fa-file-alt */}
                     <i className=" text-lg leading-lg mr-2" /> {navItems}
-                  </Link>
+                    {/* </Link> */}
+                  </span>
                 </li>
               ))}
             </ul>
