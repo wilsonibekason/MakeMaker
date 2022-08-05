@@ -15,7 +15,7 @@ export const BlogContextProvider = ({ children }) => {
         setBlogAuthor(data);
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error?.response?.body?.error?.description);
       });
   }, [postBlogQuery]);
 

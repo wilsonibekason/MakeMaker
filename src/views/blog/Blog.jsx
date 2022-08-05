@@ -6,6 +6,8 @@ import Footer from "components/Footers/Footer";
 import { useStateContextProduct } from "../../oncontext/productContext/onProductContext";
 import { Link } from "react-router-dom";
 import { useStateBlogContext } from "../../oncontext/blogContext/OnBlogContext";
+import moment from "moment";
+import { urlFor } from "../../client";
 
 const Blog = () => {
   const { nextSlide, prevSlide, current, BiLeftArrow, BiRightArrow } =
