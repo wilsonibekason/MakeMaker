@@ -44,7 +44,7 @@ const Cart = ({
         className={` ${dropdownPopoverShow ? "block" : "hidden"} bg-gray-100 `}
         ref={popoverDropdownRef}
       >
-        <div className="w-6/12 h-full bg-blueGray-400 fixed right-0 top-0 z-100 ease-linear transition-all duration-150">
+        <div className="w-4/12 h-full bg-blueGray-400 fixed right-0 top-0 z-100 ease-linear transition-all duration-150">
           <div className="w-full h-full bg-white shadow-xl float-right p-3 relative">
             <button
               className="flex center text-sm font-bold gap-2 ml-2 border-none bg-transparent mt-4"
@@ -72,11 +72,11 @@ const Cart = ({
                 <div className="pl-16 ">
                   <AiOutlineShopping size={150} className="" />
                 </div>
-                <h3 className="font-bold text-xl">
+                <h3 className="font-bold text-sm">
                   Your Shopping Cart Is Empty
                 </h3>
                 <Link to={"/"}>
-                  <button className="w-full mx-w-screen-2xl hover:max-w-prose p-2 rounded-full border-none text-md mx-12 uppercase bg-lightBlue-500 hover:bg-lightBlue-200 active:bg-teal-600 cursor-pointer transition-all scale-100 hover:scale-105 mt-12">
+                  <button className="w-full max-w-screen-2xl hover:max-w-prose p-2 rounded-full border-none text-sm mx-12 uppercase bg-lightBlue-500 hover:bg-lightBlue-200 active:bg-teal-600 cursor-pointer transition-all scale-100 hover:scale-105 mt-12">
                     Continue Shopping
                   </button>
                 </Link>
@@ -94,48 +94,55 @@ const Cart = ({
                         <div className="flex justify-between" key={index}>
                           <div className="w-1/3 px-4">
                             <div className="w-full sm:w-4/12 p-4 bg-blueGray-500">
+                              {/**CARTiMAGE */}
                               <img
-                                className="w-20 h-20 rounded-lg bg-lightBlue-400"
-                                //src="https://image.shutterstock.com/image-vector/phone-controls-diy-robot-car-260nw-1624097389.jpg"
+                                className=" max-w-150-px rounded bg-lightBlue-400 shadow-xl"
                                 src={urlFor(cartItem?.image)}
                                 alt="Shopping Cart"
                               />
                             </div>
                           </div>
-
-                          <div className="flex">
-                            <div
-                              className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md  my-4 py-3 "
-                              onClick={() =>
-                                toggleCartItemsQuantities(
-                                  cartItem?._id,
-                                  "increase"
-                                )
-                              }
-                            >
-                              <AiOutlinePlus />
+                          <div className="flex flex-col">
+                            <div className="flex">
+                              <div
+                                className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md  my-4 py-3 text-lg"
+                                onClick={() =>
+                                  toggleCartItemsQuantities(
+                                    cartItem?._id,
+                                    "increase"
+                                  )
+                                }
+                              >
+                                <AiOutlinePlus />
+                              </div>
+                              <div className="w-1/6 bg-gray-500 h-12 px-4 border border-solid font-bold  shadow-md my-4 py-3 text-lg">
+                                <span className="my-4 text-blueGray-600">
+                                  {cartItem?.quantity}
+                                </span>
+                              </div>
+                              <div
+                                className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 text-lg"
+                                onClick={() =>
+                                  toggleCartItemsQuantities(
+                                    cartItem?._id,
+                                    "decrease"
+                                  )
+                                }
+                              >
+                                <AiOutlineMinus />
+                              </div>
                             </div>
-                            <div className="w-1/6 bg-gray-500 h-12 px-4 border border-solid   shadow-md my-4 py-3 ">
-                              {cartItem?.quantity}
-                            </div>
-                            <div
-                              className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 "
-                              onClick={() =>
-                                toggleCartItemsQuantities(
-                                  cartItem?._id,
-                                  "decrease"
-                                )
-                              }
-                            >
-                              <AiOutlineMinus />
+                            <div className="flex">
+                              <h1>{cartItem?.title && cartItem?.title}</h1>
                             </div>
                           </div>
+
                           <div className=" flex flex-col px-4 ml-16">
                             <div className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-1 py-3 rounded-tr-full text-center">
                               {cartItem?.quantity}
                             </div>
                             <div
-                              className="w-1/6 bg-gray-500 h-12 px-4 border border-solid  shadow-xl my-1 py-3 rounded-tr-full"
+                              className="w-1/6 bg-gray-500 h-12 px-4 border border-solid  shadow-xl my-1 py-3 rounded-tr-full text-2xl"
                               onClick={() => onRemove(cartItem)}
                             >
                               <TiDeleteOutline />

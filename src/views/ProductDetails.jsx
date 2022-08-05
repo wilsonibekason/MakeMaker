@@ -160,6 +160,7 @@ const ProductDetails = () => {
                       key={index}
                       className="rounded-lg bg-red-500 w-16 h-16 cursor-pointer mr-4"
                       onMouseEnter={() => setIndex(index)}
+                      onClick={() => setIndex(index)}
                     />
                   ))}
               </div>
