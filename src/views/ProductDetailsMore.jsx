@@ -134,6 +134,8 @@ const ProductDetailsMore = ({ description }) => {
                       bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:shadow-outline w-full pr-10"
                       name="email"
                       value={email}
+                      required
+                      onChange={handleChange}
                     />
                     <span class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1">
                       <i class="fas fa-envelope"></i>
@@ -141,9 +143,11 @@ const ProductDetailsMore = ({ description }) => {
                   </div>
                   {/** userreview */}
                   <div class="relative flex w-full flex-wrap items-stretch mb-3">
-                    <input
+                    <textarea
+                      rows={3}
+                      cols={6}
                       type="text"
-                      placeholder="Your Review"
+                      placeholder="type in your review ..."
                       class="px-2 py-1 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:shadow-outline w-full pr-10"
                       name="review"
                       value={review}

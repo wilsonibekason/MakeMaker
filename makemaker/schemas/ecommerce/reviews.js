@@ -6,25 +6,41 @@ export default {
   icon: GrContact,
   type: "document",
   description: "A collection of reviews from the customers .",
-  usage: "review",
-  options: [
+  fields: [
     {
       name: "name",
       title: "Name",
-      type: "text",
+      type: "string",
       required: true,
+      display: {
+        placeholder: "Enter Name",
+        rules: [
+          {
+            required: true,
+            message: "Please enter a name",
+          },
+        ],
+      },
     },
     {
       name: "email",
       title: "Email",
-      type: "text",
+      type: "email",
       required: true,
+      display: {
+        placeholder: "Enter Email",
+        rules: [
+          {
+            required: true,
+            message: "Please enter a valid email address",
+          },
+        ],
+      },
     },
     {
-      name: "message",
-      title: "Message",
-      required: true,
-      type: "textarea",
+      name: "review",
+      title: "review",
+      type: "string",
     },
   ],
 };

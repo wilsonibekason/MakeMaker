@@ -37,6 +37,7 @@ export const EcomProvider = ({ children }) => {
     review: "",
   });
   const [isReviewCreated, setIsReviewCreated] = useState(false);
+  const [reviewLoaded, setReviewLoaded] = useState(false);
 
   // RVIEWS STATES
 
@@ -221,13 +222,16 @@ export const EcomProvider = ({ children }) => {
       .create(reviewDetails)
       .then(() => {
         console.log("Successfully created review");
-        toast.success("Successfully created review");
         setIsReviewCreated(true);
+        setReviewLoaded(true);
+        setReviewData({ name: "", email: "", review: "" });
+        toast.success("Successfully created review");
       })
       .catch((error) => {
         console.log("Error creating review", error);
         toast.error("Error creating review");
         setIsReviewCreated(false);
+        setReviewLoaded(false);
       });
   };
 
@@ -245,7 +249,7 @@ export const EcomProvider = ({ children }) => {
   };
 
   const handleChange = (event) => {
-    reviewData({ ...reviewData, [event.target.name]: event.target.value });
+    setReviewData({ ...reviewData, [event.target.name]: event.target.value });
   };
   ///  --------------- onchange for reviews contents
   ////////// ***************************************************************************************    REVIEWS MAIN LOGIC ***************************************** ////////////////
@@ -280,6 +284,8 @@ export const EcomProvider = ({ children }) => {
         name,
         email,
         review,
+        isReviewCreated,
+        reviewLoaded,
       }}
     >
       {children}
