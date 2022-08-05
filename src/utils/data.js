@@ -4,6 +4,7 @@ export const postBlogQuery = `*[_type == "post"]{
   _id,
    title,
       slug,
+      publishedAt
       author->{
   name,
   image

@@ -114,49 +114,69 @@ const Blog = () => {
           <div className="justify-center flex flex-wrap">
             <div className="w-full lg:w-12/12 px-4 mt-24 mb-24">
               <div className="flex flex-wrap">
-                <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
-                  <Link to={``}>
-                    <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500 ease-linear transition-all duration-150">
-                      <img
-                        alt="..."
-                        //src={urlFor(image)}
-                        src="https://www.emergingedtech.com/wp/wp-content/uploads/2018/04/blogging.jpg"
-                        className="w-full align-middle rounded-t-lg"
-                      />
-                      <blockquote className="relative p-8 mb-4">
-                        <svg
-                          preserveAspectRatio="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 583 95"
-                          className="absolute left-0 w-full block h-95-px -top-94-px"
-                        >
-                          <polygon
-                            points="-30,95 583,95 583,65"
-                            className="text-lightBlue-500 fill-current"
-                          ></polygon>
-                        </svg>
-                        <div className="flex justify-between sm:flex-row">
-                          <div className="px-4 ">
-                            <h4 className="text-xl font-bold text-white">
-                              djeefe
-                            </h4>
-                            <p className="text-md font-light mt-2 text-white">
-                              eokffokkekofe
-                            </p>
-                          </div>
-                          <div className="">
-                            <h4 className="text-xl font-bold text-white">
-                              efpfpefe
-                            </h4>
-                            <p className="text-md font-light mt-2 text-white">
-                              kepepfkepf
-                            </p>
-                          </div>
+                {blogAuthor?.map((item, INDEX) => {
+                  const {
+                    _id,
+                    title,
+                    author,
+                    description,
+                    publishedAt,
+                    mainImage,
+                    slug,
+                  } = item;
+                  const displayDate = publishedAt
+                    ? moment(publishedAt).utc().format("YYYY-MM-DD")
+                    : "";
+                  const desc =
+                    description === "undefined"
+                      ? `${description?.slice(0, 10)}..`
+                      : "description";
+                  return (
+                    <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
+                      <Link to={``}>
+                        <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500 ease-linear transition-all duration-150">
+                          <img
+                            alt="..."
+                            src={urlFor(mainImage)}
+                            //src="https://www.emergingedtech.com/wp/wp-content/uploads/2018/04/blogging.jpg"
+                            className="w-full align-middle rounded-t-lg"
+                          />
+                          <blockquote className="relative p-8 mb-4">
+                            <svg
+                              preserveAspectRatio="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 583 95"
+                              className="absolute left-0 w-full block h-95-px -top-94-px"
+                            >
+                              <polygon
+                                points="-30,95 583,95 583,65"
+                                className="text-lightBlue-500 fill-current"
+                              ></polygon>
+                            </svg>
+                            <div className="flex justify-between sm:flex-row">
+                              <div className="px-4 ">
+                                <h4 className="text-xl font-bold text-white">
+                                  {title}
+                                </h4>
+                                <p className="text-md font-light mt-2 text-white">
+                                  {desc}
+                                </p>
+                              </div>
+                              <div className="">
+                                <h4 className="text-xl font-bold text-white">
+                                  {author && author?.name}
+                                </h4>
+                                <p className="text-md font-light mt-2 text-white">
+                                  {displayDate}
+                                </p>
+                              </div>
+                            </div>
+                          </blockquote>
                         </div>
-                      </blockquote>
+                      </Link>
                     </div>
-                  </Link>
-                </div>
+                  );
+                })}
 
                 {/** end of product item */}
 
