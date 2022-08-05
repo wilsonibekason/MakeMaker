@@ -223,7 +223,7 @@ export const EcomProvider = ({ children }) => {
       .then(() => {
         console.log("Successfully created review");
         setIsReviewCreated(true);
-        setReviewLoaded(true);
+        setReviewLoaded(false);
         setReviewData({ name: "", email: "", review: "" });
         toast.success("Successfully created review");
       })

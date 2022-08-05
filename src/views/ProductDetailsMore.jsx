@@ -165,7 +165,7 @@ const ProductDetailsMore = ({ description }) => {
                         type="button"
                         onClick={handleReviewSubmit}
                       >
-                        {`${reviewLoaded ? "submitting" : "submit"} `}
+                        {`${!reviewLoaded ? "submit review" : "sending"} `}
                       </button>
                     </div>
                   ) : (
