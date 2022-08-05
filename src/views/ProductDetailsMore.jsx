@@ -150,14 +150,18 @@ const ProductDetailsMore = ({ description }) => {
                     <span class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1">
                       <i class="fas fa-star"></i>
                     </span>
+                  </div>
+                  {/**button */}
+                  <div className="relative flex w-full flex-wrap items-stretch mb-3">
                     <button
-                      className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                      className=" border border-lightBlue-500 text-blueGray-600 active:bg-lightBlue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                       type="button"
                       onClick={handleReviewSubmit}
                     >
-                      Add To Cart
+                      submit
                     </button>
                   </div>
+                  {/**button */}
                 </div>
               </div>
             </div>
