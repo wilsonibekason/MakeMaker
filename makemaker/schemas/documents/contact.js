@@ -7,8 +7,8 @@ export default {
   icon: GrContact,
   fields: [
     {
-      name: "name",
-      title: "Name",
+      name: "fullName",
+      title: "FullName",
       type: "text",
       required: true,
       display: {

@@ -29,7 +29,7 @@ export default function Landing() {
     handleSubmit,
     error,
     isFormSubmitted,
-    name,
+    fullName,
     message,
     handleChangeInput,
     loading,
@@ -459,7 +459,8 @@ export default function Landing() {
                                   placeholder="Enter yout full Name"
                                   required
                                   name="name"
-                                  value={name}
+                                  value={fullName}
+                                  onChange={handleChange}
                                 />
                               </div>
 
@@ -493,7 +494,7 @@ export default function Landing() {
                                   cols="80"
                                   className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                                   placeholder="Type in your  message..."
-                                  onChange={handleMessageInput}
+                                  onChange={handleChange}
                                   required
                                   name="message"
                                   value={message}

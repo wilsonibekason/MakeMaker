@@ -10,14 +10,14 @@ export const ContactProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [contactCard, setContactCard] = useState([]);
   const [formData, setFormData] = useState({
-    name: "",
+    fullName: "",
     email: "",
     message: "",
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [contactMore, setContactMore] = useState();
   // destruturing  formData variables
-  const { name, email, message } = formData;
+  const { fullName, email, message } = formData;
   // handleChangeInput
   const handleChangeInput = () => {
     const name = name.trim();
@@ -42,8 +42,8 @@ export const ContactProvider = ({ children }) => {
     setLoading(true);
 
     const contacted = {
-      _type: "contact",
-      name,
+      _type: "contacts",
+      fullName,
       email,
       message,
     };
@@ -85,14 +85,13 @@ export const ContactProvider = ({ children }) => {
         handleSubmit,
         error,
         isFormSubmitted,
-        name,
         message,
         handleChangeInput,
         handleMessageInput,
         handleChange,
         loading,
         contactMore,
-        name,
+        fullName,
         email,
       }}
     >
