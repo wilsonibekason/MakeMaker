@@ -243,6 +243,10 @@ export const EcomProvider = ({ children }) => {
       [name]: { ...reviewData[name], review },
     });
   };
+
+  const handleChange = (event) => {
+    reviewData({ ...reviewData, [event.target.name]: event.target.value });
+  };
   ///  --------------- onchange for reviews contents
   ////////// ***************************************************************************************    REVIEWS MAIN LOGIC ***************************************** ////////////////
 
@@ -272,6 +276,7 @@ export const EcomProvider = ({ children }) => {
         cartItems,
         handleReviewSubmit,
         handleReviewChange,
+        handleChange,
         name,
         email,
         review,
