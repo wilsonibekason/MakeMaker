@@ -31,6 +31,7 @@ import { ProductProvider } from "./oncontext/productContext/onProductContext";
 import Product from "./views/Products";
 import ProductDetails from "./views/ProductDetails";
 import { EcomProvider } from "./oncontext/productContext/onEcomContext";
+import { BlogDetails, Blog } from "./views/blog";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -52,6 +53,7 @@ ReactDOM.render(
                   path="/productdetails/:id"
                   element={<ProductDetails />}
                 />
+                <Route path="/blogs" element={<Blog />} />
                 <Route path="/" exact element={<Index />} />
                 {/* add redirect for first page */}
                 <Route path="/" element={<Navigate replace to="/" />} />
