@@ -13,7 +13,7 @@ export const postBlogQuery = `*[_type == "post"]{
   mainImage,
   slug
   }`;
-
+/// fetching each blog query
 export const blogDetailQuery = (blogId) => {
   const query = `*[_type == "post" && _id == '${blogId}']{
     _id,
@@ -28,6 +28,27 @@ export const blogDetailQuery = (blogId) => {
     mainImage,
     slug,
     body
+  }`;
+  return query;
+};
+
+/// fetching category based blogs for our blogs
+export const blogDetailMoreQuery = (product) => {
+  const query = `*[_type == "post" && category == '${product?.category}' && _id != '${product?._id}']{
+    mainImage{
+      asset->{
+        url
+      }
+    },
+    _id,
+    title,
+    slug,
+    description,
+    publishedAt,
+    author->{
+      name,
+      image
+    }
   }`;
   return query;
 };
