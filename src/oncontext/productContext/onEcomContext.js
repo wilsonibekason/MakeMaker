@@ -2,7 +2,7 @@ import { client } from "../../client";
 import React, { useState, useEffect, createContext, useContext } from "react";
 import { productDetailQuery, productDetailMoreQuery } from "../../utils/data";
 import { useParams } from "react-router-dom";
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 const EcomContext = createContext({});
 

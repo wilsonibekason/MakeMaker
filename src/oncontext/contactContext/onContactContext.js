@@ -1,5 +1,6 @@
 import React, { useState, useContext, createContext, useEffect } from "react";
 import { urlFor, client } from "../../client";
+import toast from "react-hot-toast";
 
 const ContactContext = createContext({});
 export const ContactProvider = ({ children }) => {
