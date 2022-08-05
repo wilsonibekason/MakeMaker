@@ -3,8 +3,9 @@ import React from "react";
 import BlogNavbar from "../../components/Navbars/BlogNavbar";
 import { useStateContext } from "../../oncontext/OnLandingContext";
 import Footer from "components/Footers/Footer";
-import { useStateContextProduct } from "oncontext/productContext/onProductContext";
+import { useStateContextProduct } from "../../oncontext/productContext/onProductContext";
 import { Link } from "react-router-dom";
+import { useStateBlogContext } from "../../oncontext/blogContext/OnBlogContext";
 
 const Blog = () => {
   const { nextSlide, prevSlide, current, BiLeftArrow, BiRightArrow } =
@@ -15,9 +16,13 @@ const Blog = () => {
     activeFilterBtn,
     inActiveFilterBtn,
   } = useStateContextProduct();
+  const { blogAuthor } = useStateBlogContext();
   // image carousel slide
   const showImg = "absolute top-0 w-full h-full bg-center bg-cover";
   const hideImg = "absolute top-0 w-full h-full bg-center bg-cover hidden";
+  console.log("====================================");
+  console.log(blogAuthor);
+  console.log("====================================");
   return (
     <>
       <Navbar transparent />
@@ -48,6 +53,14 @@ const Blog = () => {
                   Aspernatur fugit rerum nemo expedita omnis eligendi tenetur
                   cum commodi porro ea?
                 </p>
+                <BiLeftArrow
+                  className="absolute left-0 text-3xl inset-y-1/2 text-white cursor-pointer"
+                  onClick={prevSlide}
+                />
+                <BiRightArrow
+                  className="absolute right-0 text-3xl inset-y-1/2 text-white cursor-pointer"
+                  onClick={nextSlide}
+                />
               </div>
             </div>
           </div>
