@@ -19,7 +19,7 @@ export const HomeContext = ({ children }) => {
   const [reachOut, setReachOut] = useState([]);
   const [socialContent, setSocialContents] = useState([]);
   const [projectSection, setProjectSection] = useState([]);
-  const navComponents = ["AboutUs", "Products", "Services", "ContactUs"];
+  const navComponents = ["AboutUs", "Products", "Blogs", "ContactUs"];
   // usestate for slider
   const [current, setCurrent] = useState(0);
 

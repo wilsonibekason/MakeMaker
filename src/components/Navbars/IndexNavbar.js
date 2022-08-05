@@ -1,6 +1,6 @@
 /*eslint-disable*/
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 // components
 
@@ -8,6 +8,7 @@ import IndexDropdown from "components/Dropdowns/IndexDropdown.js";
 import { useStateContext } from "../../oncontext/OnLandingContext";
 
 export default function Navbar(props) {
+  const navigate = useNavigate();
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   const { navComponents, reachImg, Navcomponents } = useStateContext();
   return (
@@ -45,14 +46,18 @@ export default function Navbar(props) {
           >
             <ul className="flex flex-col lg:flex-row list-none mr-auto">
               {navComponents?.map((navItems, index) => (
-                <li className="flex items-center" key={index + navItems}>
-                  <Link to={`${navItems}`}>
-                    <a className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
-                      {/**far fa-file-alt */}
-                      <i className="text-blueGray-400  text-lg leading-lg mr-2" />{" "}
-                      {navItems}
-                    </a>
-                  </Link>
+                <li
+                  className="flex items-center"
+                  key={index + navItems}
+                  onClick={() => navigate(`${navItems}`, { replace: true })}
+                >
+                  {/* <Link to={`${navItems}`}> */}
+                  <a className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
+                    {/**far fa-file-alt */}
+                    <i className="text-blueGray-400  text-lg leading-lg mr-2" />{" "}
+                    {navItems}
+                  </a>
+                  {/* </Link> */}
                 </li>
               ))}
             </ul>
