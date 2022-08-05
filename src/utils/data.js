@@ -1,3 +1,18 @@
+// initialising postBlogQuery
+
+export const postBlogQuery = `*[_type == "post"]{
+  _id,
+   title,
+      slug,
+      author->{
+  name,
+  image
+    },
+  description,
+  mainImage,
+  slug
+  }`;
+
 // initialising productDetailQuery
 export const productDetailQuery = (productId) => {
   const query = `*[_type == "banner" && _id == '${productId}']{
