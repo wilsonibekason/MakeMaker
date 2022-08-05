@@ -14,6 +14,10 @@ export const postBlogQuery = `*[_type == "post"]{
   slug
   }`;
 
+export const blogDetailQuery = (blogId) => {
+  const query = `*[_type == ""]`;
+};
+
 // initialising productDetailQuery
 export const productDetailQuery = (productId) => {
   const query = `*[_type == "banner" && _id == '${productId}']{
