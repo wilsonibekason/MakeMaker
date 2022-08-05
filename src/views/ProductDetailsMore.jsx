@@ -10,6 +10,8 @@ const ProductDetailsMore = ({ description }) => {
     name,
     email,
     review,
+    isReviewCreated,
+    reviewLoaded,
   } = useStateContextEcom();
 
   return (
@@ -126,7 +128,7 @@ const ProductDetailsMore = ({ description }) => {
                   {/** useremail */}
                   <div class="relative flex w-full flex-wrap items-stretch mb-3">
                     <input
-                      type="text"
+                      type="email"
                       placeholder="Email Address"
                       class="px-2 py-1 placeholder-blueGray-300 text-blueGray-600
                       bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:shadow-outline w-full pr-10"
@@ -152,15 +154,24 @@ const ProductDetailsMore = ({ description }) => {
                     </span>
                   </div>
                   {/**button */}
-                  <div className="relative flex w-full flex-wrap items-stretch mb-3">
-                    <button
-                      className=" border border-lightBlue-500 text-blueGray-600 active:bg-lightBlue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                      type="button"
-                      onClick={handleReviewSubmit}
-                    >
-                      submit
-                    </button>
-                  </div>
+                  {!isReviewCreated ? (
+                    <div className="relative flex w-full flex-wrap items-stretch mb-3">
+                      <button
+                        className=" border border-lightBlue-500 text-blueGray-600 active:bg-lightBlue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        type="button"
+                        onClick={handleReviewSubmit}
+                      >
+                        {`${reviewLoaded ? "submitting" : "submit"} `}
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="relative flex w-full flex-wrap items-stretch mb-3">
+                      <p className="text-md text-blueGray-600 font-bold">
+                        Thanks for your review
+                      </p>
+                    </div>
+                  )}
+
                   {/**button */}
                 </div>
               </div>
