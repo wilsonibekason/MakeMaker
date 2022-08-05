@@ -211,6 +211,7 @@ export const EcomProvider = ({ children }) => {
   ////////// ***************************************************************************************    REVIEWS MAIN LOGIC ***************************************** ////////////////
   const handleReviewSubmit = (e) => {
     e.preventDefault();
+    setReviewLoaded(true);
     const reviewDetails = {
       _type: "reviews",
       name,

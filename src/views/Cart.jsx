@@ -44,7 +44,7 @@ const Cart = ({
         className={` ${dropdownPopoverShow ? "block" : "hidden"} bg-gray-100 `}
         ref={popoverDropdownRef}
       >
-        <div className="w-4/12 h-full bg-blueGray-400 fixed right-0 top-0 z-100 ease-linear transition-all duration-150">
+        <div className="w-4/12 h-full bg-blueGray-400 fixed right-0 top-0 z-100 ease-linear transition-all duration-150 ">
           <div className="w-full h-full bg-white shadow-xl float-right p-3 relative">
             <button
               className="flex center text-sm font-bold gap-2 ml-2 border-none bg-transparent mt-4"
@@ -75,7 +75,7 @@ const Cart = ({
                 <h3 className="font-bold text-sm">
                   Your Shopping Cart Is Empty
                 </h3>
-                <Link to={"/"}>
+                <Link to={"/products"}>
                   <button className="w-full max-w-screen-2xl hover:max-w-prose p-2 rounded-full border-none text-sm mx-12 uppercase bg-lightBlue-500 hover:bg-lightBlue-200 active:bg-teal-600 cursor-pointer transition-all scale-100 hover:scale-105 mt-12">
                     Continue Shopping
                   </button>
@@ -96,7 +96,7 @@ const Cart = ({
                             <div className="w-full sm:w-4/12 p-4 bg-blueGray-500">
                               {/**CARTiMAGE */}
                               <img
-                                className=" max-w-150-px rounded bg-lightBlue-400 shadow-xl"
+                                className=" max-w-100-px rounded-lg bg-lightBlue-400 shadow-xl"
                                 src={urlFor(cartItem?.image)}
                                 alt="Shopping Cart"
                               />
@@ -132,8 +132,10 @@ const Cart = ({
                                 <AiOutlineMinus />
                               </div>
                             </div>
-                            <div className="flex">
-                              <h1>{cartItem?.title && cartItem?.title}</h1>
+                            <div className="flex mx-auto">
+                              <h1 className="text-blueGray-400 font-semibold uppercase">
+                                {cartItem?.title && cartItem?.title}
+                              </h1>
                             </div>
                           </div>
 
