@@ -55,7 +55,7 @@ ReactDOM.render(
                     path="/productdetails/:id"
                     element={<ProductDetails />}
                   />
-                  <Route path="/blogs" element={<Blog />} />
+                  <Route path="/Blogs" element={<Blog />} />
                   <Route path="/" exact element={<Index />} />
                   {/* add redirect for first page */}
                   <Route path="/" element={<Navigate replace to="/" />} />
