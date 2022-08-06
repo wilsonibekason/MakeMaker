@@ -7,10 +7,22 @@ const Blog = () => {
   return (
     <>
       <Layout>
-        <FeaturedPosts />
-        <PostCard />
-        <PostWidget />
-        <Categories />
+        <div className="container mx-auto px-10 mb-8">
+          <FeaturedPosts />
+          <div className="flex flex-wrap">
+            <div className="w-full px-4 flex-1 bg-blueGray-200">
+              <PostCard />
+            </div>
+            <div className="w-8/12 px-4 bg-blueGray-300">
+              <PostWidget />
+              <Categories />
+            </div>
+            <div className="w-full px-4 flex-1 bg-blueGray-400">
+              {" "}
+              cdcdudhuivdiuvfiuvher
+            </div>
+          </div>
+        </div>
       </Layout>
     </>
   );
