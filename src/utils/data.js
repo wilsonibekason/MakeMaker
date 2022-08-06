@@ -13,6 +13,23 @@ export const postBlogQuery = `*[_type == "post"]{
   mainImage,
   slug
   }`;
+/// quering to get featuredBlog post
+export const getFeaturedPosts = () => {
+  const query = `*[_type == "post"]{
+      _id,
+       title,
+          slug,
+          publishedAt,
+          author->{
+      name,
+      image
+        },
+      description,
+      mainImage,
+      slug
+      }`;
+  return query;
+};
 /// fetching each blog query
 export const blogDetailQuery = (blogId) => {
   const query = `*[_type == "post" && _id == '${blogId}']{
