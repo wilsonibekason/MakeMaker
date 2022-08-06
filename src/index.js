@@ -56,7 +56,7 @@ ReactDOM.render(
                     path="/productdetails/:id"
                     element={<ProductDetails />}
                   />
-                  <Route path="/Blogs" element={<Blog />} />
+                  {/* <Route path="/Blogs" element={<Blog />} /> */}
                   <Route path="/blogpost/:id" element={<BlogDetails />} />
                   <Route path="/" exact element={<Index />} />
                   {/* add redirect for first page */}
