@@ -87,26 +87,7 @@ const ProductDetails = () => {
   useEffect(() => {
     fetchProductDetails();
   }, [productId]);
-  // CALL FUNCTIONS
-  // LOGS
-  console.log("====================================");
-  console.log(productId);
-  console.log(productDetails);
-  console.log(products);
-  console.log("====================================");
-  // LOGS
-  ///DESTRUCTURINGS
-  // const {
-  //   title,
-  //   description,
-  //   publishedAt,
-  //   discount,
-  //   price,
-  //   product,
-  //   tags,
-  //   saleTime,
-  // } = productDetails;
-  ///DESTRUCTURINGS
+
   return (
     <>
       <Navbar Transparent />

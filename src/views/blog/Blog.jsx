@@ -15,6 +15,16 @@ const Blog = () => {
     useStateContext();
 
   const {
+    blogAuthor,
+    moreBlogs,
+    setMoreBlogs,
+    loading,
+    setLoading,
+    BlogDetails,
+    setBlogDetails,
+  } = useStateBlogContext();
+
+  const {
     animateFilter,
     handleProductFilter,
     activeFilterBtn,

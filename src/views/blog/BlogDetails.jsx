@@ -15,6 +15,7 @@ const BlogDetails = () => {
     BlogDetails,
     setBlogDetails,
   } = useStateBlogContext();
+  ///// set global variables
   let blogid;
   let query;
   let queryMore;
