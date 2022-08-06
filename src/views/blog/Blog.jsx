@@ -106,6 +106,7 @@ const Blog = () => {
         <div className="w-full md:w-4/12 px-6 md:px-4 ml-auto mr-auto mt-6">
           <h3 className="text-2xl  text-blueGray-900 font-semibold mb-1 leading-normal align-center uppercase">
             Filter Blog Posts
+            {/* <FeaturedPosts /> */}
           </h3>
           <div className="block pb-6">
             {["All", "STEM", "CAD", "Electronics"]?.map((item, index) => (
@@ -125,13 +126,13 @@ const Blog = () => {
       {/** CATEGORIES SECTION */}
       {/**FEATUREDPOST SECTION */}
 
-      <FeaturedPosts />
+      {/* <FeaturedPosts /> */}
       {/**FEATUREDPOST SECTION */}
       {/**BLOGS SECTION */}
       {/** add products for makeMaker */}
       <section className="block relative z-1 bg-blueGray-600 ">
         <div className="container mx-auto">
-          <div className="justify-center flex flex-wrap">
+          <div className="justify-center flex flex-wrap md:flex-col">
             <div className="w-full lg:w-12/12 px-4 mt-24 mb-24">
               <div className="flex flex-wrap">
                 {blogAuthor?.map((item, INDEX) => {
@@ -173,20 +174,20 @@ const Blog = () => {
                                 className="text-lightBlue-500 fill-current"
                               ></polygon>
                             </svg>
-                            <div className="flex justify-between sm:flex-row">
+                            <div className="flex justify-between sm:flex-row lg:flex md:flex-row mx:mx-auto mx-auto">
                               <div className="px-4 ">
-                                <h4 className="text-xl font-bold text-white">
+                                <h4 className="text-sm font-bold text-white">
                                   {title}
                                 </h4>
-                                <p className="text-md font-light mt-2 text-white">
+                                <p className="text-sm font-light mt-2 text-white">
                                   {desc}
                                 </p>
                               </div>
-                              <div className="">
-                                <h4 className="text-xl font-bold text-white">
+                              <div className="mx-0 md:mx-auto ">
+                                <h4 className="text-sm font-bold text-white">
                                   {author && author?.name}
                                 </h4>
-                                <p className="text-md font-light mt-2 text-white">
+                                <p className="text-sm font-light mt-2 text-white">
                                   {displayDate}
                                 </p>
                               </div>
