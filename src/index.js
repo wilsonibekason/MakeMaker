@@ -33,6 +33,7 @@ import ProductDetails from "./views/ProductDetails";
 import { EcomProvider } from "./oncontext/productContext/onEcomContext";
 import { BlogDetails, Blog } from "./views/blog";
 import { BlogContextProvider } from "./oncontext/blogContext/OnBlogContext";
+import { Layout } from "./views/blogs";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -42,25 +43,27 @@ ReactDOM.render(
           <ProductProvider>
             <EcomProvider>
               <BlogContextProvider>
-                <Routes>
-                  {/* add routes with layouts */}
-                  <Route path="/admin" element={<Admin />} />
-                  <Route path="/auth" element={<Auth />} />
-                  {/* add routes without layouts */}
-                  <Route path="/ABOUTUS" exact element={<Landing />} />
-                  <Route path="/profile" exact element={<Profile />} />
-                  <Route path="/products" element={<Product />} />
+                <Layout>
+                  <Routes>
+                    {/* add routes with layouts */}
+                    <Route path="/admin" element={<Admin />} />
+                    <Route path="/auth" element={<Auth />} />
+                    {/* add routes without layouts */}
+                    <Route path="/ABOUTUS" exact element={<Landing />} />
+                    <Route path="/profile" exact element={<Profile />} />
+                    <Route path="/products" element={<Product />} />
 
-                  <Route
-                    path="/productdetails/:id"
-                    element={<ProductDetails />}
-                  />
-                  <Route path="/Blogs" element={<Blog />} />
-                  <Route path="/blogpost/:id" element={<BlogDetails />} />
-                  <Route path="/" exact element={<Index />} />
-                  {/* add redirect for first page */}
-                  <Route path="/" element={<Navigate replace to="/" />} />
-                </Routes>
+                    <Route
+                      path="/productdetails/:id"
+                      element={<ProductDetails />}
+                    />
+                    <Route path="/Blogs" element={<Blog />} />
+                    <Route path="/blogpost/:id" element={<BlogDetails />} />
+                    <Route path="/" exact element={<Index />} />
+                    {/* add redirect for first page */}
+                    <Route path="/" element={<Navigate replace to="/" />} />
+                  </Routes>
+                </Layout>
               </BlogContextProvider>
             </EcomProvider>
           </ProductProvider>
