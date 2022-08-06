@@ -9,6 +9,7 @@ import { useStateBlogContext } from "../../oncontext/blogContext/OnBlogContext";
 import moment from "moment";
 import { urlFor } from "../../client";
 import { blogDetailQuery } from "utils/data";
+import FeaturedPosts from "./FeaturedPosts";
 
 const Blog = () => {
   const { nextSlide, prevSlide, current, BiLeftArrow, BiRightArrow } =
@@ -99,6 +100,7 @@ const Blog = () => {
           </svg>
         </div>
       </div>
+
       {/** CATEGORIES SECTION */}
       <div className="flex flex-col items-center justify-center mb-4">
         <div className="w-full md:w-4/12 px-6 md:px-4 ml-auto mr-auto mt-6">
@@ -121,6 +123,10 @@ const Blog = () => {
         </div>
       </div>
       {/** CATEGORIES SECTION */}
+      {/**FEATUREDPOST SECTION */}
+
+      <FeaturedPosts />
+      {/**FEATUREDPOST SECTION */}
       {/**BLOGS SECTION */}
       {/** add products for makeMaker */}
       <section className="block relative z-1 bg-blueGray-600 ">
