@@ -136,6 +136,96 @@ const BlogDetails = () => {
           <div className="  w-full md:w-4/12 lg:w-4/12 px-4 mx-4 md:px-4 mt-32">
             <div className="border border-blueGray-400 border-solid p-4 my-4">
               {" "}
+              <div className="mb-4">
+                <p className="text-sm text-gray-600 dark:text-white dark:hover:text-white dark:bg-blueGray-200 dark:text-white dark:hover uppercase text-center font-semibold ">
+                  newsletter
+                </p>
+                <div className="border-t bg-blueGray-300 mt-2"></div>
+                {/**email input for newletters */}
+                <div class="relative flex w-full flex-wrap items-stretch mb-3 mt-4">
+                  <input
+                    type="email"
+                    placeholder="Send us your email to receive daily newsletters"
+                    class="px-2 py-1 placeholder-blueGray-300 text-blueGray-600
+                      bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:shadow-outline w-full pr-10"
+                    name="email"
+                    // value={email}
+                    required
+                    // onChange={handleChange}?
+                  />
+                  <span class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </div>
+              </div>
+              {/**Recent post section */}
+              <div className="mb-4 ">
+                <div className="border-t bg-blueGray-300 mt-2"></div>
+                <div className="border border-solid shadow-md ">
+                  <p className="text-sm text-gray-600 dark:text-white dark:hover:text-white dark:bg-blueGray-200 dark:text-white dark:hover uppercase text-center font-semibold mt-2">
+                    recent post
+                  </p>
+                  {/**Recent post section */}
+
+                  <div className="border-t bg-blueGray-300 mt-2"></div>
+                  <div className="flex flex-col  items-center mx-auto">
+                    <h4 className="text-md uppercase font-semibold  text-lightBlue-400  ">
+                      web development
+                    </h4>
+                    <p className="text-sm text-lightBlue-400 font-semibold">
+                      {" "}
+                      Bringing science to reality is very important
+                    </p>
+                    <div className="border-t bg-lightBlue-300 mt-2"></div>
+                    <div className="flex mr-4  mb-2">
+                      <div className="w-1/6 h-4 px-2  font-semibold">
+                        <p className="text-sm ">20/3/2004 </p>
+                      </div>
+                      <div className="border-t bg-lightBlue-300 mt-2"></div>
+                      <div className="w-1/6 h-4 px-2 font-semibold">
+                        <p className="text-sm">3mins read</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/**Recent post section */}
+                </div>
+              </div>
+              {/**Recent post section */}
+              {/**tags and categories section */}
+              <div className="mb-4 ">
+                <div className="border-t bg-blueGray-300 mt-2"></div>
+                <div className="border border-solid shadow-md ">
+                  <p className="text-sm text-gray-600 dark:text-white dark:hover:text-white dark:bg-blueGray-200 dark:text-white dark:hover uppercase text-center font-semibold mt-2">
+                    recent post
+                  </p>
+                  {/**Recent post section */}
+
+                  <div className="border-t bg-blueGray-300 mt-2"></div>
+                  <div className="flex flex-col  items-center mx-auto">
+                    <h4 className="text-md uppercase font-semibold  text-lightBlue-400  ">
+                      web development
+                    </h4>
+                    <p className="text-sm text-lightBlue-400 font-semibold">
+                      {" "}
+                      Bringing science to reality is very important
+                    </p>
+                    <div className="border-t bg-lightBlue-300 mt-2"></div>
+                    <div className="flex mr-4  mb-2">
+                      <div className="w-1/6 h-4 px-2  font-semibold">
+                        <p className="text-sm ">20/3/2004 </p>
+                      </div>
+                      <div className="border-t bg-lightBlue-300 mt-2"></div>
+                      <div className="w-1/6 h-4 px-2 font-semibold">
+                        <p className="text-sm">3mins read</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/**Recent post section */}
+                </div>
+              </div>
+              {/**tags and categories section */}
               w-full md:w-6/12 px-4w-full md:w-6/12 px-4w-full md:w-6/12
               px-4w-full md:w-6/12 px-4w-full md:w-6/12 px-4w-full md:w-6/12
               px-4w-full md:w-6/12 px-4w-full md:w-6/12 px-4w-full md:w-6/12
