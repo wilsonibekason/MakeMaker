@@ -113,7 +113,7 @@ const BlogDetails = () => {
       </div>
       {/** BLOGDETAILS COMPONENT */}
       <div className="container mx-auto my-4 bg-blueGray-200">
-        <div className="flex justify-between items-center md:flex-col sm:flex-row">
+        <div className="flex justify-between items-center flex-col  lg:flex-row md:flex-row sm:flex-col">
           {/** BLOG DETAILS COMPONENT */}
           <div className="w-full md:w-6/12 lg:w-10/12 px-2 md:px-4 lg:px-4 mx-auto lg:mx-2 mt-12">
             <img
@@ -121,9 +121,9 @@ const BlogDetails = () => {
               className="shadow-lg rounded-lg"
             />
 
-            <div className="md:pr-12">
+            <div className="md:pr-12 mx-4">
               <h3 className="text-3xl font-semibold">Lorem ipsum dolor sit.</h3>
-              <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
+              <p className="mt-4 text-xs leading-relaxed text-blueGray-500">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
                 debitis animi impedit in id unde ipsum dolores asperiores, quam
                 magnam nam ullam voluptas fuga magni saepe quod nobis quisquam
@@ -178,21 +178,21 @@ const BlogDetails = () => {
 
                   <div className="border-t bg-blueGray-300 mt-2"></div>
                   <div className="flex flex-col  items-center mx-auto">
-                    <h4 className="text-md uppercase font-semibold  text-lightBlue-400  ">
+                    <h4 className="text-sm uppercase font-semibold  text-lightBlue-400  ">
                       web development
                     </h4>
-                    <p className="text-sm text-lightBlue-400 font-semibold">
+                    <p className="text-xs text-lightBlue-400 font-semibold">
                       {" "}
                       Bringing science to reality is very important
                     </p>
                     <div className="border-t bg-lightBlue-300 mt-2"></div>
                     <div className="flex mr-4  mb-2">
                       <div className="w-1/6 h-4 px-2  font-semibold">
-                        <p className="text-sm ">20/3/2004 </p>
+                        <p className="text-xs ">20/3/2004 </p>
                       </div>
                       <div className="border-t bg-lightBlue-300 mt-2"></div>
                       <div className="w-1/6 h-4 px-2 font-semibold">
-                        <p className="text-sm">3mins read</p>
+                        <p className="text-xs">3mins read</p>
                       </div>
                     </div>
                   </div>
