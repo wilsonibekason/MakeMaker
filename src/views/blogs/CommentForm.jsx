@@ -1,4 +1,5 @@
 import React from "react";
+import { Comments } from ".";
 
 const CommentForm = () => {
   return (
@@ -91,9 +92,8 @@ const CommentForm = () => {
                 </div>
               </div>
               {/** comments section with a minimum length of three  */}
-              <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 my-4 mx-auto">
-                rrfrr
-              </div>
+              <Comments />
+
               {/** comments section with a minimum length of three  */}
             </div>
           </div>
