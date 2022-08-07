@@ -60,7 +60,9 @@ const BlogDetails = () => {
   console.log(blogAuthor);
   console.log(BlogDetails);
   console.log(moreBlogs);
+  console.log(blogid);
   console.log("====================================");
+
   const showImg = "absolute top-0 w-full h-full bg-center bg-cover";
   const hideImg = "absolute top-0 w-full h-full bg-center bg-cover hidden";
   return (

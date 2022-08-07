@@ -31,8 +31,8 @@ export const getFeaturedPosts = () => {
   return query;
 };
 /// fetching each blog query
-export const blogDetailQuery = (blogId) => {
-  const query = `*[_type == "post" && _id == '${blogId}']{
+export const blogDetailQuery = (slug) => {
+  const query = `*[_type == "post" && slug.current == '${slug}'][0]{
     _id,
     _createdAt,
     title,
