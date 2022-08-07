@@ -174,7 +174,7 @@ const ProductDetails = () => {
                     </div>
                     <div
                       className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md  my-4 py-3 font-bold"
-                      onClick={inQTY}
+                      onClick={decreQuantity}
                     >
                       -
                     </div>
@@ -183,7 +183,7 @@ const ProductDetails = () => {
                     </div>
                     <div
                       className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 font-bold text-blueGray-500"
-                      onClick={decreQuantity}
+                      onClick={inQTY}
                     >
                       +
                     </div>

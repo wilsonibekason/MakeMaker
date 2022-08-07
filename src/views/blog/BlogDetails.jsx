@@ -87,14 +87,6 @@ const BlogDetails = () => {
               <div className="pr-12">
                 <h1 className="text-white font-bold text-4xl">{"sww"}</h1>
                 <p className="mt-4 text-sm text-blueGray-200">{"swwww"}</p>
-                <BiLeftArrow
-                  className="absolute left-0 text-3xl inset-y-1/2 text-white cursor-pointer"
-                  onClick={"prevSlide"}
-                />
-                <BiRightArrow
-                  className="absolute right-0 text-3xl inset-y-1/2 text-white cursor-pointer"
-                  onClick={"nextSlide"}
-                />
               </div>
             </div>
           </div>
@@ -121,7 +113,7 @@ const BlogDetails = () => {
       </div>
       {/** BLOGDETAILS COMPONENT */}
       <div className="container mx-auto my-4 bg-blueGray-200">
-        <div className="flex justify-between items-center ">
+        <div className="flex justify-between items-center md:flex-col sm:flex-row">
           {/** BLOG DETAILS COMPONENT */}
           <div className="w-full md:w-6/12 lg:w-10/12 px-2 md:px-4 lg:px-4 mx-auto lg:mx-2 mt-12">
             <img
