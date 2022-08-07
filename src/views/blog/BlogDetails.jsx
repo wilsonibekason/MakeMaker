@@ -6,6 +6,8 @@ import { client } from "../../client";
 import { useStateBlogContext } from "../../oncontext/blogContext/OnBlogContext";
 import Navbar from "components/Navbars/AuthNavbar";
 import { useStateContext } from "oncontext/OnLandingContext";
+import Footer from "../../components/Footers/Footer";
+import { CommentForm } from "../../views/blogs";
 
 const BlogDetails = () => {
   const {
@@ -126,15 +128,20 @@ const BlogDetails = () => {
               src={require("assets/img/profile.jpg").default}
               className="shadow-lg rounded-lg"
             />
-            <div className="w-full md:w-5/12 ml-auto px-12 md:px-4">
-              <div className="md:pr-12">dididcdicdicde</div>
+
+            <div className="md:pr-12">
+              <h3 className="text-3xl font-semibold">Lorem ipsum dolor sit.</h3>
+              <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+                totam sapiente rem aspernatur sit modi ut r
+              </p>
             </div>
           </div>
           {/** BLOG DETAILS COMPONENT */}
 
           {/** BLOG CATEGORY COMPONENT */}
-          <div className="  w-full md:w-4/12 lg:w-4/12 px-4 mx-4 md:px-4 mt-32">
-            <div className="border border-blueGray-400 border-solid p-4 my-4">
+          <div className="  w-full md:w-4/12 lg:w-4/12 px-4 mx-4 md:px-4 mt-32 sticky">
+            <div className="border border-blueGray-400 border-solid p-4 my-4 ">
               {" "}
               <div className="mb-4">
                 <p className="text-sm text-gray-600 dark:text-white dark:hover:text-white dark:bg-blueGray-200 dark:text-white dark:hover uppercase text-center font-semibold ">
@@ -197,28 +204,19 @@ const BlogDetails = () => {
                 <div className="border-t bg-blueGray-300 mt-2"></div>
                 <div className="border border-solid shadow-md ">
                   <p className="text-sm text-gray-600 dark:text-white dark:hover:text-white dark:bg-blueGray-200 dark:text-white dark:hover uppercase text-center font-semibold mt-2">
-                    recent post
+                    tags and categories
                   </p>
                   {/**Recent post section */}
 
                   <div className="border-t bg-blueGray-300 mt-2"></div>
                   <div className="flex flex-col  items-center mx-auto">
-                    <h4 className="text-md uppercase font-semibold  text-lightBlue-400  ">
-                      web development
-                    </h4>
-                    <p className="text-sm text-lightBlue-400 font-semibold">
-                      {" "}
-                      Bringing science to reality is very important
-                    </p>
-                    <div className="border-t bg-lightBlue-300 mt-2"></div>
-                    <div className="flex mr-4  mb-2">
-                      <div className="w-1/6 h-4 px-2  font-semibold">
-                        <p className="text-sm ">20/3/2004 </p>
-                      </div>
-                      <div className="border-t bg-lightBlue-300 mt-2"></div>
-                      <div className="w-1/6 h-4 px-2 font-semibold">
-                        <p className="text-sm">3mins read</p>
-                      </div>
+                    <div className="block mb-2">
+                      <span className="text-xs font-semibold inline-block py-1 px-2  rounded-lg bg-lightBlue-400 text-white uppercase last:mr-0 mr-2 ml-2 mt-2">
+                        hdhhd
+                      </span>
+                      <span className="text-xs font-semibold inline-block py-1 px-2  rounded-lg bg-lightBlue-400 text-white uppercase last:mr-0 mr-2 ml-2 mt-2">
+                        hdhhd
+                      </span>
                     </div>
                   </div>
 
@@ -226,17 +224,15 @@ const BlogDetails = () => {
                 </div>
               </div>
               {/**tags and categories section */}
-              w-full md:w-6/12 px-4w-full md:w-6/12 px-4w-full md:w-6/12
-              px-4w-full md:w-6/12 px-4w-full md:w-6/12 px-4w-full md:w-6/12
-              px-4w-full md:w-6/12 px-4w-full md:w-6/12 px-4w-full md:w-6/12
-              px-4w-full md:w-6/12 px-4 w-full md:w-6/12 px-4 mx-4 md:px-4 mt
-              -32
             </div>
           </div>
           {/** BLOG CATEGORY COMPONENT */}
         </div>
       </div>
+      {/* <CommentForm /> */}
+
       {/** BLOGDETAILS COMPONENT */}
+      <Footer />
     </>
   );
 };
