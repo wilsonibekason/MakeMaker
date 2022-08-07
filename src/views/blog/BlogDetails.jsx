@@ -120,8 +120,8 @@ const BlogDetails = () => {
         </div>
       </div>
       {/** BLOGDETAILS COMPONENT */}
-      <div className="container mx-auto">
-        <div className="flex justify-between items-center">
+      <div className="container mx-auto my-4 bg-blueGray-200">
+        <div className="flex justify-between items-center ">
           {/** BLOG DETAILS COMPONENT */}
           <div className="w-full md:w-6/12 lg:w-10/12 px-2 md:px-4 lg:px-4 mx-auto lg:mx-2 mt-12">
             <img
@@ -132,15 +132,25 @@ const BlogDetails = () => {
             <div className="md:pr-12">
               <h3 className="text-3xl font-semibold">Lorem ipsum dolor sit.</h3>
               <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-                totam sapiente rem aspernatur sit modi ut r
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+                debitis animi impedit in id unde ipsum dolores asperiores, quam
+                magnam nam ullam voluptas fuga magni saepe quod nobis quisquam
+                ex quibusdam repellat eius. Consectetur quam dolorem unde minus
+                quo soluta? Id, iusto numquam! Sapiente accusamus voluptas qui
+                odit velit provident quia? Aliquid reprehenderit possimus
+                sapiente distinctio ad tenetur commodi ex cum quos,
+                necessitatibus totam doloribus nobis aspernatur, id dolores,
+                doloremque veritatis voluptates vero quis. Quod vel possimus
+                nihil molestiae aut beatae mollitia tempora culpa debitis? Error
+                dolore dicta consequuntur iste. Reiciendis, sit id maiores
+                laborum iusto voluptatem voluptates! Laborum, earum!
               </p>
             </div>
           </div>
           {/** BLOG DETAILS COMPONENT */}
 
           {/** BLOG CATEGORY COMPONENT */}
-          <div className="  w-full md:w-4/12 lg:w-4/12 px-4 mx-4 md:px-4 mt-32 sticky">
+          <div className="  w-full md:w-4/12 lg:w-4/12 px-4 mx-4 md:px-4 mt-32 sticky bg-white">
             <div className="border border-blueGray-400 border-solid p-4 my-4 ">
               {" "}
               <div className="mb-4">
@@ -230,7 +240,7 @@ const BlogDetails = () => {
         </div>
       </div>
       {/* <CommentForm /> */}
-
+      <CommentForm />
       {/** BLOGDETAILS COMPONENT */}
       <Footer />
     </>
