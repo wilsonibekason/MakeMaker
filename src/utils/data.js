@@ -12,7 +12,13 @@ export const postBlogQuery = `*[_type == "post"]{
   description,
   mainImage,
   slug,
-  category
+  category,
+ categories[] {
+   category-> { 
+    title,
+    slug
+   }
+  }
   }`;
 /// quering to get featuredBlog post
 export const getFeaturedPosts = () => {
