@@ -83,6 +83,9 @@ export const BlogContextProvider = ({ children }) => {
         handleChange,
         isError,
         setIsError,
+        fullName,
+        email,
+        message,
       }}
     >
       {children}
