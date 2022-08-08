@@ -143,7 +143,7 @@ const BlogDetails = () => {
               >
                 <svg
                   className="absolute bottom-0 overflow-hidden"
-                  xmlns="http://www.w3.org/2000/sv g"
+                  xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="none"
                   version="1.1"
                   viewBox="0 0 2560 100"
