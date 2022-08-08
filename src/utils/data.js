@@ -11,7 +11,8 @@ export const postBlogQuery = `*[_type == "post"]{
     },
   description,
   mainImage,
-  slug
+  slug,
+  category
   }`;
 /// quering to get featuredBlog post
 export const getFeaturedPosts = () => {
@@ -33,7 +34,7 @@ export const getFeaturedPosts = () => {
 
 /// fetching category based blogs for our blogs
 export const blogDetailMoreQuery = (product) => {
-  const query = `*[_type == "post" && categories.category.title == '${product?.categories.category.title}' && _id != '${product?._id}']{
+  const query = `*[_type == "post" && category == '${product?.category}' && _id != '${product?._id}']{
     mainImage{
       asset->{
         url
@@ -51,6 +52,21 @@ export const blogDetailMoreQuery = (product) => {
   }`;
   return query;
 };
+// *[_type == "post" && category == 'programming' && _id != '38bb1ae2-c512-4863-8f80-00ada8d02e9a']{
+//   _id,
+//   _createdAt,
+//   title,
+//   author ->{
+//     name,
+//     image,
+//   } ,
+//   'blogComments': *[_type == "blogComments" && post._ref == ^._id && approved == true],
+//   description,
+//   mainImage,
+//   slug,
+//   body
+// }
+
 export const blogMoreQuery = () => {
   const query = `*[_type == 'category']{
     title,
@@ -83,7 +99,8 @@ export const blogDetailQuery = (postId) => {
     'blogComments': *[_type == "blogComments" && post._ref == ^._id && approved == true],
     description,
     slug,
-    body
+    body,
+    category
   }`;
   return query;
 };
@@ -116,6 +133,7 @@ export const blogRecentPost = (blogId) => {
   const query = `*[_type == "post" && category == '${blogId?.category}' && _id != '${blogId?._id}']{
     _id, 
     title,
+    description,
     publishedAt,
   }`;
   return query;

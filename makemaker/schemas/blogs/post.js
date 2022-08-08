@@ -44,6 +44,11 @@ export default {
       of: [{ type: "reference", to: { type: "category" } }],
     },
     {
+     name: "category",
+     title:  "Category",
+     type: "string",
+    },
+    {
       name: "publishedAt",
       title: "Published at",
       type: "datetime",

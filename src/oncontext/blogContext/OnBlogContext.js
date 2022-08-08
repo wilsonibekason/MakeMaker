@@ -6,7 +6,7 @@ const BlogContext = createContext({});
 
 export const BlogContextProvider = ({ children }) => {
   const [blogAuthor, setBlogAuthor] = useState([]);
-  const [moreBlogs, setMoreBlogs] = useState([]);
+  const [moreBlogs, setMoreBlogs] = useState();
   const [loading, setLoading] = useState(true);
   const [BlogDetails, setBlogDetails] = useState([]);
   const [recentBlogs, setRecentBlogs] = useState([]);

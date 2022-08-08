@@ -61,6 +61,8 @@ const BlogDetails = () => {
       client.fetch(query).then((data) => {
         setBlogDetails(data);
         setLoading(false);
+        console.log(data[0]);
+        console.log(data);
         if (data[0]) {
           queryMore = blogDetailMoreQuery(data[0]);
           client
@@ -72,14 +74,15 @@ const BlogDetails = () => {
             .catch((error) =>
               console.log(error?.response?.body?.error?.description)
             );
-        } else if (data[0]) {
-          queryMore = blogRecentPost(data[0]);
-          client
-            .fetch(queryMore)
-            .then((recentDATA) => setRecentBlogs(recentDATA))
-            .catch((error) =>
-              console.log(error?.response?.body?.error?.description)
-            );
+          if (data[0]) {
+            queryMore = blogRecentPost(data[0]);
+            client
+              .fetch(queryMore)
+              .then((recentDATA) => setRecentBlogs(recentDATA))
+              .catch((error) =>
+                console.log(error?.response?.body?.error?.description)
+              );
+          }
         }
       });
     }
