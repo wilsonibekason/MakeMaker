@@ -1,10 +1,6 @@
 import { client } from "../../client";
 import { useState, useEffect, useContext, createContext } from "react";
-import {
-  postBlogQuery,
-  blogRecentPost,
-  tagsCategories,
-} from "../../utils/data";
+import { postBlogQuery } from "../../utils/data";
 
 const BlogContext = createContext({});
 
@@ -17,21 +13,6 @@ export const BlogContextProvider = ({ children }) => {
   const [tags, setTags] = useState([]);
   /// global for fetching recent and ralated blogs
   let blogQuery;
-
-  const BLOGACTIONS = {
-    SHOWTAGS: "showtags",
-    SHOWRECENTPOST: "showrecentPost",
-  };
-
-  const { SHOWTAGS, SHOWRECENTPOST } = BLOGACTIONS;
-
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case SHOWTAGS:
-        return "n";
-        break;
-    }
-  };
 
   // fetching bloguthorQuery
   useEffect(() => {
