@@ -86,6 +86,7 @@ export const BlogContextProvider = ({ children }) => {
         fullName,
         email,
         message,
+        isCommented,
       }}
     >
       {children}
