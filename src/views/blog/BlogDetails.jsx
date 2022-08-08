@@ -24,7 +24,7 @@ const BlogDetails = () => {
     setLoading,
     BlogDetails,
     setBlogDetails,
-    blogQuery,
+    // blogQuery,
     recentBlogs,
     setRecentBlogs,
     tags,
@@ -38,7 +38,7 @@ const BlogDetails = () => {
   let queryMore;
   let Id = useParams();
   blogid = Id?.id;
-
+  let blogQuery;
   ///// defining states
   const fetchBlogsDetailTags = () => {
     setLoading(true);

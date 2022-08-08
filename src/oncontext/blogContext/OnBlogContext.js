@@ -40,7 +40,7 @@ export const BlogContextProvider = ({ children }) => {
         setLoading,
         BlogDetails,
         setBlogDetails,
-        blogQuery,
+        // blogQuery,
         recentBlogs,
         setRecentBlogs,
         tags,
