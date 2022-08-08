@@ -22,7 +22,7 @@ const CommentForm = () => {
             <div className="w-full lg:w-6/12 px-4">
               <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 my-4">
                 {/** form  */}
-                {isCommented ? (
+                {!isCommented ? (
                   <div className="flex-auto p-5 lg:p-10">
                     <h4 className="text-md lg:text-lg font-semibold">
                       Contact us

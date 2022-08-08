@@ -13,12 +13,15 @@ export const BlogContextProvider = ({ children }) => {
   const [isCommented, setIsCommented] = useState(false);
   const [tags, setTags] = useState([]);
   const [isError, setIsError] = useState(null);
+  const [localStorage, setLocalStorage] = useState(null);
   /// global for fetching recent and ralated blogsat
   const [formData, setFormData] = useState({
     fullName: "",
     message: "",
     email: "",
   });
+  //destructure formData Input
+  const { fullName, message, email } = formData;
   // handkeChange for blog comment
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -29,7 +32,7 @@ export const BlogContextProvider = ({ children }) => {
     setLoading(true);
     setIsCommented(true);
     const contacted = {
-      _type: "contacts",
+      _type: "blogComments",
       fullName,
       email,
       message,
@@ -59,6 +62,16 @@ export const BlogContextProvider = ({ children }) => {
         console.log(error?.response?.body?.error?.description);
       });
   }, [postBlogQuery]);
+  // useEffect for storing formData
+  useEffect(() => {
+    setLocalStorage(window.localStorage);
+    const initialFormData = {
+      fullName: window.localStorage.getItem("name"),
+      email: window.localStorage.getItem("email"),
+      message: window.localStorage.getItem("message"),
+    };
+    setFormData(initialFormData);
+  }, []);
 
   /////
   console.log("====================================");
