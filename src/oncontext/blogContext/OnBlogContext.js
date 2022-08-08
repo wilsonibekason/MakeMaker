@@ -30,7 +30,9 @@ export const BlogContextProvider = ({ children }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+    setIsError(null);
     setIsCommented(true);
+    !fullName || !email || (!message && setIsError(true));
     const contacted = {
       _type: "blogComments",
       fullName,
