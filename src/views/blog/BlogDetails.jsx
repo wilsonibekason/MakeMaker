@@ -1,6 +1,7 @@
 import { useStateContextProduct } from "../../oncontext/productContext/onProductContext";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import moment from "moment";
 import {
   blogDetailMoreQuery,
   blogDetailQuery,
@@ -238,27 +239,38 @@ const BlogDetails = () => {
                           recent post
                         </p>
                         {/**Recent post section */}
-
-                        <div className="border-t bg-blueGray-300 mt-2"></div>
-                        <div className="flex flex-col  items-center mx-auto">
-                          <h4 className="text-sm uppercase font-semibold  text-lightBlue-400  ">
-                            web development
-                          </h4>
-                          <p className="text-xs text-lightBlue-400 font-semibold">
-                            {" "}
-                            Bringing science to reality is very important
-                          </p>
-                          <div className="border-t bg-lightBlue-300 mt-2"></div>
-                          <div className="flex mr-4  mb-2">
-                            <div className="w-1/6 h-4 px-2  font-semibold">
-                              <p className="text-xs ">20/3/2004 </p>
-                            </div>
-                            <div className="border-t bg-lightBlue-300 mt-2"></div>
-                            <div className="w-1/6 h-4 px-2 font-semibold">
-                              <p className="text-xs">3mins read</p>
-                            </div>
-                          </div>
-                        </div>
+                        {recentBlogs?.map((item, index) => {
+                          const { _id, title, description, publishedAt } = item;
+                          const displayDate = publishedAt
+                            ? moment(publishedAt).utc().format("YYYY-MM-DD")
+                            : "";
+                          return (
+                            <>
+                              <div className="border-t bg-blueGray-300 mt-2"></div>
+                              <div className="flex flex-col  items-center mx-auto">
+                                <h4 className="text-sm uppercase font-semibold  text-lightBlue-400  ">
+                                  {title}
+                                </h4>
+                                <p className="text-xs text-lightBlue-400 font-semibold">
+                                  {" "}
+                                  {description && description.length < 50
+                                    ? description.slice(0, 30)
+                                    : "no description"}
+                                </p>
+                                <div className="border-t bg-lightBlue-300 mt-2"></div>
+                                <div className="flex mr-4  mb-2">
+                                  <div className="w-1/6 h-4 px-2  font-semibold">
+                                    <p className="text-xs ">{displayDate} </p>
+                                  </div>
+                                  <div className="border-t bg-lightBlue-300 mt-2"></div>
+                                  <div className="w-1/6 h-4 px-2 font-semibold">
+                                    <p className="text-xs">3mins read</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          );
+                        })}
 
                         {/**Recent post section */}
                       </div>
