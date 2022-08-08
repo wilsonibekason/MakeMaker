@@ -33,7 +33,7 @@ export const getFeaturedPosts = () => {
 
 /// fetching category based blogs for our blogs
 export const blogDetailMoreQuery = (product) => {
-  const query = `*[_type == "post" && category == '${product?.category}' && _id != '${product?._id}']{
+  const query = `*[_type == "post" && categories.category.title == '${product?.categories.category.title}' && _id != '${product?._id}']{
     mainImage{
       asset->{
         url
@@ -51,7 +51,20 @@ export const blogDetailMoreQuery = (product) => {
   }`;
   return query;
 };
+export const blogMoreQuery = () => {
+  const query = `*[_type == 'category']{
+    title,
+   'id':*[defined(categories) && _type == 'product' && references(^._id)][0]{
+   _id
+  }
+  }[defined(id)]`;
+  return query;
+};
 
+// categories[] {
+//   category-> { name }
+// }
+// {singlePost.categories.map { |c| c.category.name }.join(", ")
 /// fetching each blog query
 export const blogDetailQuery = (postId) => {
   const query = `*[_type == "post" && _id == '${postId}']{
@@ -110,7 +123,7 @@ export const blogRecentPost = (blogId) => {
 // initialsing for fetching tags and categories
 export const tagsCategories = (blogId) => {
   const query = `*[_type == "post" && _id  == '${blogId}']{
-     catetegories -> {
+    categories -> {
        category
      }
   }`;

@@ -52,6 +52,7 @@ const BlogDetails = () => {
         );
     }
   };
+
   const fetchBlogDetails = () => {
     setLoading(true);
 
@@ -92,12 +93,9 @@ const BlogDetails = () => {
   const item = BlogDetails?.map((item, index) => item?.title);
   const itemsrc = BlogDetails?.map((item, index) => item?.mainImage);
   console.log("====================================");
-  console.log(blogAuthor);
-  console.log(BlogDetails);
+  // console.log(BlogDetails);
   console.log(recentBlogs);
   console.log(moreBlogs);
-  console.log(BlogDetails?.map((item, index) => item));
-  console.log(itemsrc);
   console.log(blogid);
   console.log("====================================");
 
