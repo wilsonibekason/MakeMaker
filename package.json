@@ -25,6 +25,7 @@
     "react-hot-toast": "^2.3.0",
     "react-icons": "^4.4.0",
     "react-multi-carousel": "^2.8.2",
+    "react-portable-text": "^0.4.3",
     "react-router": "5.2.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "4.0.3",

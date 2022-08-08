@@ -154,8 +154,8 @@ const Blog = () => {
                       : "description";
                   return (
                     <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
-                      {/* <Link to={`/blogpost/${_id}`}> */}
-                      <Link to={`/blogpost/${slug?.current}`}>
+                      <Link to={`/blogpost/${_id}`}>
+                        {/* <Link to={`/blogpost/${slug?.current}`}> */}
                         <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500 ease-linear transition-all duration-150">
                           <img
                             alt="..."

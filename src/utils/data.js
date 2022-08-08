@@ -30,24 +30,6 @@ export const getFeaturedPosts = () => {
       }`;
   return query;
 };
-/// fetching each blog query
-export const blogDetailQuery = (slug) => {
-  const query = `*[_type == "post" && slug.current == '${slug}'][0]{
-    _id,
-    _createdAt,
-    title,
-    author ->{
-      name,
-      image,
-    } ,
-    'blogComments': *[_type == "blogComments" && post._ref == ^._id && approved == true],
-    description,
-    mainImage,
-    slug,
-    body
-  }`;
-  return query;
-};
 
 /// fetching category based blogs for our blogs
 export const blogDetailMoreQuery = (product) => {
@@ -66,6 +48,28 @@ export const blogDetailMoreQuery = (product) => {
       name,
       image
     }
+  }`;
+  return query;
+};
+/// fetching each blog query
+export const blogDetailQuery = (postId) => {
+  const query = `*[_type == "post" && _id == '${postId}']{
+    mainImage{
+      asset->{
+        url
+      }
+    },
+    _id,
+    _createdAt,
+    title,
+    author ->{
+      name,
+      image,
+    } ,
+    'blogComments': *[_type == "blogComments" && post._ref == ^._id && approved == true],
+    description,
+    slug,
+    body
   }`;
   return query;
 };
