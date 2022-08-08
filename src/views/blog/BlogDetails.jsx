@@ -8,6 +8,7 @@ import Navbar from "components/Navbars/AuthNavbar";
 import { useStateContext } from "oncontext/OnLandingContext";
 import Footer from "../../components/Footers/Footer";
 import { CommentForm } from "../../views/blogs";
+import PortableText from "react-portable-text";
 
 const BlogDetails = () => {
   const {
@@ -57,12 +58,13 @@ const BlogDetails = () => {
   }, [blogid]);
   // LOGS
   const item = BlogDetails?.map((item, index) => item?.title);
+  const itemsrc = BlogDetails?.map((item, index) => item?.mainImage);
   console.log("====================================");
   console.log(blogAuthor);
   console.log(BlogDetails);
   console.log(moreBlogs);
   console.log(BlogDetails?.map((item, index) => item));
-  console.log(item);
+  console.log(itemsrc);
   console.log(blogid);
   console.log("====================================");
 
@@ -72,7 +74,7 @@ const BlogDetails = () => {
     <>
       <Navbar />
       {BlogDetails?.map((item, index) => {
-        const { mainImage, title, description } = item;
+        const { mainImage, title, description, body } = item;
         return (
           <>
             <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
@@ -80,9 +82,9 @@ const BlogDetails = () => {
                 //={index === current ? showImg : hideImg}
                 className={showImg}
                 style={{
-                  backgroundImage:
-                    "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')",
-                  // backgroundImage: `url(${urlFor(mainImage)})`,
+                  // backgroundImage:
+                  // "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')",
+                  backgroundImage: `url(${urlFor(mainImage).url()})`,
                 }}
               >
                 <span
@@ -128,36 +130,42 @@ const BlogDetails = () => {
               <div className="flex justify-between items-center flex-col  lg:flex-row md:flex-row sm:flex-col">
                 {/** BLOG DETAILS COMPONENT */}
                 <div className="w-full md:w-6/12 lg:w-10/12 px-2 md:px-4 lg:px-4 mx-auto lg:mx-2 mt-12">
-
-                  <img
+                  {/* <img
                     src={require("assets/img/profile.jpg").default}
                     className="shadow-lg rounded-lg"
-                  />
+                  /> */}
 
-                  <div className="md:pr-12 mx-4">a
-                  <PortableText
-      content={portableTextContent}  
-      serializers={{
-        h1: props => <h1 style={{ color: "red" }} {...props} />
-        li: ({ children }) => <li className="special-list-item">{children}</li>,
-       /// someCustomType: YourComponent,
-      }}
-    />
-                    <p className="mt-4 text-xs leading-relaxed text-blueGray-500">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ea debitis animi impedit in id unde ipsum dolores
-                      asperiores, quam magnam nam ullam voluptas fuga magni
-                      saepe quod nobis quisquam ex quibusdam repellat eius.
-                      Consectetur quam dolorem unde minus quo soluta? Id, iusto
-                      numquam! Sapiente accusamus voluptas qui odit velit
-                      provident quia? Aliquid reprehenderit possimus sapiente
-                      distinctio ad tenetur commodi ex cum quos, necessitatibus
-                      totam doloribus nobis aspernatur, id dolores, doloremque
-                      veritatis voluptates vero quis. Quod vel possimus nihil
-                      molestiae aut beatae mollitia tempora culpa debitis? Error
-                      dolore dicta consequuntur iste. Reiciendis, sit id maiores
-                      laborum iusto voluptatem voluptates! Laborum, earum!
-                    </p>
+                  <div className="md:pr-12 mx-4">
+                    <PortableText
+                      dataset={"production"}
+                      projectId={"yfhcl1lq"}
+                      content={body}
+                      serializers={{
+                        h1: (props) => (
+                          <h1 className="text-2xl font-bold my-5" {...props} />
+                        ),
+                        h2: (props) => (
+                          <h2 className="text-xl font-bold my-5" {...props} />
+                        ),
+                        p: (props) => (
+                          <p
+                            className="text-sm font-semibold text-blueGray-200"
+                            {...props}
+                          ></p>
+                        ),
+                        li: ({ children }) => (
+                          <li className="ml-4 list-none">{children}</li>
+                        ),
+                        link: ({ href, children }) => (
+                          <a
+                            href={href}
+                            className="inline-block py-2 text-base leading-7 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover hover:underline "
+                          >
+                            {children}
+                          </a>
+                        ),
+                      }}
+                    />
                   </div>
                 </div>
                 {/** BLOG DETAILS COMPONENT */}
