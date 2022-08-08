@@ -1,6 +1,10 @@
 import { client } from "../../client";
 import { useState, useEffect, useContext, createContext } from "react";
-import { postBlogQuery } from "../../utils/data";
+import {
+  postBlogQuery,
+  blogRecentPost,
+  tagsCategories,
+} from "../../utils/data";
 
 const BlogContext = createContext({});
 
@@ -9,8 +13,27 @@ export const BlogContextProvider = ({ children }) => {
   const [moreBlogs, setMoreBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [BlogDetails, setBlogDetails] = useState([]);
+  const [recentBlogs, setRecentBlogs] = useState([]);
+  const [tags, setTags] = useState([]);
+  /// global for fetching recent and ralated blogs
+  let blogQuery;
 
-  // fetching blogAuthorQuery
+  const BLOGACTIONS = {
+    SHOWTAGS: "showtags",
+    SHOWRECENTPOST: "showrecentPost",
+  };
+
+  const { SHOWTAGS, SHOWRECENTPOST } = BLOGACTIONS;
+
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case SHOWTAGS:
+        return "n";
+        break;
+    }
+  };
+
+  // fetching bloguthorQuery
   useEffect(() => {
     client
       .fetch(postBlogQuery)
@@ -36,6 +59,11 @@ export const BlogContextProvider = ({ children }) => {
         setLoading,
         BlogDetails,
         setBlogDetails,
+        blogQuery,
+        recentBlogs,
+        setRecentBlogs,
+        tags,
+        setTags,
       }}
     >
       {children}

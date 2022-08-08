@@ -1,7 +1,12 @@
 import { useStateContextProduct } from "../../oncontext/productContext/onProductContext";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { blogDetailMoreQuery, blogDetailQuery } from "../../utils/data";
+import {
+  blogDetailMoreQuery,
+  blogDetailQuery,
+  blogRecentPost,
+  tagsCategories,
+} from "../../utils/data";
 import { client, urlFor } from "../../client";
 import { useStateBlogContext } from "../../oncontext/blogContext/OnBlogContext";
 import Navbar from "components/Navbars/AuthNavbar";
@@ -19,16 +24,34 @@ const BlogDetails = () => {
     setLoading,
     BlogDetails,
     setBlogDetails,
+    blogQuery,
+    recentBlogs,
+    setRecentBlogs,
+    tags,
+    setTags,
   } = useStateBlogContext();
   const { BiLeftArrow, BiRightArrow } = useStateContext();
   ///// set global variables
   let blogid;
   let query;
+
   let queryMore;
   let Id = useParams();
   blogid = Id?.id;
 
   ///// defining states
+  const fetchBlogsDetailTags = () => {
+    setLoading(true);
+    blogQuery = tagsCategories(blogid);
+    if (blogQuery) {
+      client
+        .fetch(blogQuery)
+        .then((data) => setTags(data))
+        .catch((error) =>
+          console.log(error?.response.body?.error?.description)
+        );
+    }
+  };
   const fetchBlogDetails = () => {
     setLoading(true);
 
@@ -48,6 +71,14 @@ const BlogDetails = () => {
             .catch((error) =>
               console.log(error?.response?.body?.error?.description)
             );
+        } else if (data[0]) {
+          queryMore = blogRecentPost(data[0]);
+          client
+            .fetch(queryMore)
+            .then((recentDATA) => setRecentBlogs(recentDATA))
+            .catch((error) =>
+              console.log(error?.response?.body?.error?.description)
+            );
         }
       });
     }
@@ -55,6 +86,7 @@ const BlogDetails = () => {
 
   useEffect(() => {
     fetchBlogDetails();
+    fetchBlogsDetailTags();
   }, [blogid]);
   // LOGS
   const item = BlogDetails?.map((item, index) => item?.title);
@@ -62,6 +94,7 @@ const BlogDetails = () => {
   console.log("====================================");
   console.log(blogAuthor);
   console.log(BlogDetails);
+  console.log(recentBlogs);
   console.log(moreBlogs);
   console.log(BlogDetails?.map((item, index) => item));
   console.log(itemsrc);
