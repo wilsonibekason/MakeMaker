@@ -10,10 +10,44 @@ export const BlogContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [BlogDetails, setBlogDetails] = useState([]);
   const [recentBlogs, setRecentBlogs] = useState([]);
+  const [isCommented, setIsCommented] = useState(false);
   const [tags, setTags] = useState([]);
-  /// global for fetching recent and ralated blogs
-  let blogQuery;
+  const [isError, setIsError] = useState(null);
+  /// global for fetching recent and ralated blogsat
+  const [formData, setFormData] = useState({
+    fullName: "",
+    message: "",
+    email: "",
+  });
+  // handkeChange for blog comment
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setIsCommented(true);
+    const contacted = {
+      _type: "contacts",
+      fullName,
+      email,
+      message,
+    };
+
+    client
+      .create(contacted)
+      .then(() => {
+        setLoading(false);
+        setIsCommented(false);
+        setIsError(null);
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log(error?.response?.body?.error?.description);
+        setIsError(error?.response?.body?.error?.description);
+      });
+  };
   // fetching bloguthorQuery
   useEffect(() => {
     client
@@ -45,6 +79,10 @@ export const BlogContextProvider = ({ children }) => {
         setRecentBlogs,
         tags,
         setTags,
+        handleSubmit,
+        handleChange,
+        isError,
+        setIsError,
       }}
     >
       {children}
