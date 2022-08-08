@@ -1,4 +1,3 @@
-
 export default {
   name: "categorys",
   title: "Category",
@@ -30,7 +29,7 @@ export default {
       of: [
         {
           type: "reference",
-          to: [{ type: "category" }],
+          to: [{ type: "categorys" }],
         },
       ],
     },
